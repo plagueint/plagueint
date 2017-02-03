@@ -1,0 +1,50 @@
+
+
+-Taper le rapport sur tex
+-Éditer le wiki programme gitHub --> Expliquer le fonctionnement de tel partie du code, tel fichier, etc...
+-compte-rendu/rapport projet -> dossier rapport
+-todolist sur trello
+
+
+Répartition des tâches:
+-Créer le fichier tex de base (Yohan)
+
+-Faire le cahier des charges regarder la slide 5, puis >65 (http://www-inf.it-sudparis.eu/COURS/CSC3502/Cours/GL/transparentsGL.pdf) (TOus)
+
+Conseils:
+-Le rapport peut être édité, à l'aide d'un traitement de textes choisi par
+les membres du groupe-projet.
+-Le rapport doit être soumis au format pdf (Portable Document Format).
+-Le nom du chier doit être explicite (par exemple : Rapport.pdf).
+ -La page de garde doit indiquer le titre du projet, le nom des étudiants et de l'encadrant, la version courante et sa date.
+-Les pages doivent être numérotées.
+-Le rapport doit contenir une table des matières avec les numéros de pages.
+-Des annexes peuvent si nécessaire être utilisées (par exemple, un lexique pour les dénitions des abréviations éventuelles et/ou des termes techniques relatifs au sujet traité).
+
+
+Fonction du produit:
+-Mode de visualisation (écoulement du temps) [discret ]
+-Modélisation mondiale avec celulle de la taille d'un pays
+-Possibilité d'exporter le résultat dans un fichier lisible [ lecture/écriture de fichier csv ]
+-Voix de transports prise en compte [1 seul graphe avec les voix de transports sur les arêtes nbre de passagers/jour]
+-Possibilité d'ajouter des événements (blocage d'aéroports, gare, etc..) au début
+
+Contraintes techniques:
+-Utiliser Java8 + Eclipse + Python (pour récupérer les données et traiter ce qui est nécessaire)
+-Possibilité d'exeution en mode terminal puis graphique
+-Portabilité Windows, Linux (MAC OS) [natif avec Java]
+
+Critères d'acceptabilité et de réception
+-Application performante [utiliser Euler dans un premier temps puis utiliser Runge Kutta implémenter par Java]
+*********Interface utilisateur:*********
+-temps [choix de l'échelle de temps pour gérer la rapidité de calcul]
+-Choix des coeffs pour équa diff de manière directe (entrée manuelle) ou indirect (grippe->a=0.5)
+-Le ou les Point de lancement de la maladie (Pays) [Rentrer pays et on regarde si ce qui est rentré match]
+-Choisir Nombre d'infecté initial
+
+Extensions:
+-Interface - graphique [spécifier la bibliothèque Java]
+-Informations sur les celulles (petits graphiques, etc...) [utiliser des bibliothèques]
+-Modification de l'environnement (hygiène, température, etc...) []
+
+Juridique: Creative Commons sans usage commerciale [BY NC SA]
