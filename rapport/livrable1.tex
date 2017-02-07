@@ -1,0 +1,112 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{esint}
+
+\title{ \Huge \textbf{Premier livrable de PlagueINT} \\ \large Modélisation de la propagation des épidémies}
+\date{\today}
+\author{
+CHERRE Romain
+\and COROLLER Stevan 
+\and PAMART Pierrick
+\and PIPEREAU Yohan
+\and \\
+Encadrant: Mr. Vincent Gauthier }
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\addcontentsline{toc}{section}{Analyse des besoins}
+\section*{Analyse des besoins}
+
+\addcontentsline{toc}{subsection}{Fonction du produit} %obligé si on utilise pas les numérotations de section et sous section
+\subsection*{Fonction du produit}
+\begin{flushleft}
+  \begin{itemize}
+	\item[$\bullet$] Mode de visualisation (écoulement du temps) [discret ]
+	\item[$\bullet$] Modélisation mondiale avec celulle de la taille d'un pays
+	\item[$\bullet$] Possibilité d'exporter le résultat dans un fichier lisible [ lecture/écriture de fichier csv ]
+	\item[$\bullet$] Voix de transports prise en compte [1 seul graphe avec les voix de transports sur les arêtes nbre de passagers/jour]
+	\item[$\bullet$] Possibilité d'ajouter des événements (blocage d'aéroports, gare, etc..) au début
+  \end{itemize}
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Contraintes techniques}
+\subsection*{Contraintes techniques}
+\begin{flushleft}
+  \begin{itemize}
+	\item[$\bullet$] Utiliser Java8 + Eclipse + Python (pour récupérer les données et traiter ce qui est nécessaire)
+	\item[$\bullet$] Possibilité d'exeution en mode terminal puis graphique
+	\item[$\bullet$] Portabilité Windows, Linux, MAC OS (géré nativement par Java)
+    \end{itemize}
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Critères d'acceptabilité et de réception}
+\subsection*{Critères d'acceptabilité et de réception}
+\begin{flushleft}
+  \begin{itemize}
+	\item[$\bullet$] Application performante [utiliser Euler dans un premier temps puis utiliser Runge Kutta implémenter par Java]
+*********Interface utilisateur:*********
+	\item[$\bullet$] temps 
+	\item[$\bullet$] Choix des coeffs pour équa diff de manière directe (entrée manuelle) ou indirect (grippe->a=0.5)
+	\item[$\bullet$] Le ou les Point de lancement de la maladie (Pays) 
+	\item[$\bullet$] Choisir Nombre d'infecté initial
+  \end{itemize}
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Extensions}
+\subsection*{Extensions}
+\begin{flushleft}
+  \begin{itemize}
+	\item[$\bullet$] Interface - graphique 
+	\item[$\bullet$] Informations sur les celulles (petits graphiques, etc...) 
+	\item[$\bullet$] Modification de l'environnement (hygiène, température, etc...) 
+  \end{itemize}
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Juridique}
+\subsection*{Juridique}
+\begin{flushleft}
+Creative Commons sans usage commerciale [BY NC SA]
+\end{flushleft}
+
+\addcontentsline{toc}{section}{Spécification fonctionnelle générale}
+\section*{Spécification fonctionnelle générale}
+
+\addcontentsline{toc}{subsection}{Fonction du produit} %obligé si on utilise pas les numérotations de section et sous section
+\subsection*{Fonction du produit}
+	\begin{flushleft}
+	Pour l'écoulement du temps, nous avons choisi de discrétiser le temps. \\
+	Pour l'exportation des résultats dans un fichier lisible, on exporterait les données dans un fichier csv en utilisant des fonctionnalités de lecture/écriture de fichier.\\
+	Pour modéliser les voix de transports, on utiliserait un seul graphe avec comme noeuds du graphe les pays et sur les branches, le nombre de passagers par jour.
+	\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Critères d'acceptabilité et de réception}
+\subsection*{Critères d'acceptabilité et de réception}
+\begin{flushleft}
+	Pour la résolution des équations différentielles, on utiliserait dans un premier temps une méthode d'Euler. Dans un second temps, on implémenterait une méthode de Runge Kutta qui nous permettrait de gagner en performance. \\
+	Pour l'interface utilisateur, on permettrait à l'utilisateur de définir l'échelle de temps afin de gérer la rapidité du programme. L'utilisateur pourrait également choisir les pays de lancement de la maladie. Il écrirait le nom du pays et on vérifierait si le nom correspond au nom d'un pays présent dans la liste d'une variable pays.
+\end{flushleft}
+
+\addcontentsline{toc}{subsection}{Extensions}
+\subsection*{Extensions}
+\begin{flushleft}
+ 	Pour l'interface graphique qui permettra d'afficher une carte du monde, ainsi que de tracer des graphiques relatifs aux données de la celulle et leur évolution dans le temps, nous utiliserons la librairie (toolkit) graphique JavaFX. \\
+	Pour la modification de l'environnement (hygiène, température, etc...), on modifie directement les coefficients de propagation de la maladie dans la celulle.
+\end{flushleft}
+
+\addcontentsline{toc}{section}{Regroupement modulaire des fonctionnalités}
+\section*{Regroupement modulaire des fonctionnalités}
+
+\addcontentsline{toc}{section}{Description du flux des données entre les modules}
+\section*{Description du flux des données entre les modules}
+
+\end{document}
+
