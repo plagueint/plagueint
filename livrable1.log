@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.26)  7 FEB 2017 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.26)  7 FEB 2017 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,18 +475,18 @@ Package: esint
 ) (./livrable1.aux)
 \openout1 = `livrable1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -502,40 +502,41 @@ LaTeX Font Info:    ... okay on input line 11.
 \makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks24
 )
-LaTeX Info: Redefining \degres on input line 11.
-LaTeX Info: Redefining \dots on input line 11.
-LaTeX Info: Redefining \up on input line 11.
-LaTeX Font Info:    Try loading font information for U+esint on input line 13.
+LaTeX Info: Redefining \degres on input line 17.
+LaTeX Info: Redefining \dots on input line 17.
+LaTeX Info: Redefining \up on input line 17.
+LaTeX Font Info:    Try loading font information for U+esint on input line 19.
  (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
-
-] [2] (./livrable1.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./livrable1.toc)
 \tf@toc=\write3
 \openout3 = `livrable1.toc'.
 
- [3
+ [1
 
-] (./livrable1.aux) ) 
+] [2
+
+] [3] (./livrable1.aux) ) 
 Here is how much of TeX's memory you used:
  3719 strings out of 493013
  44799 string characters out of 6139316
- 116482 words of memory out of 5000000
+ 117515 words of memory out of 5000000
  7241 multiletter control sequences out of 15000+600000
  12666 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,6n,35p,226b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t
-1.enc}</usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/f
-onts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm2074.pfb>
-Output written on livrable1.pdf (4 pages, 67760 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-sup
+er-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm2074.pfb>
+Output written on livrable1.pdf (4 pages, 73567 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
