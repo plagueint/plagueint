@@ -31,7 +31,7 @@ Fonction du produit:
 
 Contraintes techniques:
 -Utiliser Java8 + Eclipse + Python (pour récupérer les données et traiter ce qui est nécessaire)
--Possibilité d'exeution en mode terminal puis graphique
+-Possibilité d'execution en mode terminal puis graphique
 -Portabilité Windows, Linux (MAC OS) [natif avec Java]
 
 Critères d'acceptabilité et de réception
