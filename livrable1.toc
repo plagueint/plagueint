@@ -1,1 +1,10 @@
 \select@language {french}
+\contentsline {section}{Analyse des besoins}{1}
+\contentsline {subsection}{Fonction du produit}{1}
+\contentsline {subsection}{Contraintes techniques}{1}
+\contentsline {subsection}{Crit\IeC {\`e}res d'acceptabilit\IeC {\'e} et de r\IeC {\'e}ception}{1}
+\contentsline {subsection}{Extensions}{2}
+\contentsline {subsection}{Juridique}{2}
+\contentsline {section}{Sp\IeC {\'e}cification fonctionnelle g\IeC {\'e}n\IeC {\'e}rale}{2}
+\contentsline {section}{Regroupement modulaire des fonctionnalit\IeC {\'e}s}{2}
+\contentsline {section}{Description du flux des donn\IeC {\'e}es entre les modules}{2}
