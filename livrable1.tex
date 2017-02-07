@@ -1,14 +1,68 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{xcolor}
 \usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage{esint}
+\title{Livrable 1 du projet PlagueINT sur la propagation des épidémies}
+\date{16 février 2017}
+\author{CHERRE Romain \\ COROLLER Stevan \\ PAMART Pierrick \\ PIPEREAU Yohan}
 \begin{document}
 
+\maketitle
+\chapter*{Analyse des besoins}
 
 
-        
+\begin{flushleft}
+Conseils:
+-Le rapport peut être édité, à l'aide d'un traitement de textes choisi par
+les membres du groupe-projet.
+-Le rapport doit être soumis au format pdf (Portable Document Format).
+-Le nom du fichier doit être explicite (par exemple : Rapport.pdf).
+ -La page de garde doit indiquer le titre du projet, le nom des étudiants et de l'encadrant, la version courante et sa date.
+-Les pages doivent être numérotées.
+-Le rapport doit contenir une table des matières avec les numéros de pages.
+-Des annexes peuvent si nécessaire être utilisées (par exemple, un lexique pour les définitions des abréviations éventuelles et/ou des termes techniques relatifs au sujet traité).
+\end{flushleft}
+
+\begin{flushleft}
+Fonction du produit:
+-Mode de visualisation (écoulement du temps) [discret ]
+-Modélisation mondiale avec celulle de la taille d'un pays
+-Possibilité d'exporter le résultat dans un fichier lisible [ lecture/écriture de fichier csv ]
+-Voix de transports prise en compte [1 seul graphe avec les voix de transports sur les arêtes nbre de passagers/jour]
+-Possibilité d'ajouter des événements (blocage d'aéroports, gare, etc..) au début
+\end{flushleft}
+
+\begin{flushleft}
+Contraintes techniques:
+-Utiliser Java8 + Eclipse + Python (pour récupérer les données et traiter ce qui est nécessaire)
+-Possibilité d'exeution en mode terminal puis graphique
+-Portabilité Windows, Linux (MAC OS) [natif avec Java]
+\end{flushleft}
+
+\begin{flushleft}
+Critères d'acceptabilité et de réception
+-Application performante [utiliser Euler dans un premier temps puis utiliser Runge Kutta implémenter par Java]
+*********Interface utilisateur:*********
+-temps [choix de l'échelle de temps pour gérer la rapidité de calcul]
+-Choix des coeffs pour équa diff de manière directe (entrée manuelle) ou indirect (grippe->a=0.5)
+-Le ou les Point de lancement de la maladie (Pays) [Rentrer pays et on regarde si ce qui est rentré match]
+-Choisir Nombre d'infecté initial
+\end{flushleft}
+
+\begin{flushleft}
+Extensions:
+-Interface - graphique [spécifier la bibliothèque Java]
+-Informations sur les celulles (petits graphiques, etc...) [utiliser des bibliothèques]
+-Modification de l'environnement (hygiène, température, etc...) []
+\end{flushleft}
+
+\begin{flushleft}
+Juridique: Creative Commons sans usage commerciale [BY NC SA]
+\end{flushleft}
+
+\tableofcontents
 \end{document}
 
