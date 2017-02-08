@@ -1,6 +1,8 @@
 # plagueint
 Modelisation of viruses propagation on a worldwide scale
 
+Pour l'UML on utilise UMLet (paquet umlet sous arch)
+
 Manuel Git:
 #Créer un dépôt avec git init pour chaque projet, puis placer les codes dans le même dossier que le .git. Attention il faut absolument faire commit car git crée une branche mais
 #origin est un alias pointant vers le serveur
