@@ -1,4 +1,5 @@
 \select@language {french}
+<<<<<<< HEAD
 \contentsline {section}{Analyse des besoins}{1}
 \contentsline {subsection}{Fonction du produit}{1}
 \contentsline {subsection}{Contraintes techniques}{1}
@@ -16,3 +17,17 @@
 \contentsline {section}{Regroupement modulaire des fonctionnalit\IeC {\'e}s}{3}
 \contentsline {section}{Description du flux des donn\IeC {\'e}es entre les modules}{4}
 >>>>>>> f5a83fe... 1ère relecture CDC
+=======
+\contentsline {section}{Analyse des besoins}{2}
+\contentsline {subsection}{Fonction du produit}{2}
+\contentsline {subsection}{Contraintes techniques}{2}
+\contentsline {subsection}{Crit\IeC {\`e}res d'acceptabilit\IeC {\'e} et de r\IeC {\'e}ception}{2}
+\contentsline {subsection}{Extensions}{3}
+\contentsline {subsection}{Juridique}{3}
+\contentsline {section}{Sp\IeC {\'e}cification fonctionnelle g\IeC {\'e}n\IeC {\'e}rale}{3}
+\contentsline {subsection}{Fonction du produit}{3}
+\contentsline {subsection}{Crit\IeC {\`e}res d'acceptabilit\IeC {\'e} et de r\IeC {\'e}ception}{4}
+\contentsline {subsection}{Extensions}{4}
+\contentsline {section}{Regroupement modulaire des fonctionnalit\IeC {\'e}s}{4}
+\contentsline {section}{Description du flux des donn\IeC {\'e}es entre les modules}{5}
+>>>>>>> 3137428... Ajout de l'interface utilisateur CDC

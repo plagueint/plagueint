@@ -4,7 +4,7 @@
 \usepackage{xcolor}
 \usepackage[french]{babel}
 \usepackage{amsmath}
-\usepackage{esint}
+%\usepackage{esint}
 
 \title{ \Huge \textbf{Premier livrable de PlagueINT} \\ \large Modélisation de la propagation des épidémies}
 \date{\today}
@@ -52,12 +52,39 @@ Encadrant: Mr. Vincent Gauthier }
 \subsection*{Critères d'acceptabilité et de réception}
 \begin{flushleft}
   \begin{itemize}
-	\item[$\bullet$] Application performante \\ 
-	Interface utilisateur
-	\item[$\bullet$] temps 
-	\item[$\bullet$] Choix des coeffs pour les équations différentielles de manière directe (entrée manuelle des coefficients) ou indirect (l'utilisateur sélectionne une maladie parmi une liste et les coefficients sont déjà connus du programme)
-	\item[$\bullet$] Le ou les Point de lancement de la maladie (Pays) 
-	\item[$\bullet$] Choisir Nombre d'infecté initial
+	\item[$\bullet$] Application performante avec un temps d'exécution raisonnable \\
+	\item[$\bullet$] L'interface de l'application doit être conforme à la maquette suivante :\\
+\subparagraph*{
+------ Simulation de propagation de maladies ------\\
+(1) Lancer la simulation\\
+(2) Paramètres de simulation\\
+(3) Quitter la simulation\\
+}
+\subparagraph*{  
+------ Paramètres de simulation ------\\
+(1) Quitter les options sans sauvegarder\\
+(2) Date de début et durée de la simulation\\
+(3) Pays infectés et nombre d'infectés de départ\\
+(4) Choisir les constantes de propagation\\
+(5) Gérer les évènements\\
+(6) Choisir une maladie pré-enregistrée\\
+(7) Quitter et sauvegarder les paramètres\\
+}
+\subparagraph*{  
+------ Evènements ------\\
+(1) Créer un évènement\\
+(2) Voir les évènements\\
+(3) Supprimer un évènement\\
+(4) Revenir aux paramètres\\
+}
+\subparagraph*{  
+------ Résultat de la simulation ------\\
+(1) Voir la carte du monde\\
+(2) Voir les statistiques globales\\
+(3) Voir les statistiques d'un pays\\
+(4) Extraire le résultat dans un fichier .csv\\
+(5) Revenir au menu principal\\
+}
   \end{itemize}
 \end{flushleft}
 
