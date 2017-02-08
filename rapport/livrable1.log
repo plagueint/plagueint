@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.26)  7 FEB 2017 17:03
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2016.12.26)  8 FEB 2017 00:47
 >>>>>>> f5a83fe... 1ère relecture CDC
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.2.8)  8 FEB 2017 08:46
+>>>>>>> c2228ce... Ajout tirets modules
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,10 +476,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
-)
-(/usr/share/texmf-dist/tex/latex/esint/esint.sty
-Package: esint 
-\symlargesymbolsA=\mathgroup4
 ) (./livrable1.aux)
 \openout1 = `livrable1.aux'.
 
@@ -509,19 +509,18 @@ LaTeX Font Info:    ... okay on input line 19.
 LaTeX Info: Redefining \degres on input line 19.
 LaTeX Info: Redefining \dots on input line 19.
 LaTeX Info: Redefining \up on input line 19.
-LaTeX Font Info:    Try loading font information for U+esint on input line 20.
- (/usr/share/texmf-dist/tex/latex/esint/uesint.fd
-File: uesint.fd 
-) [1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./livrable1.toc)
 \tf@toc=\write3
 \openout3 = `livrable1.toc'.
 
- [1
+
+[1
 
 ] [2] (./livrable1.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  3725 strings out of 493013
  44872 string characters out of 6139316
 <<<<<<< HEAD
@@ -556,6 +555,26 @@ Output written on livrable1.pdf (5 pages, 95265 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
+=======
+ 3675 strings out of 493013
+ 44145 string characters out of 6139318
+ 117425 words of memory out of 5000000
+ 7202 multiletter control sequences out of 15000+600000
+ 14584 words of font info for 39 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 28i,6n,35p,398b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/varens/.texlive/texmf-var/fonts/pk/ljf
+our/public/cm/cmsy10.720pk> </home/varens/.texlive/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecbx1440.600pk> </home/varens/.texlive/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1728.600pk> </home/varens/.texlive/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm1200.600pk> </home/varens/.texlive/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecrm1440.600pk> </home/varens/.texlive/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecbx2488.600pk>
+Output written on livrable1.pdf (5 pages, 66327 bytes).
+PDF statistics:
+ 230 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+>>>>>>> c2228ce... Ajout tirets modules
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
