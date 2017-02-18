@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>320</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>/Country/
+Package::Propagation
+--
+# id: int
+# name: String
+# susceptibles: int
+# infectives: int
+# recovered: int
+# population: int
+--
+/~getters/
+/#setters/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>160</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/Graph/
+Package::Propagation
+--
+# edges: Frontier[][]
+# countries: Country[]
+--
+/~getters/
+/#setters/
+--
+With Country[k].id=k</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>30</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>/SIRModel/
+Package::Propagation
+--
+# beta: float
+# gamma: float
+# dt: float
+--
+/~getters/
+/#setters/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>250</y>
+      <w>300</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/Frontier/
+Package::Propagation
+--
+# opened : boolean
+// if the frontiers between theses two countries are opened
+# freqRate : float
+// nbre d'usager par unité de temps / population du pays
+# crossingTime : float
+# hygieneRate : float
+--
+/~getters/
+/#setters/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>390</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>390</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>390</y>
+      <w>70</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>460</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/Terrestre/
+Package::Propagation
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>520</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>/Aérienne/
+Package::Propagation
+--
+# airportName : String
+# coord : Coordinates
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>450</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/Maritime/
+Package::Propagation
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>200</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>220</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;160.0;10.0</additional_attributes>
+  </element>
+</diagram>
