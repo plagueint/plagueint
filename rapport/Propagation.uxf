@@ -4,20 +4,21 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>320</y>
+      <x>100</x>
+      <y>230</y>
       <w>210</w>
       <h>190</h>
     </coordinates>
-    <panel_attributes>/Country/
+    <panel_attributes>/Cell/
 Package::Propagation
 --
 # id: int
-# name: String
 # susceptibles: int
 # infectives: int
 # recovered: int
 # population: int
+# hygieneRate : int
+//Ajouter les informations pour la visualisation graphique
 --
 /~getters/
 /#setters/
@@ -27,28 +28,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>160</y>
-      <w>210</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>/Graph/
-Package::Propagation
---
-# edges: Frontier[][]
-# countries: Country[]
---
-/~getters/
-/#setters/
---
-With Country[k].id=k</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>40</x>
-      <y>30</y>
+      <x>100</x>
+      <y>50</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -66,8 +47,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>250</y>
+      <x>660</x>
+      <y>230</y>
       <w>300</w>
       <h>150</h>
     </coordinates>
@@ -88,8 +69,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>390</y>
+      <x>640</x>
+      <y>370</y>
       <w>100</w>
       <h>90</h>
     </coordinates>
@@ -99,8 +80,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>780</x>
-      <y>390</y>
+      <x>790</x>
+      <y>370</y>
       <w>30</w>
       <h>150</h>
     </coordinates>
@@ -110,8 +91,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>390</y>
+      <x>870</x>
+      <y>370</y>
       <w>70</w>
       <h>80</h>
     </coordinates>
@@ -121,8 +102,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>460</y>
+      <x>550</x>
+      <y>440</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -134,8 +115,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>520</y>
+      <x>700</x>
+      <y>500</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -150,8 +131,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>450</y>
+      <x>830</x>
+      <y>430</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -163,23 +144,72 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
+      <x>590</x>
       <y>200</y>
-      <w>160</w>
-      <h>90</h>
+      <w>90</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>140.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>150</x>
-      <y>220</y>
-      <w>180</w>
-      <h>120</h>
+      <x>300</x>
+      <y>210</y>
+      <w>110</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;160.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>460</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/Country/
+Package::Propagation
+--
+# name: String
+--
+/~getters/
+/#setters/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>160</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>/Graph/
+Package::Propagation
+--
+# edges: Frontier[][]
+# countries: Country[]
+--
+/~getters/
+/#setters/
+--
+With Country[k].id=k</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>410</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
 </diagram>
