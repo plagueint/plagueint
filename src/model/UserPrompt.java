@@ -3,6 +3,7 @@ public class UserPrompt {
 	public String country; //Demande la celulle où débute l'épidémie
 	public double numberOfInfected; //Demande le nombre d'infectés de départ
 	public String illness; //demande la maladie
+	public double timeModelisation; //temps de la simulation
 	
 	public String getCountry() {
 		return country;
