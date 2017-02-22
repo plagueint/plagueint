@@ -207,6 +207,8 @@ With Country[k].id=k</panel_attributes>
     <panel_attributes>MenuEntry
 Package::Terminal
 --
+# menu_name: String
+--
 ~ getInput(): int
 - action(): void</panel_attributes>
     <additional_attributes/>
@@ -353,6 +355,18 @@ Package::Propagation
 /~getters/
 /#setters/</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>100</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
