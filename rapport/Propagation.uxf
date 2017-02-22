@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>480</y>
+      <x>80</x>
+      <y>640</y>
       <w>210</w>
       <h>190</h>
     </coordinates>
@@ -28,8 +28,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>480</y>
+      <x>610</x>
+      <y>670</y>
       <w>300</w>
       <h>150</h>
     </coordinates>
@@ -50,41 +50,41 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>710</x>
-      <y>620</y>
-      <w>100</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>860</x>
-      <y>620</y>
-      <w>30</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>940</x>
-      <y>620</y>
+      <x>620</x>
+      <y>810</y>
       <w>70</w>
-      <h>80</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;60.0</additional_attributes>
+    <additional_attributes>50.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>810</y>
+      <w>60</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>810</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;30.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>690</y>
+      <x>530</x>
+      <y>850</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -96,8 +96,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>750</y>
+      <x>680</x>
+      <y>910</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -112,8 +112,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>680</y>
+      <x>810</x>
+      <y>840</y>
       <w>190</w>
       <h>50</h>
     </coordinates>
@@ -125,20 +125,20 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>430</y>
-      <w>100</w>
-      <h>90</h>
+      <x>560</x>
+      <y>590</y>
+      <w>70</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>430</y>
+      <x>280</x>
+      <y>590</y>
       <w>100</w>
       <h>90</h>
     </coordinates>
@@ -149,8 +149,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>710</y>
+      <x>80</x>
+      <y>870</y>
       <w>210</w>
       <h>120</h>
     </coordinates>
@@ -167,15 +167,16 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>380</y>
+      <x>360</x>
+      <y>540</y>
       <w>210</w>
       <h>150</h>
     </coordinates>
     <panel_attributes>Graph
 Package::Propagation
 --
-# edges: Frontier[][]
+# edges: Frontier[][][3]
+//Liste de longueur 3
 # countries: Country[]
 --
 /~getters/
@@ -187,8 +188,8 @@ With Country[k].id=k</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>260</x>
-      <y>660</y>
+      <x>170</x>
+      <y>820</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -198,8 +199,8 @@ With Country[k].id=k</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>140</y>
+      <x>880</x>
+      <y>160</y>
       <w>210</w>
       <h>100</h>
     </coordinates>
@@ -213,8 +214,8 @@ Package::Terminal
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>310</y>
+      <x>880</x>
+      <y>0</y>
       <w>210</w>
       <h>110</h>
     </coordinates>
@@ -230,45 +231,45 @@ Package::Terminal
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>230</y>
+      <x>1010</x>
+      <y>100</y>
       <w>30</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>50</x>
-      <y>230</y>
+      <x>930</x>
+      <y>100</y>
       <w>30</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>310</y>
+      <x>450</x>
+      <y>480</y>
       <w>30</w>
-      <h>90</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>150</y>
+      <x>330</x>
+      <y>310</y>
       <w>290</w>
-      <h>170</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>/GenericModel/
 Package::Propagation
@@ -278,6 +279,7 @@ Package::Propagation
 # network: Graph
 # S: int //total susceptibles
 # I: int //total infectives
+# dt : float
 --
 /~getters/
 /#setters/</panel_attributes>
@@ -286,8 +288,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>70</y>
+      <x>290</x>
+      <y>230</y>
       <w>170</w>
       <h>100</h>
     </coordinates>
@@ -297,8 +299,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>10</y>
+      <x>510</x>
+      <y>170</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -310,8 +312,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>70</y>
+      <x>490</x>
+      <y>230</y>
       <w>130</w>
       <h>100</h>
     </coordinates>
@@ -321,20 +323,20 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>160</y>
-      <w>240</w>
-      <h>30</h>
+      <x>970</x>
+      <y>250</y>
+      <w>30</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>0</y>
+      <x>1200</x>
+      <y>640</y>
       <w>260</w>
       <h>200</h>
     </coordinates>
@@ -343,33 +345,20 @@ Package::Propagation
 --
 # beta: float
 # gamma: float
-# startDate: Date
-# endDate: Date
+//# startDate: Date
+//# endDate: Date
 # events: Event[]
 # modelisation: GenericModel
-
 --
 /~getters/
 /#setters/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>700</x>
-      <y>60</y>
-      <w>240</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black</panel_attributes>
-    <additional_attributes>220.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>10</y>
+      <x>190</x>
+      <y>170</y>
       <w>230</w>
       <h>70</h>
     </coordinates>
@@ -382,8 +371,8 @@ Package::Propagation
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>90</x>
-      <y>10</y>
+      <x>0</x>
+      <y>170</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -392,5 +381,107 @@ filles des
 autres modèles
 bg=blue</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>370</y>
+      <w>260</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>/Event/
+Package::Propagation
+--
+# eventDate: Date
+action()
+--
+/~getters/
+/#setters/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>360</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>MainLoop
+Package::Propagation
+--
+main()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>380</y>
+      <w>270</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1090</x>
+      <y>380</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>530</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>BorderLocking
+Package::Propagation
+--
+action()
+//action(model : GenericModel): void
+//{
+//	GenericModel.getNetwork(model).getEdge(1,2).setOpened(False)
+//}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>540</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Csv
+Package:: DAO
+--
+-CsvWriter(): void
+-CsvGenerate() : File
+-CsvGetter()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>470</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
