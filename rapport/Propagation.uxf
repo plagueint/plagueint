@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8</x>
-      <y>592</y>
+      <x>16</x>
+      <y>560</y>
       <w>136</w>
       <h>152</h>
     </coordinates>
@@ -28,20 +28,20 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>592</y>
+      <x>296</x>
+      <y>560</y>
       <w>144</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>/Frontier/
 Package::Propagation
 --
-# opened : boolean
+- opened : boolean
 // if the frontiers between theses two countries are opened
-# freqRate : float
+- freqRate : float
 // nbre d'usager par unité de temps / population du pays
-# crossingTime : float
-# hygieneRate : float
+- crossingTime : float
+- hygieneRate : float
 --
 /~getters/
 /#setters/</panel_attributes>
@@ -50,8 +50,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>704</y>
+      <x>224</x>
+      <y>672</y>
       <w>88</w>
       <h>72</h>
     </coordinates>
@@ -61,8 +61,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>704</y>
+      <x>360</x>
+      <y>672</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -72,8 +72,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>704</y>
+      <x>432</x>
+      <y>672</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -83,8 +83,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>760</y>
+      <x>304</x>
+      <y>728</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -96,24 +96,23 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>760</y>
+      <x>168</x>
+      <y>728</y>
       <w>128</w>
-      <h>72</h>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Air
 Package::Propagation
---
-- airportName : String
-- coord : Coordinates
+//- airportName : String
+//- coord : Coordinates
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>760</y>
+      <x>440</x>
+      <y>728</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -125,8 +124,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>296</x>
-      <y>552</y>
+      <x>304</x>
+      <y>520</y>
       <w>88</w>
       <h>56</h>
     </coordinates>
@@ -137,8 +136,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>552</y>
+      <x>80</x>
+      <y>520</y>
       <w>80</w>
       <h>56</h>
     </coordinates>
@@ -149,8 +148,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8</x>
-      <y>760</y>
+      <x>16</x>
+      <y>728</y>
       <w>136</w>
       <h>96</h>
     </coordinates>
@@ -167,8 +166,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>464</y>
+      <x>144</x>
+      <y>432</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -187,8 +186,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>736</y>
+      <x>80</x>
+      <y>704</y>
       <w>24</w>
       <h>40</h>
     </coordinates>
@@ -198,10 +197,10 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>160</y>
+      <x>536</x>
+      <y>128</y>
       <w>168</w>
-      <h>72</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>MenuEntry
 Package::Terminal
@@ -218,8 +217,8 @@ Package::Terminal
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>32</y>
+      <x>536</x>
+      <y>0</y>
       <w>168</w>
       <h>88</h>
     </coordinates>
@@ -235,8 +234,8 @@ Package::Terminal
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>632</x>
-      <y>112</y>
+      <x>640</x>
+      <y>80</y>
       <w>24</w>
       <h>64</h>
     </coordinates>
@@ -246,8 +245,8 @@ Package::Terminal
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>112</y>
+      <x>576</x>
+      <y>80</y>
       <w>24</w>
       <h>64</h>
     </coordinates>
@@ -258,8 +257,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>416</y>
+      <x>224</x>
+      <y>384</y>
       <w>24</w>
       <h>64</h>
     </coordinates>
@@ -270,8 +269,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>112</x>
-      <y>280</y>
+      <x>120</x>
+      <y>248</y>
       <w>232</w>
       <h>144</h>
     </coordinates>
@@ -294,8 +293,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>136</x>
-      <y>216</y>
+      <x>144</x>
+      <y>184</y>
       <w>64</w>
       <h>80</h>
     </coordinates>
@@ -305,8 +304,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>168</y>
+      <x>248</x>
+      <y>136</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -318,8 +317,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>216</y>
+      <x>272</x>
+      <y>184</y>
       <w>64</w>
       <h>80</h>
     </coordinates>
@@ -329,32 +328,20 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>224</y>
+      <x>608</x>
+      <y>200</y>
       <w>24</w>
-      <h>112</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>760</x>
-      <y>100</y>
-      <w>240</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black</panel_attributes>
-    <additional_attributes>220.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>168</y>
+      <x>72</x>
+      <y>136</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -368,8 +355,8 @@ Package::Propagation
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>144</x>
-      <y>96</y>
+      <x>168</x>
+      <y>64</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -383,16 +370,18 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>856</x>
-      <y>296</y>
+      <x>864</x>
+      <y>264</y>
       <w>208</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>/Event/
 Package::Propagation
 --
-- eventDate: Date
-- action(): void
+- name: String
+- parameters: Hashmap&lt;float&gt;
+//On cast tous les paramètres (id de pays, les int et boolean. etc) en float
+//lorsqu'on crée l'Event.
 --
 /~getters/
 /#setters/</panel_attributes>
@@ -401,22 +390,23 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>512</x>
-      <y>320</y>
+      <x>520</x>
+      <y>288</y>
       <w>192</w>
-      <h>56</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>MainLoop
 Package::Propagation
 --
-- main()</panel_attributes>
+- main()
+- switchcaseMethod()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>336</y>
+      <x>344</x>
+      <y>304</y>
       <w>192</w>
       <h>24</h>
     </coordinates>
@@ -427,8 +417,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>336</y>
+      <x>704</x>
+      <y>304</y>
       <w>176</w>
       <h>24</h>
     </coordinates>
@@ -440,8 +430,8 @@ bg=black</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>528</x>
-      <y>440</y>
-      <w>168</w>
+      <y>408</y>
+      <w>176</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>Csv
@@ -455,56 +445,20 @@ Package:: DAO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>368</y>
+      <x>608</x>
+      <y>344</y>
       <w>24</w>
-      <h>88</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>904</x>
-      <y>552</y>
-      <w>136</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>Une classe héritant de
-Event est à créer pour
-chaque évènement
-bg=magenta</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1000</x>
-      <y>384</y>
-      <w>80</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>872</x>
-      <y>384</y>
-      <w>64</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>152</y>
+      <x>888</x>
+      <y>120</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -523,8 +477,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>240</y>
+      <x>960</x>
+      <y>208</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -534,16 +488,14 @@ Package::Propagation
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>896</x>
-      <y>72</y>
+      <x>904</x>
+      <y>56</y>
       <w>136</w>
-      <h>72</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>initialEvents est stocké
 dans différents fichiers,
 un par maladie.
-Les fichiers doivent être
-accessibles par Java.
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
