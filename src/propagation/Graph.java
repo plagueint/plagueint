@@ -2,7 +2,7 @@ package propagation;
 
 public class Graph {
 	
-	private Frontier[][][] edges;
+	private Border[][][] edges;
 	private Country[][] countries;
 	
 	

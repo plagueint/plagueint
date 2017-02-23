@@ -1,10 +1,40 @@
 package propagation;
 
 public class Border {
-	private double id;
-	private double susceptibles;
-	private double infectives;
-	private double recovered;
-	private double population;
+	public Border(boolean opened, float freqRate, float crossingTime, float hygieneRate) {
+		this.opened = opened;
+		this.freqRate = freqRate;
+		this.crossingTime = crossingTime;
+		this.hygieneRate = hygieneRate;
+	}
+	
+	private boolean opened;
+	private float freqRate;
+	private float crossingTime;
 	private float hygieneRate;
+	
+	public boolean isOpened() {
+		return opened;
+	}
+	public void setOpened(boolean opened) {
+		this.opened = opened;
+	}
+	public float getFreqRate() {
+		return freqRate;
+	}
+	public void setFreqRate(float freqRate) {
+		this.freqRate = freqRate;
+	}
+	public float getCrossingTime() {
+		return crossingTime;
+	}
+	public void setCrossingTime(float crossingTime) {
+		this.crossingTime = crossingTime;
+	}
+	public float getHygieneRate() {
+		return hygieneRate;
+	}
+	public void setHygieneRate(float hygieneRate) {
+		this.hygieneRate = hygieneRate;
+	}
 }

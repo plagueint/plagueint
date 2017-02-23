@@ -2,6 +2,14 @@ package propagation;
 
 public abstract class GenericModel {
 	
+	public GenericModel(float beta, float gamma, Graph network, double susceptibles, double infectives, float dt) {
+		this.beta = beta;
+		this.gamma = gamma;
+		this.network = network;
+		this.susceptibles = susceptibles;
+		this.infectives = infectives;
+		this.dt = dt;
+	}
 	private float beta;
 	private float gamma;
 	private Graph network;
