@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>560</y>
+      <x>24</x>
+      <y>576</y>
       <w>136</w>
       <h>152</h>
     </coordinates>
@@ -28,8 +28,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>560</y>
+      <x>304</x>
+      <y>576</y>
       <w>144</w>
       <h>120</h>
     </coordinates>
@@ -50,8 +50,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>208</x>
-      <y>672</y>
+      <x>232</x>
+      <y>688</y>
       <w>88</w>
       <h>72</h>
     </coordinates>
@@ -61,8 +61,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>344</x>
-      <y>672</y>
+      <x>368</x>
+      <y>688</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -72,8 +72,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>672</y>
+      <x>440</x>
+      <y>688</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -83,8 +83,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>728</y>
+      <x>312</x>
+      <y>744</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -96,8 +96,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>152</x>
-      <y>728</y>
+      <x>176</x>
+      <y>744</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -111,8 +111,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
-      <y>728</y>
+      <x>448</x>
+      <y>744</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -124,8 +124,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>520</y>
+      <x>312</x>
+      <y>536</y>
       <w>88</w>
       <h>56</h>
     </coordinates>
@@ -136,8 +136,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>64</x>
-      <y>520</y>
+      <x>88</x>
+      <y>536</y>
       <w>80</w>
       <h>56</h>
     </coordinates>
@@ -148,8 +148,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>728</y>
+      <x>24</x>
+      <y>744</y>
       <w>136</w>
       <h>96</h>
     </coordinates>
@@ -166,8 +166,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>128</x>
-      <y>432</y>
+      <x>152</x>
+      <y>448</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -186,8 +186,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>64</x>
-      <y>704</y>
+      <x>88</x>
+      <y>720</y>
       <w>24</w>
       <h>40</h>
     </coordinates>
@@ -197,35 +197,17 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>128</y>
+      <x>536</x>
+      <y>112</y>
       <w>168</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>MenuEntry
-Package::Terminal
---
-# menu_name: String
---
-~ getInput(): double
-- action(): void
-
-//On prend en paramètres les trucs que rentre
-//l'utilisateur, et les actions() utilisent ces paramètres</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>520</x>
-      <y>0</y>
-      <w>168</w>
-      <h>88</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Menu
 Package::Terminal
 --
-# entries : MenuEntry[]
+~ getInt(): int
+~ getString(): String
+~ getDouble(): double
 --
 /~getters/
 /#setters/</panel_attributes>
@@ -234,31 +216,8 @@ Package::Terminal
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>80</y>
-      <w>24</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>560</x>
-      <y>80</y>
-      <w>24</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>208</x>
-      <y>384</y>
+      <x>232</x>
+      <y>400</y>
       <w>24</w>
       <h>64</h>
     </coordinates>
@@ -269,8 +228,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
-      <y>248</y>
+      <x>128</x>
+      <y>264</y>
       <w>232</w>
       <h>144</h>
     </coordinates>
@@ -293,8 +252,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>128</x>
-      <y>184</y>
+      <x>152</x>
+      <y>200</y>
       <w>64</w>
       <h>80</h>
     </coordinates>
@@ -304,8 +263,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>56</x>
-      <y>0</y>
+      <x>80</x>
+      <y>16</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -318,8 +277,8 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>48</y>
+      <x>144</x>
+      <y>64</y>
       <w>24</w>
       <h>104</h>
     </coordinates>
@@ -329,8 +288,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>56</x>
-      <y>136</y>
+      <x>80</x>
+      <y>152</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -344,8 +303,8 @@ Package::Propagation
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>232</x>
-      <y>160</y>
+      <x>256</x>
+      <y>176</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -359,10 +318,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>264</y>
+      <x>816</x>
+      <y>280</y>
       <w>208</w>
-      <h>104</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>/Event/
 Package::Propagation
@@ -374,15 +333,16 @@ Package::Propagation
 //On cast tous les paramètres (id de pays, les double et boolean. etc) en float
 //lorsqu'on crée l'Event.
 --
-~getters
-#setters</panel_attributes>
+~ saveEvent(): Event
+/~getters/
+/#setters/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>320</y>
+      <x>528</x>
+      <y>360</y>
       <w>192</w>
       <h>64</h>
     </coordinates>
@@ -395,8 +355,8 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>472</y>
+      <x>640</x>
+      <y>488</y>
       <w>176</w>
       <h>80</h>
     </coordinates>
@@ -411,8 +371,8 @@ Package:: DAO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
-      <y>120</y>
+      <x>840</x>
+      <y>136</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -422,30 +382,16 @@ Package::Propagation
 - listEvents: Event[]
 --
 - switchcase(list :Event[]): void
-~getters
-#setters
+/~getters/
+/#setters/
 </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>832</x>
-      <y>56</y>
-      <w>136</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>initialEvents est stocké
-dans différents fichiers,
-un par maladie.
-bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>888</x>
-      <y>208</y>
+      <x>912</x>
+      <y>224</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -456,8 +402,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>544</x>
-      <y>280</y>
+      <x>576</x>
+      <y>320</y>
       <w>112</w>
       <h>32</h>
     </coordinates>
