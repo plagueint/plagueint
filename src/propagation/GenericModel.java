@@ -5,8 +5,8 @@ public abstract class GenericModel {
 	private float beta;
 	private float gamma;
 	private Graph network;
-	private int susceptibles;
-	private int infectives;
+	private double susceptibles;
+	private double infectives;
 	private float dt;
 	
 	
@@ -28,13 +28,13 @@ public abstract class GenericModel {
 	void setNetwork(Graph network) {
 		this.network = network;
 	}
-	int getSusceptibles() {
+	double getSusceptibles() {
 		return susceptibles;
 	}
 	void setSusceptibles(int susceptibles) {
 		this.susceptibles = susceptibles;
 	}
-	int getInfectives() {
+	double getInfectives() {
 		return infectives;
 	}
 	void setInfectives(int infectives) {
