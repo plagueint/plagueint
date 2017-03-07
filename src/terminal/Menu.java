@@ -2,6 +2,9 @@ package terminal;
 
 import java.io.Console;
 
+import service.Solve;
+import utils.Euler;
+
 public class Menu {
 	
 	
@@ -59,9 +62,12 @@ public class Menu {
 	public static void main(String[] args){
 	// C'est cette méthode main qui gère tous les appels
 		
-	while (true)
-	{
-		
-	}
+		while (true)
+		{
+			// Gestion des Event
+			EulerSolve() //Appel à la méthode d'Euler
+			//Écriture dans le .csv
+			t=t+1 // On incrémente le temps de 1
+		}
 	}
 }
