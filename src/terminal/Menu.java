@@ -1,7 +1,7 @@
 package terminal;
 import java.io.Console;
-import java.util.function.Function;
-import propagation.GenericModel;
+import java.util.function.Consumer;
+import propagation.*;
 
 public class Menu {
 	
@@ -13,7 +13,7 @@ public class Menu {
 	 * Prend en argument la fonction qui change la valeur de l'attribut souhaité
 	 * ex : voir la permière fonction sous les getters simples
 	*/
-	float getFloat( Function <Float,Void> function){
+	float getFloat( Consumer<Float> function){
 		String s="";
 		float number=0;
 		boolean ask=true;
@@ -22,7 +22,7 @@ public class Menu {
 				s=console.readLine();
 				number=Float.parseFloat(s);
 				ask=false;
-				function.apply(number);
+				function.accept(number);
 			} catch (NumberFormatException e){
 				System.out.println(s + "is not a float");
 				ask=true;
@@ -48,7 +48,7 @@ public class Menu {
 		return "";
 	}
 	
-	double getDouble(){
+	double getDouble(Consumer<Double> function){
 		String s="";
 		boolean ask=true;
 		double number=0;
@@ -57,6 +57,7 @@ public class Menu {
 				s=console.readLine();
 				ask=false;
 				number = Double.parseDouble(s);
+				function.accept(number);
 			} catch (NumberFormatException e){
 				System.out.println(s + "is not a double");
 				ask=true;
@@ -65,28 +66,52 @@ public class Menu {
 		return number;
 	}
 	
-	
-	/*
-	 * Fonction exemple 
-	 */
-	void menuPrincipal(){
+	int getMenuChoice(int limit){ //limite: numéro du dernier choix
 		String s="";// La chaine de caractère que l'utilisateur rentre
 		boolean ask=true;
 		int number=0;// Le nombre que l'utilisateur veut rentrer
 		while(ask){
 			try{
 				s=console.readLine();
-				ask=false;
 				number = Integer.parseInt(s);
+				if (number > 0 && number <= limit){
+					ask=false;
+				}
 			} catch (NumberFormatException e){
 				System.out.println(s + "is not an integer");
 				ask=true;
 			}
 		}
-		
-		switch (number){
-			case 1:getFloat(model.setInfectives);
+		return number;
+	}
+	
+	
+	/*
+	 * Menu paramètres initiaux : Pays + nbre infectés
+	 */
+	void cellParamMenu (Cell cell){
+		switch (getMenuChoice(2)){
+			case 1:
+				//number of susceptibles
+				getDouble(x -> cell.setSusceptibles(x));
+				break;
+			case 2:
+				//number of infectives
+				getDouble(x -> cell.setInfectives(x));
+				break;
+			case 3:
+				//number recovered
+				getDouble(x -> cell.setRecovered(x));
 		}
 	}
+	
+	public static void main(String[] args){
+		// C'est cette méthode main qui gère tous les appels
+			
+		while (true)
+		{
+			
+		}
+		}
 	
 }
