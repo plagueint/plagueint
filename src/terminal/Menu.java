@@ -40,7 +40,19 @@ public class Menu {
 	}
 	
 	double getDouble(){
-		return 0;
-	}
-
+		String s="";
+		boolean ask=true;
+		double number=0;
+		while(ask){
+			try{
+				s=console.readLine();
+				ask=false;
+				number = Double.parseDouble(s);
+			} catch (NumberFormatException e){
+				System.out.println(s + "is not a double");
+				ask=true;
+			}
+		}
+		return number;
+	}		
 }
