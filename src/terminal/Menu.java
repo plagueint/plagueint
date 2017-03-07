@@ -13,7 +13,7 @@ public class Menu {
 	 * Prend en argument la fonction qui change la valeur de l'attribut souhaité
 	 * ex : voir la permière fonction sous les getters simples
 	*/
-	float getFloat( Consumer<Float> function){
+	float getFloat(Consumer<Float> function){
 		String s="";
 		float number=0;
 		boolean ask=true;
@@ -33,13 +33,14 @@ public class Menu {
 		return number;
 	}
 	
-	String getString(){
+	String getString(Consumer<String> function){
 		String s="";
 		boolean ask=true;
 		while (ask){
 			try{
 				s=console.readLine();
 				ask=false;
+				function.accept(s);
 			} catch (Exception e){
 				System.out.println(s + "is not correct");
 				ask=true;
@@ -90,18 +91,26 @@ public class Menu {
 	 * Menu paramètres initiaux : Pays + nbre infectés
 	 */
 	void cellParamMenu (Cell cell){
-		switch (getMenuChoice(2)){
-			case 1:
-				//number of susceptibles
-				getDouble(x -> cell.setSusceptibles(x));
-				break;
-			case 2:
-				//number of infectives
-				getDouble(x -> cell.setInfectives(x));
-				break;
-			case 3:
-				//number recovered
-				getDouble(x -> cell.setRecovered(x));
+		boolean stay=true;
+		while (stay){
+			System.out.println("");
+			switch (getMenuChoice(2)){
+				case 1:
+					//number of susceptibles
+					getDouble(x -> cell.setSusceptibles(x));
+					break;
+				case 2:
+					//number of infectives
+					getDouble(x -> cell.setInfectives(x));
+					break;
+				case 3:
+					//number recovered
+					getDouble(x -> cell.setRecovered(x));
+					break;
+				case 4:
+					stay=false;
+					break;
+			}
 		}
 	}
 	
