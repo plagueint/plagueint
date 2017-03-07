@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>648</y>
+      <y>560</y>
       <w>136</w>
       <h>152</h>
     </coordinates>
@@ -29,7 +29,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>280</x>
-      <y>648</y>
+      <y>560</y>
       <w>144</w>
       <h>120</h>
     </coordinates>
@@ -51,7 +51,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>208</x>
-      <y>760</y>
+      <y>672</y>
       <w>88</w>
       <h>72</h>
     </coordinates>
@@ -62,7 +62,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>344</x>
-      <y>760</y>
+      <y>672</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -73,7 +73,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>416</x>
-      <y>760</y>
+      <y>672</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -84,7 +84,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>288</x>
-      <y>816</y>
+      <y>728</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -97,7 +97,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>152</x>
-      <y>816</y>
+      <y>728</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -112,7 +112,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>424</x>
-      <y>816</y>
+      <y>728</y>
       <w>128</w>
       <h>40</h>
     </coordinates>
@@ -125,7 +125,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>288</x>
-      <y>608</y>
+      <y>520</y>
       <w>88</w>
       <h>56</h>
     </coordinates>
@@ -137,7 +137,7 @@ bg=black</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>64</x>
-      <y>608</y>
+      <y>520</y>
       <w>80</w>
       <h>56</h>
     </coordinates>
@@ -149,7 +149,7 @@ bg=black</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>816</y>
+      <y>728</y>
       <w>136</w>
       <h>96</h>
     </coordinates>
@@ -167,7 +167,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>128</x>
-      <y>520</y>
+      <y>432</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -176,7 +176,7 @@ Package::Propagation
 --
 - edges: Frontier[][][3]
 //Liste de longueur 3
-- countries: Country[]
+- cells: Cell[]
 --
 /~getters/
 /#setters/
@@ -187,7 +187,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>64</x>
-      <y>792</y>
+      <y>704</y>
       <w>24</w>
       <h>40</h>
     </coordinates>
@@ -198,7 +198,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>512</x>
-      <y>224</y>
+      <y>136</y>
       <w>168</w>
       <h>80</h>
     </coordinates>
@@ -215,7 +215,7 @@ Package::Terminal
     <id>Relation</id>
     <coordinates>
       <x>208</x>
-      <y>472</y>
+      <y>384</y>
       <w>24</w>
       <h>64</h>
     </coordinates>
@@ -227,7 +227,7 @@ bg=black</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>104</x>
-      <y>336</y>
+      <y>248</y>
       <w>232</w>
       <h>144</h>
     </coordinates>
@@ -251,7 +251,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>128</x>
-      <y>272</y>
+      <y>184</y>
       <w>64</w>
       <h>80</h>
     </coordinates>
@@ -262,7 +262,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>56</x>
-      <y>88</y>
+      <y>0</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -276,7 +276,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>120</x>
-      <y>136</y>
+      <y>48</y>
       <w>24</w>
       <h>104</h>
     </coordinates>
@@ -287,7 +287,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>56</x>
-      <y>224</y>
+      <y>136</y>
       <w>144</w>
       <h>56</h>
     </coordinates>
@@ -302,7 +302,7 @@ Package::Propagation
     <id>UMLNote</id>
     <coordinates>
       <x>232</x>
-      <y>248</y>
+      <y>160</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -317,7 +317,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>792</x>
-      <y>352</y>
+      <y>264</y>
       <w>208</w>
       <h>120</h>
     </coordinates>
@@ -340,7 +340,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>504</x>
-      <y>432</y>
+      <y>344</y>
       <w>192</w>
       <h>64</h>
     </coordinates>
@@ -354,7 +354,7 @@ Package::Propagation
     <id>UMLClass</id>
     <coordinates>
       <x>616</x>
-      <y>560</y>
+      <y>472</y>
       <w>176</w>
       <h>80</h>
     </coordinates>
@@ -370,7 +370,7 @@ Package:: DAO
     <id>UMLClass</id>
     <coordinates>
       <x>816</x>
-      <y>208</y>
+      <y>120</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -389,7 +389,7 @@ Package::Propagation
     <id>Relation</id>
     <coordinates>
       <x>888</x>
-      <y>296</y>
+      <y>208</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -401,7 +401,7 @@ bg=black</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>512</x>
-      <y>376</y>
+      <y>288</y>
       <w>168</w>
       <h>48</h>
     </coordinates>
