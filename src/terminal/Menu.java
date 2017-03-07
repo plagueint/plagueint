@@ -13,7 +13,7 @@ public class Menu {
 	 * Prend en argument la fonction qui change la valeur de l'attribut souhaité
 	 * ex : voir la permière fonction sous les getters simples
 	*/
-	float getFloat(Consumer<Float> function){
+	static float getFloat(Consumer<Float> function){
 		String s="";
 		float number=0;
 		boolean ask=true;
@@ -33,7 +33,7 @@ public class Menu {
 		return number;
 	}
 	
-	String getString(Consumer<String> function){
+	static String getString(Consumer<String> function){
 		String s="";
 		boolean ask=true;
 		while (ask){
@@ -49,7 +49,7 @@ public class Menu {
 		return "";
 	}
 	
-	double getDouble(Consumer<Double> function){
+	static double getDouble(Consumer<Double> function){
 		String s="";
 		boolean ask=true;
 		double number=0;
@@ -67,7 +67,7 @@ public class Menu {
 		return number;
 	}
 	
-	int getMenuChoice(int limit){ //limite: numéro du dernier choix
+	static int getMenuChoice(int limit){ //limite: numéro du dernier choix
 		String s="";// La chaine de caractère que l'utilisateur rentre
 		boolean ask=true;
 		int number=0;// Le nombre que l'utilisateur veut rentrer
@@ -90,11 +90,11 @@ public class Menu {
 	/*
 	 * Menu paramètres initiaux : Pays + nbre infectés
 	 */
-	void cellParamMenu (Cell cell){
+	static void cellParamMenu (Cell cell){
 		boolean stay=true;
 		while (stay){
 			System.out.println("");
-			switch (getMenuChoice(2)){
+			switch (getMenuChoice(4)){
 				case 1:
 					//number of susceptibles
 					getDouble(x -> cell.setSusceptibles(x));
@@ -114,9 +114,39 @@ public class Menu {
 		}
 	}
 	
+	
+	/*
+	 * Pour créer un menu :
+	 * Créer une boucle qui utilise un booléen
+	 * qui est mis à jour si l'utilisateur choisis le choix de retour en
+	 * arrière dans les menus
+	 */
+	
+	
+	static void menu(){
+		boolean stay=true;
+		while (stay){
+			System.out.println("---Simulation---"
+							+  "1) Choisir une maladie prédéfinie"
+							+  "2) Créer une maladie personnalisée"
+							+  "3) Quitter");
+			switch(getMenuChoice(3)){
+				case 1:
+					break;
+				case 2:
+					//createDisease();
+					break;
+				case 3:
+					stay=false;
+					break;
+			}
+		}
+	}
+	
 	public static void main(String[] args){
 		// C'est cette méthode main qui gère tous les appels
-			
+		
+		menu();
 		while (true)
 		{
 			
