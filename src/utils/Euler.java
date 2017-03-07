@@ -11,12 +11,13 @@ public class Euler implements Function{
 	//u=u+dt*du
 	//du=f(t,u(t))
 	
-	public void EulerSolve(double dt,double a, double b, double u[],double du) 
+	public void EulerSolve(double dt,double a, double b, double u[],double du[]) 
 	{
 		u[0]=u[0]+dt*du[0];
 		u[1]=u[1]+dt*du[1];
 		u[2]=u[2]+dt*du[2];
 		du=f(u);
 	}
-		
+	
+	
 }

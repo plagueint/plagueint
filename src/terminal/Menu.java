@@ -56,4 +56,12 @@ public class Menu {
 		return number;
 	}
 	
+	public static void main(String[] args){
+	// C'est cette méthode main qui gère tous les appels
+		
+	while (true)
+	{
+		
+	}
+	}
 }
