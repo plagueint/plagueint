@@ -54,5 +54,6 @@ public class Menu {
 			}
 		}
 		return number;
-	}		
+	}
+	
 }
