@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+%\usepackage{esint}
+
+%\title{ \Huge \textbf{Rapport du projet PlagueINT} \\ \large Modélisation de la propagation des épidémies}
+%\date{\today}
+%\author{
+%CHERRE Romain
+%\and COROLLER Stevan 
+%\and PAMART Pierrick
+%\and PIPEREAU Yohan
+%\and \\
+%Encadrant: Mr. Vincent Gauthier }
+
+
+\begin{document}
+%\maketitle
+
+%\tableofcontents
+%\newpage
+
+%\addcontentsline{toc}{section}{Modélisation du problème}
+\section*{Modélisation du problème}
+\begin{flushleft}
+	On procède à un découpage de la carte du monde en celulles. Dans chaque celulles 
+\end{flushleft}
+
+%\addcontentsline{toc}{subsection}{Présentation du modèle SIR} %obligé si on utilise pas les numérotations de section et sous section
+\subsection*{Présentation du modèle SIR}
+
+\begin{flushleft}
+	Dans la suite, on note:
+\begin{itemize}
+	\item{N(t) le nombre d'individu total}
+	\item{S(t) pour Susceptibles en anglais, le nombre d'individu qui n'ont pas encore été contaminés mais qui sont susceptible de l'être.}
+	\item{I(t) pour Infectives en anglais, le nombre d'individu infectés par la maladie.}
+	\item{R(t) pour Recovered en anglais, le nombre d'individu ayant été infectés, ayant survécu et étant immunisés.}
+	\item{c,le taux de contagion ie la probabilité qu'un individu infecté contamine un individu sain}
+	\item{g, le taux de guérison, la probabilité qu'un individu infecté devienne immuni.}
+	\item{m, le taux de mortalité}
+	\item{dt, une variation temporelle typiquement de l'ordre de grandeur de la journée}
+\end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+	On obtient alors un jeu de trois équations différentielles ainsi qu'une équation de conservation de la population totale.
+	\begin{equation} N(t)=S(t)+I(t)+R(t) \end{equation}
+
+	On peut également exprimer la variation du nombre d'individu sain par: 
+	\begin{equation} {dS(t) \over dt} = -p S I \end{equation}
+où p est la probabilité qu'un individu infecté contamine un individu sain.
+Ainsi, la quantité $ pI $ désigne la probabilité que les tous les infectés infectent un individu sain. Puis on multiplie par le nombre d'individu sain pouvant être infectés.
+
+Par un raisonnement similaire, on obtient:
+	\begin{equation} {dI(t) \over dt } = pSI - qI \end{equation}
+	où $pSI$ désigne le nombre de sains devenus infectés et $-qI$ le nombre d'infectés devenus immunisés.
+
+
+	Enfin, on a \begin{equation} {dS(t) \over dt } = qI \end{equation}
+
+\end{flushleft}
+
+\begin{flushleft}
+Les limites de notre modélisation sont les suivantes:
+\end{flushleft}
+
+%\bibliographystyle{} %style de la biblio
+%\bibliography{bibli} %base de données s'appelle bibli.bib
+
+\end{document}

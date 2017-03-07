@@ -1,7 +1,7 @@
 # Meeting 1 - First Meeting with our supervisor
 ## Participants : Groupe projet + Encadrant
 
-Modele SIR : Susceptibles , Infecté, R : guéris ?
+Modele SIR : Susceptibles, Infectives, Recovered with immunity
 
 équations différentielles
 
