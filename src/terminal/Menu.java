@@ -8,7 +8,9 @@ public class Menu {
 	GenericModel model;
 	
 	final private static Console console=System.console();
-	
+	public Menu() {
+		
+	}
 	/*
 	 * Prend en argument la fonction qui change la valeur de l'attribut souhaité
 	 * ex : voir la permière fonction sous les getters simples
@@ -143,9 +145,33 @@ public class Menu {
 		}
 	}
 	
+	static void chooseDisease(){
+		boolean stay=true;
+		System.out.println("---Choix d'un modèle---"
+						 + "1) Modèle SIR"
+						 + "2) Précédent");
+		switch(getMenuChoice(2)){
+			case 1:
+				break;
+			case 2:
+				stay=false;
+				break;
+		}
+		if (stay){
+			
+		}
+	}
+		
+	static void createDisease (){
+		boolean stay=true;
+		while (stay){
+			System.out.println("---Création d'une maladie---"
+							 + "1) ");
+		}
+	}
+	
 	public static void main(String[] args){
 		// C'est cette méthode main qui gère tous les appels
-		
 		menu();
 		while (true)
 		{
