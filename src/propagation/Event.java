@@ -1,7 +1,7 @@
 package propagation;
 import java.util.Hashtable;
 
-public abstract class Event {
+public class Event {
 	public Event(String name, double time, Hashtable<String, Float> parameters) {
 		super();
 		this.name = name;

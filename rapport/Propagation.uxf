@@ -321,7 +321,7 @@ bg=green</panel_attributes>
       <w>208</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>/Event/
+    <panel_attributes>Event
 Package::Propagation
 --
 - name: String
