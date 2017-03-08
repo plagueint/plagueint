@@ -6,8 +6,7 @@ import service.Solve;
 import utils.Euler;
 
 public class Menu {
-	
-	
+		
 	final private static Console console=System.console();
 	
 	float getFloat(){
@@ -65,7 +64,7 @@ public class Menu {
 		while (true)
 		{
 			// Gestion des Event
-			EulerSolve() //Appel à la méthode d'Euler
+			EulerSolve(dt,u,du);//Appel à la méthode d'Euler
 			//Écriture dans le .csv
 			t=t+1 // On incrémente le temps de 1
 		}
