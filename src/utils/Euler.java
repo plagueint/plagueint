@@ -1,6 +1,6 @@
 package utils;
 
-static public class Euler{
+public interface Euler{
 	
 	//Création d'une classe Tuple parce que Java c'est de la merde il retourne qu'un seul arguments
 	public class Tuple<X,Y>{ //<X,Y> est puissant on ne décrit pas les types on peut metre X=int, Y=double --> fonction d'ordre supérieur
