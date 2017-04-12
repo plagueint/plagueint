@@ -1,5 +1,6 @@
 package terminal;
-import java.io.Console;
+//import java.io.Console;
+import terminal.Console;
 import java.util.function.*;
 import propagation.Event;
 /**
@@ -102,17 +103,14 @@ public class Util {
 	
 	static int verifyMenuChoice(int limit, Supplier<Integer> function){
 		int choice = 0;
-		System.out.println(function.getClass());
-		if (function.getClass()==Event.class){
+		boolean ask=true;
+		while (ask){
 			choice=function.get();
-		}else{
-			boolean ask=true;
-			while (ask){
-				choice=function.get();
-				if (choice > 0 && choice <= limit){
-					ask=false;
-					System.out.println(choice + "is not between 1 and" + limit);
-				}
+			if (choice > 0 && choice <= limit){
+				ask=false;
+			}
+			else{
+				System.out.println(choice + " is not between 1 and " + limit);
 			}
 		}
 		return choice;

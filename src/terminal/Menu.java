@@ -1,16 +1,21 @@
 package terminal;
 
-import java.io.Console;
+//import java.io.Console;
 import java.util.function.Supplier;
 
 import propagation.*;
+import terminal.Console;
 /**
  * @author varens
  *
  */
+
 public class Menu {
 	
-	final private static Console console=System.console();
+	
+    
+
+	final private static Console console=new Console();
 	public Menu() {
 		
 	}
@@ -26,10 +31,10 @@ public class Menu {
 	static void userMenu(){
 		boolean stay=true;
 		while (stay){
-			System.out.println("---Simulation---"
-							+  "1) Choisir une maladie prédéfinie"
-							+  "2) Créer une maladie personnalisée"
-							+  "3) Quitter");
+			System.out.println("---Simulation---\n"
+							+  "1) Choisir une maladie prédéfinie\n"
+							+  "2) Créer une maladie personnalisée\n"
+							+  "3) Quitter\n");
 			switch(Util.getInteger(console)){
 				case 1:
 					chooseDisease(() -> Util.getInteger(console));
@@ -61,10 +66,15 @@ public class Menu {
 		}
 	}
 	
+	
+	/*
+	 * Menus génériques qui peuvent gérer des évènements ou bien l'entrée utilisateur grâce aux suppliers
+	 */
+	
 	static void chooseDisease(Supplier<Integer> choice){
-		System.out.println("---Choix d'un modèle---"
-						 + "1) Modèle SIR"
-						 + "2) Précédent");
+		System.out.println("---Choix d'un modèle---\n"
+						 + "1) Modèle SIR\n"
+						 + "2) Précédent\n");
 		switch(Util.verifyMenuChoice(2, choice)){
 			case 1:
 				break;
@@ -76,10 +86,10 @@ public class Menu {
 	static void createDisease(Supplier<Integer> choice){
 		boolean stay=true;
 		while (stay){
-			System.out.println("---Création d'une maladie---"
-							 + "1) Paramètres de la maladie"
-							 + "2) Paramètres des cellules");
-			switch (Util.verifyMenuChoice(1,choice)){
+			System.out.println("---Création d'une maladie---\n"
+							 + "1) Paramètres de la maladie\n"
+							 + "2) Paramètres des cellules\n");
+			switch (Util.verifyMenuChoice(2,choice)){
 				case 1:
 					
 					break;
@@ -117,10 +127,10 @@ public class Menu {
 	public static void main(String[] args){
 		// C'est cette méthode main qui gère tous les appels
 		userMenu();
-		while (true)
-		{
-			
-		}
-		}
+//		while (true)
+//		{
+//			
+//		}
+	}
 
 }
