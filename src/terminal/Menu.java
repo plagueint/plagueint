@@ -3,7 +3,7 @@ package terminal;
 import java.io.Console;
 import java.util.function.Supplier;
 
-import propagation.Cell;
+import propagation.*;
 /**
  * @author varens
  *
@@ -23,19 +23,19 @@ public class Menu {
 	 */
 	
 	
-	static void menu(){
+	static void userMenu(){
 		boolean stay=true;
 		while (stay){
 			System.out.println("---Simulation---"
 							+  "1) Choisir une maladie prédéfinie"
 							+  "2) Créer une maladie personnalisée"
 							+  "3) Quitter");
-			switch(Util.getUserMenuChoice(3,console)){
+			switch(Util.getInteger(console)){
 				case 1:
-					chooseDisease();
+					chooseDisease(() -> Util.getInteger(console));
 					break;
 				case 2:
-					//createDisease();
+					createDisease(() -> Util.getInteger(console));
 					break;
 				case 3:
 					stay=false;
@@ -44,28 +44,46 @@ public class Menu {
 		}
 	}
 	
-	static void chooseDisease(){
+	static void eventMenu(Event e){
 		boolean stay=true;
+		while (stay){
+			switch(Util.verifyMenuChoice(3,() -> e.getNextChoice())){
+				case 1:
+					chooseDisease(() -> e.getNextChoice());
+					break;
+				case 2:
+					createDisease(() -> e.getNextChoice());
+					break;
+				case 3:
+					stay=false;
+					break;
+			}
+		}
+	}
+	
+	static void chooseDisease(Supplier<Integer> choice){
 		System.out.println("---Choix d'un modèle---"
 						 + "1) Modèle SIR"
 						 + "2) Précédent");
-		switch(Util.getUserMenuChoice(2,console)){
+		switch(Util.verifyMenuChoice(2, choice)){
 			case 1:
 				break;
 			case 2:
-				stay=false;
 				break;
-		}
-		if (stay){
-			
 		}
 	}
 		
-	static void createDisease (){
+	static void createDisease(Supplier<Integer> choice){
 		boolean stay=true;
 		while (stay){
 			System.out.println("---Création d'une maladie---"
-							 + "1) ");
+							 + "1) Paramètres de la maladie"
+							 + "2) Paramètres des cellules");
+			switch (Util.verifyMenuChoice(1,choice)){
+				case 1:
+					
+					break;
+			}
 		}
 	}
 	
@@ -76,7 +94,7 @@ public class Menu {
 		boolean stay=true;
 		while (stay){
 			System.out.println("");
-			switch (Util.getUserMenuChoice(4, console)){
+			switch (Util.verifyMenuChoice(4,choice)){
 				case 1:
 					//number of susceptibles
 					Util.applyDouble(x -> cell.setSusceptibles(x),input);
@@ -98,7 +116,7 @@ public class Menu {
 	
 	public static void main(String[] args){
 		// C'est cette méthode main qui gère tous les appels
-		menu();
+		userMenu();
 		while (true)
 		{
 			

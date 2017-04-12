@@ -1,6 +1,7 @@
 package terminal;
 import java.io.Console;
 import java.util.function.*;
+import propagation.Event;
 /**
  * @author varens
  *
@@ -97,27 +98,24 @@ public class Util {
 	static void applyInteger(Consumer<Integer> function,Supplier<Integer> input){
 		function.accept(input.get());
 	}
+		
 	
-	
-	static int getUserMenuChoice(int limit,Console console){ //limite: numéro du dernier choix
-		String s="";// La chaine de caractère que l'utilisateur rentre
-		boolean ask=true;
-		int number=0;// Le nombre que l'utilisateur veut rentrer
-		while(ask){
-			try{
-				number=getInteger(console);
-				if (number > 0 && number <= limit){
+	static int verifyMenuChoice(int limit, Supplier<Integer> function){
+		int choice = 0;
+		System.out.println(function.getClass());
+		if (function.getClass()==Event.class){
+			choice=function.get();
+		}else{
+			boolean ask=true;
+			while (ask){
+				choice=function.get();
+				if (choice > 0 && choice <= limit){
 					ask=false;
+					System.out.println(choice + "is not between 1 and" + limit);
 				}
-			} catch (NumberFormatException e){
-				System.out.println(s + "is between 1 and" + limit);
-				ask=true;
 			}
 		}
-		return number;
+		return choice;
 	}
-	
-	
-	
 	
 }

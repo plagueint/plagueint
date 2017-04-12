@@ -1,18 +1,25 @@
 package propagation;
-import java.util.Hashtable;
+import java.util.Queue;
 
 public class Event {
-	public Event(String name, double time, Hashtable<String, Float> parameters) {
+	public Event(String name, double time, Queue<Float> parameters,Queue<Integer> choices) {
 		super();
-		this.name = name;
-		this.time = time;
-		this.parameters = parameters;
+		this.setName(name);
+		this.setTime(time);
+		this.setParameters(parameters);
 	}
 	
 	private String name;
 	private double time;
-	private Hashtable<String , Float> parameters;
+	private Queue<Float> parameters;
+	private Queue<Integer> choices;
 	
+	Queue<Integer> getChoices() {
+		return choices;
+	}
+	void setChoices(Queue<Integer> choices) {
+		this.choices = choices;
+	}
 	public String getName() {
 		return name;
 	}
@@ -25,11 +32,19 @@ public class Event {
 	public void setTime(double time) {
 		this.time = time;
 	}
-	public Hashtable<String, Float> getParameters() {
+	public Queue<Float> getParameters() {
 		return parameters;
 	}
-	public void setParameters(Hashtable<String, Float> parameters) {
+	public void setParameters(Queue<Float> parameters) {
 		this.parameters = parameters;
+	}
+	
+	public float getNextEntry(){
+		return parameters.remove();
+	}
+	
+	public int getNextChoice(){
+		return choices.remove();
 	}
 	
 }
