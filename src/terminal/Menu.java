@@ -1,124 +1,19 @@
 package terminal;
+
 import java.io.Console;
-import java.util.function.Consumer;
-import propagation.*;
+import java.util.function.Supplier;
 
-import service.Solve;
-import utils.Euler;
-
+import propagation.Cell;
+/**
+ * @author varens
+ *
+ */
 public class Menu {
-	
-	GenericModel model;
 	
 	final private static Console console=System.console();
 	public Menu() {
 		
 	}
-	/*
-	 * Prend en argument la fonction qui change la valeur de l'attribut souhaité
-	 * ex : voir la permière fonction sous les getters simples
-	*/
-	static float getFloat(Consumer<Float> function){
-		String s="";
-		float number=0;
-		boolean ask=true;
-		while (ask){
-			try{
-				s=console.readLine();
-				number=Float.parseFloat(s);
-				ask=false;
-				function.accept(number);
-			} catch (NumberFormatException e){
-				System.out.println(s + "is not a float");
-				ask=true;
-			} catch (Exception e){
-				System.out.println(e.getMessage());
-			}
-		}
-		return number;
-	}
-	
-	static String getString(Consumer<String> function){
-		String s="";
-		boolean ask=true;
-		while (ask){
-			try{
-				s=console.readLine();
-				ask=false;
-				function.accept(s);
-			} catch (Exception e){
-				System.out.println(s + "is not correct");
-				ask=true;
-			}
-		}
-		return "";
-	}
-	
-	static double getDouble(Consumer<Double> function){
-		String s="";
-		boolean ask=true;
-		double number=0;
-		while(ask){
-			try{
-				s=console.readLine();
-				ask=false;
-				number = Double.parseDouble(s);
-				function.accept(number);
-			} catch (NumberFormatException e){
-				System.out.println(s + "is not a double");
-				ask=true;
-			}
-		}
-		return number;
-	}
-	
-	static int getMenuChoice(int limit){ //limite: numéro du dernier choix
-		String s="";// La chaine de caractère que l'utilisateur rentre
-		boolean ask=true;
-		int number=0;// Le nombre que l'utilisateur veut rentrer
-		while(ask){
-			try{
-				s=console.readLine();
-				number = Integer.parseInt(s);
-				if (number > 0 && number <= limit){
-					ask=false;
-				}
-			} catch (NumberFormatException e){
-				System.out.println(s + "is not an integer");
-				ask=true;
-			}
-		}
-		return number;
-	}
-	
-	
-	/*
-	 * Menu paramètres initiaux : Pays + nbre infectés
-	 */
-	static void cellParamMenu (Cell cell){
-		boolean stay=true;
-		while (stay){
-			System.out.println("");
-			switch (getMenuChoice(4)){
-				case 1:
-					//number of susceptibles
-					getDouble(x -> cell.setSusceptibles(x));
-					break;
-				case 2:
-					//number of infectives
-					getDouble(x -> cell.setInfectives(x));
-					break;
-				case 3:
-					//number recovered
-					getDouble(x -> cell.setRecovered(x));
-					break;
-				case 4:
-					stay=false;
-					break;
-			}
-		}
-	}
-	
 	
 	/*
 	 * Pour créer un menu :
@@ -135,8 +30,9 @@ public class Menu {
 							+  "1) Choisir une maladie prédéfinie"
 							+  "2) Créer une maladie personnalisée"
 							+  "3) Quitter");
-			switch(getMenuChoice(3)){
+			switch(Util.getUserMenuChoice(3,console)){
 				case 1:
+					chooseDisease();
 					break;
 				case 2:
 					//createDisease();
@@ -153,7 +49,7 @@ public class Menu {
 		System.out.println("---Choix d'un modèle---"
 						 + "1) Modèle SIR"
 						 + "2) Précédent");
-		switch(getMenuChoice(2)){
+		switch(Util.getUserMenuChoice(2,console)){
 			case 1:
 				break;
 			case 2:
@@ -173,6 +69,33 @@ public class Menu {
 		}
 	}
 	
+	/*
+	 * Menu paramètres initiaux : Pays + nbre infectés
+	 */
+	static void cellParamMenu (Supplier<Integer> choice, Supplier<Double> input, Cell cell){
+		boolean stay=true;
+		while (stay){
+			System.out.println("");
+			switch (Util.getUserMenuChoice(4, console)){
+				case 1:
+					//number of susceptibles
+					Util.applyDouble(x -> cell.setSusceptibles(x),input);
+					break;
+				case 2:
+					//number of infectives
+					Util.applyDouble(x -> cell.setInfectives(x),input);
+					break;
+				case 3:
+					//number recovered
+					Util.applyDouble(x -> cell.setRecovered(x),input);
+					break;
+				case 4:
+					stay=false;
+					break;
+			}
+		}
+	}
+	
 	public static void main(String[] args){
 		// C'est cette méthode main qui gère tous les appels
 		menu();
@@ -181,5 +104,5 @@ public class Menu {
 			
 		}
 		}
-	
+
 }
