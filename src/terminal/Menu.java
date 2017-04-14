@@ -1,9 +1,10 @@
 package terminal;
-import propagation.Event;
+import Main.Context;
 
 public interface Menu {
 	public String toString();
-	public void getUserChoice(Event e);
-	public void getEventChoice(Event e);
-	public static final Console console=new Console();
+	public String getName();
+	public void getUserChoice(Context context, propagation.Event e);
+	public void getEventChoice(Context context, propagation.Event e);
+	final static Console console = new Console();
 }

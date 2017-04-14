@@ -1,49 +1,53 @@
 package terminal;
-import java.util.function.*;
+import java.util.function.BiConsumer;
+import Main.Context;
 import propagation.Event;
 
 
 public class MenuItem implements Menu{
 	
-	private Consumer<String> function;
-	private String text;
+	private BiConsumer<Context,Event> function;
+	private String name;
 	
-	public MenuItem(Consumer<String> function,String text){
+	public MenuItem(BiConsumer<Context,Event> function,String name){
 		this.function = function;
-		this.text=text;
+		this.name=name;
+	}
+	
+	public String getName(){
+		return name;
 	}
 
-	public void apply (String value){
-		this.function.accept(value);
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public void accept(Context context,Event e){
+		this.function.accept(context,e);;
 	}
 	
-	public void getUserChoice(Event e){
+	public void getUserChoice(Context context, Event e){
 		console.print(this.toString());
-		console.print("\nChoice ?:");
-		String choice = console.readLine();
 		boolean ask=true;
 		while(ask){
 			ask=false;
 			try{
-				apply(choice);
+				accept(context,e);
 			}catch (NumberFormatException error){
 				console.print("You might have not provided the right type");
 			}finally{
 				ask=true;
 			}
+			
 		}
-		
-		
-		
 	}
 	
-	public void getEventChoice(Event e){
-		String choice = e.getNextChoice();
-		this.apply(choice);
+	public void getEventChoice(Context context, Event e){
+		this.accept(context,e);
 	}
 	
 	@Override
 	public String toString(){
-		return this.text;
+		return this.name;
 	}
 }

@@ -42,8 +42,22 @@ public class Event {
 	public String getNextChoice(){
 		return menuPath.remove();
 	}
-	public void addChoice(String s){
-		this.menuPath.add(s);
+	public Event addChoice(String s){
+		Event next=new Event(this.name,this.time,this.menuPath);
+		next.menuPath.add(s);
+		return next;
+	}
+	
+	public static double getPriority(Event e){
+		return e.getTime();
+	}
+	
+	public String toString(){
+		String s=name + "\n";
+		for (String i : menuPath){
+			s += i; 
+		}
+		return s;
 	}
 	
 }
