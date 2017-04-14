@@ -52,12 +52,12 @@ public class Menu {
 	static void eventMenu(Event e){
 		boolean stay=true;
 		while (stay){
-			switch(Util.verifyMenuChoice(3,() -> e.getNextChoice())){
+			switch(Util.verifyMenuChoice(3,() -> Integer.parseInt(e.getNextChoice()))){
 				case 1:
-					chooseDisease(() -> e.getNextChoice());
+					chooseDisease(() -> Integer.parseInt(e.getNextChoice()));
 					break;
 				case 2:
-					createDisease(() -> e.getNextChoice());
+					createDisease(() -> Integer.parseInt(e.getNextChoice()));
 					break;
 				case 3:
 					stay=false;

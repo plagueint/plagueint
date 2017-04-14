@@ -2,24 +2,18 @@ package propagation;
 import java.util.Queue;
 
 public class Event {
-	public Event(String name, double time, Queue<Float> parameters,Queue<Integer> choices) {
+	public Event(String name, double time, Queue<String> menuPath) {
 		super();
 		this.setName(name);
 		this.setTime(time);
-		this.setParameters(parameters);
+		this.setMenuPath(menuPath);
 	}
 	
 	private String name;
 	private double time;
-	private Queue<Float> parameters;
-	private Queue<Integer> choices;
+	private Queue<String> menuPath;
 	
-	Queue<Integer> getChoices() {
-		return choices;
-	}
-	void setChoices(Queue<Integer> choices) {
-		this.choices = choices;
-	}
+
 	public String getName() {
 		return name;
 	}
@@ -32,19 +26,20 @@ public class Event {
 	public void setTime(double time) {
 		this.time = time;
 	}
-	public Queue<Float> getParameters() {
-		return parameters;
+	
+	
+	Queue<String> getMenuPath() {
+		return menuPath;
 	}
-	public void setParameters(Queue<Float> parameters) {
-		this.parameters = parameters;
+	void setMenuPath(Queue<String> menuPath) {
+		this.menuPath = menuPath;
+	}
+	public String getNextEntry(){
+		return menuPath.remove();
 	}
 	
-	public float getNextEntry(){
-		return parameters.remove();
-	}
-	
-	public int getNextChoice(){
-		return choices.remove();
+	public String getNextChoice(){
+		return menuPath.remove();
 	}
 	
 }
