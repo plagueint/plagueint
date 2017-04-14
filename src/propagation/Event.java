@@ -9,6 +9,13 @@ public class Event {
 		this.parameters = parameters;
 	}
 	
+	public Event (double time, Hashtable<String, Float> parameters){
+		super();
+		this.name = "";
+		this.time = time;
+		this.parameters = parameters;
+	}
+	
 	private String name;
 	private double time;
 	private Hashtable<String , Float> parameters;
