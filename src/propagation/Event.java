@@ -1,24 +1,30 @@
 package propagation;
-import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Event {
-	public Event(String name, double time, Queue<Float> parameters,Queue<Integer> choices) {
+	public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
 		super();
 		this.setName(name);
 		this.setTime(time);
-		this.setParameters(parameters);
+		this.setMenuPath(menuPath);
+	}
+	
+	public Event(String name,double time){
+		super();
+		this.setName(name);
+		this.setTime(time);
+		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
 	}
 	
 	private String name;
 	private double time;
-	private Queue<Float> parameters;
-	private Queue<Integer> choices;
+	private ConcurrentLinkedQueue<String> menuPath;
 	
-	Queue<Integer> getChoices() {
-		return choices;
+	public ConcurrentLinkedQueue<String> getMenuPath() {
+		return menuPath;
 	}
-	void setChoices(Queue<Integer> choices) {
-		this.choices = choices;
+	void setMenuPath(ConcurrentLinkedQueue<String> menuPath) {
+		this.menuPath = menuPath;
 	}
 	public String getName() {
 		return name;
@@ -32,19 +38,12 @@ public class Event {
 	public void setTime(double time) {
 		this.time = time;
 	}
-	public Queue<Float> getParameters() {
-		return parameters;
-	}
-	public void setParameters(Queue<Float> parameters) {
-		this.parameters = parameters;
-	}
 	
-	public float getNextEntry(){
-		return parameters.remove();
+	public String getNextChoice(){
+		return menuPath.remove();
 	}
-	
-	public int getNextChoice(){
-		return choices.remove();
+	public void addChoice(String s){
+		this.menuPath.add(s);
 	}
 	
 }
