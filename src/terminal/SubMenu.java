@@ -1,6 +1,7 @@
 package terminal;
 import java.util.ArrayList;
 import propagation.Event;
+import java.util.function.Consumer;
 
 
 public class SubMenu implements Menu{
@@ -17,6 +18,14 @@ public class SubMenu implements Menu{
 	public void add(Menu menu){
 		this.submenus.add(length, menu);
 		this.length+=1;
+	}
+	
+	public void add(String s){
+		this.add(new SubMenu(s));
+	}
+	
+	public void add(Consumer<String> consumer,String s){
+		this.add(new MenuItem(consumer,s));
 	}
 	
 	public void remove(int i){

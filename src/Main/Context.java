@@ -12,7 +12,7 @@ public class Context {
 	private GenericModel model=new SIRModel();
 	
 	
-	private Menu constructMainMenu(){
+	private Menu constructModelMenu(){
 		SubMenu modelMenu=new SubMenu("Simulation");
 		SubMenu firstSubMenu=new SubMenu("Choisir une maladie personnalisée");
 		SubMenu secondSubMenu=new SubMenu("Créer une maladie personnalisée");
@@ -24,13 +24,13 @@ public class Context {
 		modelMenu.add(secondSubMenu);
 		return modelMenu;
 	}
+
 	
 	public static void main(String[] args){
 		Context context=new Context();
-		Menu mainMenu=context.constructMainMenu();
+		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event("test",0);
 		mainMenu.getUserChoice(e);
-		MenuItem test=new MenuItem(x-> System.out.println("creating fake item"),"test");
-		System.out.println(test.events);
+		System.out.println(MenuItem.events);
 	}
 }
