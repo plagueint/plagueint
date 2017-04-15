@@ -42,7 +42,6 @@ public class SubMenu implements Menu{
 		String choice = "";
 		boolean ask=true;
 		while(ask){
-			ask=false;
 			console.print(this.toString());
 			console.print("\nChoice ?:");
 			try{
@@ -51,14 +50,12 @@ public class SubMenu implements Menu{
 				if (value != submenus.size()){
 					submenus.get(value).getUserChoice(e.addChoice(choice));
 				}else{
-					ask=true;
+					ask=false;
 				}
 			}catch (NumberFormatException error){
 				console.print("An Integer is expected");
 			}catch (IndexOutOfBoundsException error){
 				console.print(value + " is not between 1 and " + this.submenus.size());
-			}finally{
-				ask=true;
 			}
 		}
 	}

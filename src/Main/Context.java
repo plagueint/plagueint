@@ -12,7 +12,7 @@ Elle renvoie les résultats en sortie dans la classe output
 
 public class Context {
 	
-	private GenericModel standardModel=new SIRModel();
+	private GenericModel model=new SIRModel();
 	private PriorityQueue<Event> events = new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 	
 	
@@ -21,8 +21,8 @@ public class Context {
 		SubMenu firstSubMenu=new SubMenu("Choisir une maladie personnalisée");
 		SubMenu secondSubMenu=new SubMenu("Créer une maladie personnalisée");
 		SubMenu modelChoice=new SubMenu("Choix d'un modèle");
-		//modelChoice.add(new MenuItem(context,e->, "Modèle SIR"));
-		//modelChoice.add(new MenuItem(context,e-> "Modèle SIR with Birth and Death"));
+		modelChoice.add(new MenuItem(x-> model=new SIRModel(), "Modèle SIR"));
+		modelChoice.add(new MenuItem(x-> model=new SIRBaDModel(), "Modèle SIR with Birth and Death"));
 		secondSubMenu.add(modelChoice);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);

@@ -5,10 +5,10 @@ import propagation.Event;
 
 public class MenuItem implements Menu{
 	
-	private Consumer<Event> function;
+	private Consumer<String> function;
 	private String menuName;
 	
-	public MenuItem(Consumer<Event> function,String menuName){
+	public MenuItem(Consumer<String> function,String menuName){
 		this.function = function;
 		this.menuName=menuName;
 	}
@@ -21,28 +21,27 @@ public class MenuItem implements Menu{
 		this.menuName = menuName;
 	}
 
-	public void accept(Event e){
-		this.function.accept(e);;
+	public void accept(String choice){
+		this.function.accept(choice);;
 	}
 	
 	public void getUserChoice(Event e){
 		console.print(this.toString());
+		String choice="";
 		boolean ask=true;
 		while(ask){
-			ask=false;
 			try{
-				accept(e);
+				choice=console.readLine();
+				accept(choice);
+				ask=false;
 			}catch (NumberFormatException error){
 				console.print("You might have not provided the right type");
-			}finally{
-				ask=true;
 			}
-			
 		}
 	}
 	
 	public void getEventChoice(Event e){
-		this.accept(e);
+		this.accept(e.getNextChoice());
 	}
 	
 	@Override
