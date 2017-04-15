@@ -53,7 +53,7 @@ public class Event {
 	}
 	
 	public String toString(){
-		String s=name + "\n";
+		String s=name + ":";
 		for (String i : menuPath){
 			s += i; 
 		}
