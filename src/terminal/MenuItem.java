@@ -1,15 +1,14 @@
 package terminal;
-import java.util.function.BiConsumer;
-import Main.Context;
+import java.util.function.Consumer;
 import propagation.Event;
 
 
 public class MenuItem implements Menu{
 	
-	private BiConsumer<Context,Event> function;
+	private Consumer<Event> function;
 	private String name;
 	
-	public MenuItem(BiConsumer<Context,Event> function,String name){
+	public MenuItem(Consumer<Event> function,String name){
 		this.function = function;
 		this.name=name;
 	}
@@ -22,17 +21,17 @@ public class MenuItem implements Menu{
 		this.name = name;
 	}
 
-	public void accept(Context context,Event e){
-		this.function.accept(context,e);;
+	public void accept(Event e){
+		this.function.accept(e);;
 	}
 	
-	public void getUserChoice(Context context, Event e){
+	public void getUserChoice(Event e){
 		console.print(this.toString());
 		boolean ask=true;
 		while(ask){
 			ask=false;
 			try{
-				accept(context,e);
+				accept(e);
 			}catch (NumberFormatException error){
 				console.print("You might have not provided the right type");
 			}finally{
@@ -42,8 +41,8 @@ public class MenuItem implements Menu{
 		}
 	}
 	
-	public void getEventChoice(Context context, Event e){
-		this.accept(context,e);
+	public void getEventChoice(Event e){
+		this.accept(e);
 	}
 	
 	@Override

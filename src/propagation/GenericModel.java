@@ -59,6 +59,5 @@ public abstract class GenericModel {
 		this.dt = dt;
 	}
 	
-	
-	
+		
 }

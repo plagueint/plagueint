@@ -10,7 +10,7 @@ Dans la classe Main on a une boucle while[true] qui incrémente le temps de 1 à
 Elle renvoie les résultats en sortie dans la classe output
 */
 
-public class Context { 
+public class Context {
 	
 	private GenericModel standardModel=new SIRModel();
 	private PriorityQueue<Event> events = new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
@@ -33,6 +33,6 @@ public class Context {
 		Context context=new Context();
 		Menu mainMenu=context.constructMainMenu();
 		Event e=new Event("test",0);
-		mainMenu.getUserChoice(context,e);
+		mainMenu.getUserChoice(e);
 	}
 }

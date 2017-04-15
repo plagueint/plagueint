@@ -1,7 +1,6 @@
 package terminal;
 import java.util.ArrayList;
 import propagation.Event;
-import Main.Context;
 
 
 public class SubMenu implements Menu{
@@ -38,7 +37,7 @@ public class SubMenu implements Menu{
 		this.name = name;
 	}
 	
-	public void getUserChoice(Context context, Event e){
+	public void getUserChoice(Event e){
 		int value=0;
 		String choice = "";
 		boolean ask=true;
@@ -50,7 +49,7 @@ public class SubMenu implements Menu{
 				choice = console.readLine();
 				value = Integer.parseInt(choice)-1;
 				if (value != submenus.size()){
-					submenus.get(value).getUserChoice(context,e.addChoice(choice));
+					submenus.get(value).getUserChoice(e.addChoice(choice));
 				}else{
 					ask=true;
 				}
@@ -64,8 +63,8 @@ public class SubMenu implements Menu{
 		}
 	}
 	
-	public void getEventChoice(Context context,Event e){
-		submenus.get(Integer.parseInt(e.getNextChoice())).getEventChoice(context,e);
+	public void getEventChoice(Event e){
+		submenus.get(Integer.parseInt(e.getNextChoice())).getEventChoice(e);
 	}
 	
 	
