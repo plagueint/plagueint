@@ -17,8 +17,8 @@ public class Context {
 		SubMenu firstSubMenu=new SubMenu("Choisir une maladie personnalisée");
 		SubMenu secondSubMenu=new SubMenu("Créer une maladie personnalisée");
 		SubMenu modelChoice=new SubMenu("Choix d'un modèle");
-		modelChoice.add(x-> this.model=new SIRModel(), "Modèle SIR");
-		modelChoice.add(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death");
+		modelChoice.add(x-> this.model=new SIRModel(), "Modèle SIR",()->this.model.getClass().getSimpleName());
+		modelChoice.add(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death",()->this.model.getClass().getName());
 		secondSubMenu.add(modelChoice);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);

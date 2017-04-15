@@ -2,6 +2,7 @@ package terminal;
 import java.util.ArrayList;
 import propagation.Event;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 
 public class SubMenu implements Menu{
@@ -9,10 +10,17 @@ public class SubMenu implements Menu{
 	
 	private ArrayList<Menu> submenus = new ArrayList<Menu>();
 	private String menuName;
+	private Supplier<String> current;
 	private int length = submenus.size();
+	
+	public SubMenu (String menuName,Supplier<String> current){
+		this.menuName=menuName;
+		this.current=current;
+	}
 	
 	public SubMenu (String menuName){
 		this.menuName=menuName;
+		this.current=null;
 	}
 	
 	public void add(Menu menu){
@@ -20,12 +28,20 @@ public class SubMenu implements Menu{
 		this.length+=1;
 	}
 	
+	public void add(String s,Supplier<String> current){
+		this.add(new SubMenu(s,current));
+	}
+	
 	public void add(String s){
-		this.add(new SubMenu(s));
+		this.add(s,null);
+	}
+	
+	public void add(Consumer<String> consumer,String s,Supplier<String> actual){
+		this.add(new MenuItem(consumer,s,actual));
 	}
 	
 	public void add(Consumer<String> consumer,String s){
-		this.add(new MenuItem(consumer,s));
+		this.add(consumer,s,null);
 	}
 	
 	public void remove(int i){
@@ -77,6 +93,9 @@ public class SubMenu implements Menu{
 	@Override
 	public String toString(){
 		String menuText = "---" + this.getMenuName() + "---" + "\n";
+		if (this.current != null && this.current.get() != ""){
+			menuText+=this.current.get() + "\n";
+		}
 		int i;
 		for (i=0;i<submenus.size();i++){
 			menuText += (i+1) + ") " + submenus.get(i).getMenuName() + "\n";

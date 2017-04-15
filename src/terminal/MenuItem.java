@@ -2,6 +2,7 @@ package terminal;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 import propagation.Event;
 
 
@@ -12,10 +13,12 @@ public class MenuItem implements Menu{
 	
 	private Consumer<String> function;
 	private String menuName;
+	private Supplier<String> current;
 	
-	protected MenuItem(Consumer<String> function,String menuName){
+	protected MenuItem(Consumer<String> function,String menuName, Supplier<String> current){
 		this.function = function;
 		this.menuName=menuName;
+		this.current=current;
 	}
 	
 	public String getMenuName(){
@@ -52,6 +55,11 @@ public class MenuItem implements Menu{
 	
 	@Override
 	public String toString(){
-		return this.getMenuName();
+		if (this.current != null && this.current.get() != ""){
+			return this.getMenuName() + "\n" + "current is : " + this.current.get();
+		}else{
+			return this.getMenuName();
+		}
+		
 	}
 }
