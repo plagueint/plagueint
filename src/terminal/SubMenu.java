@@ -42,7 +42,7 @@ public class SubMenu implements Menu{
 		return menuName;
 	}
 
-	public void setName(String name) {
+	protected void setName(String name) {
 		this.menuName = name;
 	}
 	

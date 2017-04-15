@@ -13,7 +13,7 @@ public class MenuItem implements Menu{
 	private Consumer<String> function;
 	private String menuName;
 	
-	public MenuItem(Consumer<String> function,String menuName){
+	protected MenuItem(Consumer<String> function,String menuName){
 		this.function = function;
 		this.menuName=menuName;
 	}
@@ -22,11 +22,11 @@ public class MenuItem implements Menu{
 		return menuName;
 	}
 
-	public void setName(String menuName){
+	protected void setName(String menuName){
 		this.menuName = menuName;
 	}
 
-	public void accept(String choice){
+	protected void accept(String choice){
 		this.function.accept(choice);;
 	}
 	
