@@ -1,9 +1,14 @@
 package terminal;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.function.Consumer;
 import propagation.Event;
 
 
 public class MenuItem implements Menu{
+	
+	final static public PriorityQueue<Event> events = new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+
 	
 	private Consumer<String> function;
 	private String menuName;
@@ -38,6 +43,7 @@ public class MenuItem implements Menu{
 				console.print("You might have not provided the right type");
 			}
 		}
+		events.add(e.addChoice(choice));
 	}
 	
 	public void getEventChoice(Event e){

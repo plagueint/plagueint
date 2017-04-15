@@ -1,8 +1,5 @@
 package Main;
 import terminal.*;
-
-import java.util.Comparator;
-import java.util.PriorityQueue;
 import propagation.*;
 
 /* La classe Main appelle les getters de terminal.Menu.
@@ -13,7 +10,6 @@ Elle renvoie les résultats en sortie dans la classe output
 public class Context {
 	
 	private GenericModel model=new SIRModel();
-	private PriorityQueue<Event> events = new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 	
 	
 	private Menu constructMainMenu(){
@@ -21,8 +17,8 @@ public class Context {
 		SubMenu firstSubMenu=new SubMenu("Choisir une maladie personnalisée");
 		SubMenu secondSubMenu=new SubMenu("Créer une maladie personnalisée");
 		SubMenu modelChoice=new SubMenu("Choix d'un modèle");
-		modelChoice.add(new MenuItem(x-> model=new SIRModel(), "Modèle SIR"));
-		modelChoice.add(new MenuItem(x-> model=new SIRBaDModel(), "Modèle SIR with Birth and Death"));
+		modelChoice.add(new MenuItem(x-> this.model=new SIRModel(), "Modèle SIR"));
+		modelChoice.add(new MenuItem(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death"));
 		secondSubMenu.add(modelChoice);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);
@@ -34,5 +30,7 @@ public class Context {
 		Menu mainMenu=context.constructMainMenu();
 		Event e=new Event("test",0);
 		mainMenu.getUserChoice(e);
+		MenuItem test=new MenuItem(x-> System.out.println("creating fake item"),"test");
+		System.out.println(test.events);
 	}
 }
