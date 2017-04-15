@@ -43,7 +43,8 @@ public class Event {
 		return menuPath.remove();
 	}
 	public Event addChoice(String s){
-		Event next=new Event(this.name,this.time,this.menuPath);
+		ConcurrentLinkedQueue<String> newMenuPath= new ConcurrentLinkedQueue<String>(this.menuPath);
+		Event next=new Event(this.name,this.time,newMenuPath);
 		next.menuPath.add(s);
 		return next;
 	}
