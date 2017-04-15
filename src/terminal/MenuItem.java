@@ -6,19 +6,19 @@ import propagation.Event;
 public class MenuItem implements Menu{
 	
 	private Consumer<Event> function;
-	private String name;
+	private String menuName;
 	
-	public MenuItem(Consumer<Event> function,String name){
+	public MenuItem(Consumer<Event> function,String menuName){
 		this.function = function;
-		this.name=name;
+		this.menuName=menuName;
 	}
 	
-	public String getName(){
-		return name;
+	public String getMenuName(){
+		return menuName;
 	}
 
-	public void setName(String name){
-		this.name = name;
+	public void setName(String menuName){
+		this.menuName = menuName;
 	}
 
 	public void accept(Event e){
@@ -47,6 +47,6 @@ public class MenuItem implements Menu{
 	
 	@Override
 	public String toString(){
-		return this.name;
+		return this.getMenuName();
 	}
 }

@@ -7,11 +7,11 @@ public class SubMenu implements Menu{
 	
 	
 	private ArrayList<Menu> submenus = new ArrayList<Menu>();
-	private String name;
+	private String menuName;
 	private int length = submenus.size();
 	
-	public SubMenu (String name){
-		this.name=name;
+	public SubMenu (String menuName){
+		this.menuName=menuName;
 	}
 	
 	public void add(Menu menu){
@@ -29,12 +29,12 @@ public class SubMenu implements Menu{
 		this.length-=1;
 	}
 	
-	public String getName() {
-		return name;
+	public String getMenuName() {
+		return menuName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.menuName = name;
 	}
 	
 	public void getUserChoice(Event e){
@@ -70,10 +70,10 @@ public class SubMenu implements Menu{
 	
 	@Override
 	public String toString(){
-		String menuText = "---" + this.name + "---" + "\n";
+		String menuText = "---" + this.getMenuName() + "---" + "\n";
 		int i;
 		for (i=0;i<submenus.size();i++){
-			menuText += (i+1) + ") " + submenus.get(i).getName() + "\n";
+			menuText += (i+1) + ") " + submenus.get(i).getMenuName() + "\n";
 		}
 		menuText += (i+1) + ") Menu précédent\n";
 		return menuText;
