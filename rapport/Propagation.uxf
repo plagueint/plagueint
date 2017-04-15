@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
-      <y>560</y>
-      <w>136</w>
-      <h>152</h>
+      <x>49</x>
+      <y>490</y>
+      <w>119</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>/Cell/
 Package::Propagation
 --
 - id: int
-- susceptibles: int
-- infectives: int
-- recovered: int
-- population: int
-- hygieneRate: int
+- susceptibles: double
+- infectives: double
+- recovered: double
+- population: double
+- hygieneRate: float
 //Ajouter les informations pour la visualisation graphique
 --
 /~getters/
@@ -28,12 +28,12 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>560</y>
-      <w>144</w>
-      <h>120</h>
+      <x>294</x>
+      <y>490</y>
+      <w>126</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>/Frontier/
+    <panel_attributes>/Border/
 Package::Propagation
 --
 - opened : boolean
@@ -50,10 +50,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>672</y>
-      <w>88</w>
-      <h>72</h>
+      <x>231</x>
+      <y>588</y>
+      <w>77</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;70.0</additional_attributes>
@@ -61,10 +61,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>672</y>
-      <w>24</w>
-      <h>72</h>
+      <x>350</x>
+      <y>588</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -72,10 +72,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>672</y>
-      <w>96</w>
-      <h>72</h>
+      <x>413</x>
+      <y>588</y>
+      <w>84</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;70.0</additional_attributes>
@@ -83,10 +83,10 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>728</y>
-      <w>128</w>
-      <h>40</h>
+      <x>301</x>
+      <y>637</y>
+      <w>112</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Land
 Package::Propagation
@@ -96,10 +96,10 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
-      <y>728</y>
-      <w>128</w>
-      <h>40</h>
+      <x>182</x>
+      <y>637</y>
+      <w>112</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Air
 Package::Propagation
@@ -111,10 +111,10 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>728</y>
-      <w>128</w>
-      <h>40</h>
+      <x>420</x>
+      <y>637</y>
+      <w>112</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Maritime
 Package::Propagation
@@ -124,10 +124,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
-      <y>520</y>
-      <w>88</w>
-      <h>56</h>
+      <x>301</x>
+      <y>455</y>
+      <w>77</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
@@ -136,10 +136,10 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>520</y>
-      <w>80</w>
-      <h>56</h>
+      <x>105</x>
+      <y>455</y>
+      <w>70</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
@@ -148,10 +148,10 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>104</x>
-      <y>728</y>
-      <w>136</w>
-      <h>96</h>
+      <x>49</x>
+      <y>637</y>
+      <w>119</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Country
 Package::Propagation
@@ -166,17 +166,17 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>432</y>
-      <w>168</w>
-      <h>96</h>
+      <x>161</x>
+      <y>378</y>
+      <w>147</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Graph
 Package::Propagation
 --
 - edges: Frontier[][][3]
 //Liste de longueur 3
-- countries: Country[]
+- cells: Cell[]
 --
 /~getters/
 /#setters/
@@ -186,10 +186,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>704</y>
-      <w>24</w>
-      <h>40</h>
+      <x>105</x>
+      <y>616</y>
+      <w>21</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -197,70 +197,27 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
-      <y>128</y>
-      <w>168</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>MenuEntry
-Package::Terminal
---
-# menu_name: String
---
-~ getInput(): int
-- action(): void
-
-//On prend en paramètres les trucs que rentre
-//l'utilisateur, et les actions() utilisent ces paramètres</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>624</x>
-      <y>0</y>
-      <w>168</w>
-      <h>88</h>
+      <x>497</x>
+      <y>119</y>
+      <w>147</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Menu
 Package::Terminal
 --
-# entries : MenuEntry[]
---
-/~getters/
-/#setters/</panel_attributes>
+~ getInt(): int
+~ getString(): String
+~ getDouble(): double
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>728</x>
-      <y>80</y>
-      <w>24</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>664</x>
-      <y>80</y>
-      <w>24</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>312</x>
-      <y>384</y>
-      <w>24</w>
-      <h>64</h>
+      <x>231</x>
+      <y>336</y>
+      <w>21</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
@@ -269,10 +226,10 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>208</x>
-      <y>248</y>
-      <w>232</w>
-      <h>144</h>
+      <x>140</x>
+      <y>217</y>
+      <w>203</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>/GenericModel/
 Package::Propagation
@@ -280,9 +237,9 @@ Package::Propagation
 - beta: float
 - gamma: float
 - network: Graph
-- S: int
+- S: double
 //total susceptibles
-- I: int
+- I: double
 //total infectives
 - dt : float
 --
@@ -293,10 +250,10 @@ Package::Propagation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>184</y>
-      <w>64</w>
-      <h>80</h>
+      <x>161</x>
+      <y>161</y>
+      <w>56</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;80.0;10.0;10.0</additional_attributes>
@@ -304,49 +261,50 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>136</y>
-      <w>144</w>
-      <h>56</h>
+      <x>98</x>
+      <y>0</y>
+      <w>126</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>SIRBaDModel
 Package::Propagation
---</panel_attributes>
+--
+- mu: float</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>184</y>
-      <w>64</w>
-      <h>80</h>
+      <x>154</x>
+      <y>42</y>
+      <w>21</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;60.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>136</y>
-      <w>144</w>
-      <h>56</h>
+      <x>98</x>
+      <y>119</y>
+      <w>126</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>SIRModel
 Package::Propagation
 --
-- R: int
+- R: double
 //total recovered</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>256</x>
-      <y>64</y>
-      <w>128</w>
-      <h>64</h>
+      <x>252</x>
+      <y>140</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Une classe héritant de
 GenericModel est à
@@ -358,32 +316,33 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>896</x>
-      <y>264</y>
-      <w>208</w>
-      <h>104</h>
+      <x>742</x>
+      <y>231</y>
+      <w>182</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>/Event/
+    <panel_attributes>Event
 Package::Propagation
 --
 - name: String
-- time: int
+- time: double
 //time est le nombre de dt entre le temps initial et le temps de l'Event
 - parameters: Hashmap&lt;float&gt;
-//On cast tous les paramètres (id de pays, les int et boolean. etc) en float
+//On cast tous les paramètres (id de pays, les double et boolean. etc) en float
 //lorsqu'on crée l'Event.
 --
-~getters
-#setters</panel_attributes>
+~ saveEvent(): Event
+/~getters/
+/#setters/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>608</x>
-      <y>288</y>
-      <w>192</w>
-      <h>64</h>
+      <x>490</x>
+      <y>301</y>
+      <w>168</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>
 Package::Propagation
@@ -394,26 +353,27 @@ Package::Propagation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>472</y>
-      <w>176</w>
-      <h>80</h>
+      <x>588</x>
+      <y>413</y>
+      <w>154</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Csv
 Package:: DAO
 --
 - CsvWriter(): void
 - CsvGenerate() : File
-- CsvGetter()</panel_attributes>
+- CsvGetter()
+- CsvReader()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>120</y>
-      <w>168</w>
-      <h>96</h>
+      <x>763</x>
+      <y>105</y>
+      <w>147</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Disease
 Package::Propagation
@@ -421,32 +381,18 @@ Package::Propagation
 - listEvents: Event[]
 --
 - switchcase(list :Event[]): void
-~getters
-#setters
+/~getters/
+/#setters/
 </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>936</x>
-      <y>56</y>
-      <w>136</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>initialEvents est stocké
-dans différents fichiers,
-un par maladie.
-bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>992</x>
-      <y>208</y>
-      <w>24</w>
-      <h>72</h>
+      <x>826</x>
+      <y>182</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 bg=black</panel_attributes>
@@ -455,13 +401,14 @@ bg=black</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>648</x>
-      <y>256</y>
-      <w>112</w>
-      <h>32</h>
+      <x>497</x>
+      <y>252</y>
+      <w>147</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Une classe, pour les
-relier tous
+gouverner tous et dans
+les ténèbres les lier
 bg=red</panel_attributes>
     <additional_attributes/>
   </element>
