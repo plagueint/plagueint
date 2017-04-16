@@ -1,25 +1,31 @@
 package propagation;
-import java.util.Hashtable;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Event {
-	public Event(String name, double time, Hashtable<String, Float> parameters) {
+	public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
 		super();
-		this.name = name;
-		this.time = time;
-		this.parameters = parameters;
+		this.setName(name);
+		this.setTime(time);
+		this.setMenuPath(menuPath);
 	}
 	
-	public Event (double time, Hashtable<String, Float> parameters){
+	public Event(String name,double time){
 		super();
-		this.name = "";
-		this.time = time;
-		this.parameters = parameters;
+		this.setName(name);
+		this.setTime(time);
+		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
 	}
 	
 	private String name;
 	private double time;
-	private Hashtable<String , Float> parameters;
+	private ConcurrentLinkedQueue<String> menuPath;
 	
+	public ConcurrentLinkedQueue<String> getMenuPath() {
+		return menuPath;
+	}
+	void setMenuPath(ConcurrentLinkedQueue<String> menuPath) {
+		this.menuPath = menuPath;
+	}
 	public String getName() {
 		return name;
 	}
@@ -32,11 +38,27 @@ public class Event {
 	public void setTime(double time) {
 		this.time = time;
 	}
-	public Hashtable<String, Float> getParameters() {
-		return parameters;
+	
+	public String getNextChoice(){
+		return menuPath.remove();
 	}
-	public void setParameters(Hashtable<String, Float> parameters) {
-		this.parameters = parameters;
+	public Event addChoice(String s){
+		ConcurrentLinkedQueue<String> newMenuPath= new ConcurrentLinkedQueue<String>(this.menuPath);
+		Event next=new Event(this.name,this.time,newMenuPath);
+		next.menuPath.add(s);
+		return next;
+	}
+	
+	public static double getPriority(Event e){
+		return e.getTime();
+	}
+	
+	public String toString(){
+		String s=name + ":";
+		for (String i : menuPath){
+			s += i; 
+		}
+		return s;
 	}
 	
 }
