@@ -3,6 +3,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+import java.util.function.BooleanSupplier;
 import propagation.Event;
 
 
@@ -14,11 +15,13 @@ public class MenuItem implements Menu{
 	private Consumer<String> function;
 	private String menuName;
 	private Supplier<String> current;
+	private BooleanSupplier available;
 	
-	protected MenuItem(Consumer<String> function,String menuName, Supplier<String> current){
+	protected MenuItem(Consumer<String> function,String menuName, Supplier<String> current,BooleanSupplier available){
 		this.function = function;
 		this.menuName=menuName;
 		this.current=current;
+		this.available=available;
 	}
 	
 	public String getMenuName(){
@@ -31,6 +34,10 @@ public class MenuItem implements Menu{
 
 	protected void accept(String choice){
 		this.function.accept(choice);;
+	}
+	
+	public Boolean isAvailable(){
+		return this.available.getAsBoolean();
 	}
 	
 	public void getUserChoice(Event e){
