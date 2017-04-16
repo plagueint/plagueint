@@ -37,7 +37,6 @@ public class Csv {
                 for (int i = 0; i < nud; i++) {
 					useful_data[i] = data[infoPosition[i]];
 				}
-                System.out.println(useful_data[0]);
                 table.add(useful_data);
 
             }
