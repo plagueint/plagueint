@@ -2,25 +2,35 @@ package propagation;
 
 public abstract class GenericModel {
 	
-	public GenericModel(float beta, Graph network, double susceptibles, double infectives, float dt) {
-		this.beta = beta;
+	//Standard GenericModel
+	public GenericModel(){
+		this.beta=0.00218;
+		this.susceptibles=1;
+		this.infectives=0;
+		this.network=new Graph();
+		this.dt=1;
 		
+	}
+	
+	public GenericModel(double beta, Graph network, double susceptibles, double infectives, double dt) {
+		this.beta = beta;
 		this.network = network;
 		this.susceptibles = susceptibles;
 		this.infectives = infectives;
 		this.dt = dt;
 	}
-	private float beta;
+		
+	private double beta;
 	private Graph network;
 	private double susceptibles;
 	private double infectives;
-	private float dt;
+	private double dt;
 	
 	
-	float getBeta() {
+	double getBeta() {
 		return beta;
 	}
-	void setBeta(float beta) {
+	void setBeta(double beta) {
 		this.beta = beta;
 	}
 	
@@ -42,12 +52,13 @@ public abstract class GenericModel {
 	void setInfectives(int infectives) {
 		this.infectives = infectives;
 	}
-	float getDt() {
+	double getDt() {
 		return dt;
 	}
-	void setDt(float dt) {
+	void setDt(double dt) {
 		this.dt = dt;
 	}
 	
 	
+
 }

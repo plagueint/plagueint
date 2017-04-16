@@ -1,19 +1,31 @@
 package propagation;
-import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Event {
-	public Event(String name, double time, Queue<String> menuPath) {
+	public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
 		super();
 		this.setName(name);
 		this.setTime(time);
 		this.setMenuPath(menuPath);
 	}
 	
+	public Event(String name,double time){
+		super();
+		this.setName(name);
+		this.setTime(time);
+		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
+	}
+	
 	private String name;
 	private double time;
-	private Queue<String> menuPath;
+	private ConcurrentLinkedQueue<String> menuPath;
 	
-
+	public ConcurrentLinkedQueue<String> getMenuPath() {
+		return menuPath;
+	}
+	void setMenuPath(ConcurrentLinkedQueue<String> menuPath) {
+		this.menuPath = menuPath;
+	}
 	public String getName() {
 		return name;
 	}
@@ -27,19 +39,26 @@ public class Event {
 		this.time = time;
 	}
 	
-	
-	Queue<String> getMenuPath() {
-		return menuPath;
-	}
-	void setMenuPath(Queue<String> menuPath) {
-		this.menuPath = menuPath;
-	}
-	public String getNextEntry(){
-		return menuPath.remove();
-	}
-	
 	public String getNextChoice(){
 		return menuPath.remove();
+	}
+	public Event addChoice(String s){
+		ConcurrentLinkedQueue<String> newMenuPath= new ConcurrentLinkedQueue<String>(this.menuPath);
+		Event next=new Event(this.name,this.time,newMenuPath);
+		next.menuPath.add(s);
+		return next;
+	}
+	
+	public static double getPriority(Event e){
+		return e.getTime();
+	}
+	
+	public String toString(){
+		String s=name + ":";
+		for (String i : menuPath){
+			s += i; 
+		}
+		return s;
 	}
 	
 }
