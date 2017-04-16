@@ -40,6 +40,10 @@ public class MenuItem implements Menu{
 		return this.available.getAsBoolean();
 	}
 	
+	public String getCurrentState(){
+		return this.current.get();
+	}
+	
 	public void getUserChoice(Event e){
 		console.print(this.toString());
 		String choice="";
@@ -62,8 +66,8 @@ public class MenuItem implements Menu{
 	
 	@Override
 	public String toString(){
-		if (this.current != null && this.current.get() != ""){
-			return this.getMenuName() + "\n" + "current is : " + this.current.get();
+		if (this.current != null && this.getCurrentState() != ""){
+			return this.getMenuName() + "\n" + "current is : " + this.getCurrentState();
 		}else{
 			return this.getMenuName();
 		}

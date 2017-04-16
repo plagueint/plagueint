@@ -6,5 +6,6 @@ public interface Menu {
 	public void getUserChoice(propagation.Event e);
 	public void getEventChoice(propagation.Event e);
 	public Boolean isAvailable();
+	public String getCurrentState();
 	final static Console console = new Console();
 }

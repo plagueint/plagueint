@@ -97,6 +97,10 @@ public class SubMenu implements Menu{
 		return this.available.getAsBoolean();
 	}
 	
+	public String getCurrentState(){
+		return this.current.get();
+	}
+	
 	public void getUserChoice(Event e){
 		int value=0;
 		String choice = "";
@@ -132,8 +136,8 @@ public class SubMenu implements Menu{
 	@Override
 	public String toString(){
 		String menuText = "---" + this.getMenuName() + "---" + "\n";
-		if (this.current != null && this.current.get() != ""){
-			menuText+=this.current.get() + "\n";
+		if (this.current != null && this.getCurrentState() != ""){
+			menuText+=this.getCurrentState() + "\n";
 		}
 		int i;
 		for (i=0;i<submenus.size();i++){
