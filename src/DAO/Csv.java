@@ -41,21 +41,19 @@ public class Csv {
 
             }
 
-// Début de la partie empruntée
         } catch (FileNotFoundException e) {  
-            e.printStackTrace();
+            System.out.println("File not found");;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error while opening the file");;
         } finally {
             if (br != null) {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Error while closing the file");;
                 }
             }
         }
-// Fin de la partie empruntée
 		
 		return table;
 	}
