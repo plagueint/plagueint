@@ -10,8 +10,8 @@ public class SIRModel extends GenericModel{
 		this.gamma=0;
 	}
 
-	public SIRModel(double beta, double gamma, Graph network, double susceptibles, double infectives, double dt, double recovered) {
-		super(beta, network, susceptibles, infectives, dt);
+	public SIRModel(double beta, double gamma, Graph network, double susceptibles, double infectives, double dt, double recovered,String name) {
+		super(beta, network, susceptibles, infectives, dt,name);
 		this.recovered=recovered;
 		this.gamma = gamma;
 	}

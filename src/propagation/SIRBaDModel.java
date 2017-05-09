@@ -3,8 +3,8 @@ package propagation;
 public class SIRBaDModel extends SIRModel {
 	
 	
-	public SIRBaDModel(double beta, double gamma, Graph network, double susceptibles, double infectives, double dt, double recovered,double mu) {
-		super(beta, gamma, network, susceptibles, infectives, dt, recovered);
+	public SIRBaDModel(double beta, double gamma, Graph network, double susceptibles, double infectives, double dt, double recovered,double mu,String name) {
+		super(beta, gamma, network, susceptibles, infectives, dt, recovered,name);
 		this.mu=mu;
 	}
 	

@@ -9,15 +9,17 @@ public abstract class GenericModel {
 		this.infectives=0;
 		this.network=new Graph();
 		this.dt=1;
+		this.name="maladie par défaut";
 		
 	}
 	
-	public GenericModel(double beta, Graph network, double susceptibles, double infectives, double dt) {
+	public GenericModel(double beta, Graph network, double susceptibles, double infectives, double dt,String name) {
 		this.beta = beta;
 		this.network = network;
 		this.susceptibles = susceptibles;
 		this.infectives = infectives;
 		this.dt = dt;
+		this.name=name;
 	}
 		
 	private double beta;
@@ -25,8 +27,17 @@ public abstract class GenericModel {
 	private double susceptibles;
 	private double infectives;
 	private double dt;
+	private String name;
 	
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	double getBeta() {
 		return beta;
 	}
