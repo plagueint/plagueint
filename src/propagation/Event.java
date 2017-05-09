@@ -58,7 +58,7 @@ public class Event {
 		for (String i : menuPath){
 			s += i; 
 		}
-		return s;
+		return s + ";" + time;
 	}
 	
 }

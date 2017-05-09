@@ -111,7 +111,7 @@ public class SubMenu implements Menu{
 			try{
 				choice = console.readLine();
 				value = Integer.parseInt(choice)-1;
-				if (value == submenus.size()){
+				if (value == -1){
 					ask=false;
 				}else if (submenus.get(value).isAvailable()){
 					submenus.get(value).getUserChoice(e.addChoice(choice));
@@ -121,7 +121,7 @@ public class SubMenu implements Menu{
 			}catch (NumberFormatException error){
 				console.print("An Integer is expected\n");
 			}catch (IndexOutOfBoundsException error){
-				console.print((value+1) + " is not between 1 and " + this.submenus.size() +"\n");
+				console.print((value+1) + " is not between 0 and " + this.submenus.size() +"\n");
 			}catch (NotAvailableChoice error){
 				console.print("choice " + (value+1) + " is not available\n");
 			}
@@ -140,6 +140,7 @@ public class SubMenu implements Menu{
 			menuText+=this.getCurrentState() + "\n";
 		}
 		int i;
+		menuText += 0 + ") Menu précédent\n";
 		for (i=0;i<submenus.size();i++){
 			menuText += (i+1) + ") " + submenus.get(i).getMenuName();
 			if (!this.submenus.get(i).isAvailable()){
@@ -147,7 +148,6 @@ public class SubMenu implements Menu{
 			}
 			menuText+="\n";
 		}
-		menuText += (i+1) + ") Menu précédent\n";
 		return menuText;
 	}
 
