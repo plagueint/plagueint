@@ -18,7 +18,12 @@ public class SIRBaDModel extends SIRModel {
 	double getMu() {
 		return mu;
 	}
-	void setMu(double mu) {
+	public void setMu(double mu) {
 		this.mu = mu;
+	}
+	
+	public String toString (){
+		String s= super.toString();
+		return s + "mu : " + this.mu + "\n";
 	}
 }

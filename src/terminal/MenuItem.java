@@ -54,7 +54,7 @@ public class MenuItem implements Menu{
 				accept(choice);
 				ask=false;
 			}catch (NumberFormatException error){
-				console.print("You might have not provided the right type");
+				console.print("You might have not provided the right type\n");
 			}
 		}
 		events.add(e.addChoice(choice));

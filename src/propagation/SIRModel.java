@@ -28,7 +28,7 @@ public class SIRModel extends GenericModel{
 	double getGamma() {
 		return gamma;
 	}
-	void setGamma(double gamma) {
+	public void setGamma(double gamma) {
 		this.gamma = gamma;
 	}
 	
@@ -40,5 +40,10 @@ public class SIRModel extends GenericModel{
 		du[2] = gamma*u[1];
 		return du;
 	}
-		
+	
+	@Override
+	public String toString (){
+		String s=super.toString() ;
+		return s + "gamma : " + this.gamma + "\n";
+	}
 }

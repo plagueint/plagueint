@@ -2,14 +2,14 @@ package propagation;
 
 public class Graph {
 	
-	public Graph(Border[][][] edges, Cell[][] cells) {
+	public Graph(Border[][][] edges, Cell[] cells) {
 		super();
 		this.edges = edges;
 		this.cells = cells;
 	}
 	
 	private Border[][][] edges;
-	private Cell[][] cells;
+	private Cell[] cells;
 	
 	
 	public Graph (){
@@ -22,10 +22,10 @@ public class Graph {
 	public void setEdges(Border[][][] edges) {
 		this.edges = edges;
 	}
-	public Cell[][] getCells() {
+	public Cell[] getCells() {
 		return cells;
 	}
-	public void setCells(Cell[][] cells) {
+	public void setCells(Cell[] cells) {
 		this.cells = cells;
 	}
 	

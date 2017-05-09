@@ -30,11 +30,11 @@ public abstract class GenericModel {
 	double getBeta() {
 		return beta;
 	}
-	void setBeta(double beta) {
+	public void setBeta(double beta) {
 		this.beta = beta;
 	}
 	
-	Graph getNetwork() {
+	public Graph getNetwork() {
 		return network;
 	}
 	void setNetwork(Graph network) {
@@ -55,10 +55,13 @@ public abstract class GenericModel {
 	double getDt() {
 		return dt;
 	}
-	void setDt(double dt) {
+	public void setDt(double dt) {
 		this.dt = dt;
 	}
 	
+	public String toString(){
+		return "Dt : " + this.dt + " | beta : " + this.beta +"\n";
+	}
 	
 
 }
