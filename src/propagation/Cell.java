@@ -41,7 +41,7 @@ public class Cell {
 		return infectives;
 	}
 	public void setInfectives(double infectives)  throws ImpossibleValue{
-		if (this.susceptibles<(infectives-this.infectives)){
+		if (this.susceptibles>(infectives-this.infectives)){
 			this.susceptibles=this.susceptibles-(infectives-this.infectives);
 		}
 		else{
@@ -53,7 +53,7 @@ public class Cell {
 		return recovered;
 	}
 	public void setRecovered(double recovered) throws ImpossibleValue{
-		if (this.infectives<(recovered-this.recovered)){
+		if (this.infectives>(recovered-this.recovered)){
 			this.infectives=this.infectives-(recovered-this.recovered);
 		}
 		else{
