@@ -17,8 +17,8 @@ public class Context {
 		// ou bien menuPrincipal.add("Titre", [ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice) ] ).
 		// Pour faire une entrée menu qui exécute une action sur le sous-menu sousMenu: sousMenu.add(inconnue String x -> void, "Titre",[ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice), ()->boolean pour rendre indisponible une entrée menu)]
 		SubMenu modelMenu=new SubMenu("Simulation");
-		SubMenu firstSubMenu=new SubMenu("Maladie personnalisé",()->"Maladie actuelle " + this.model.getName());
-		SubMenu secondSubMenu=new SubMenu("Autre maladie");
+		SubMenu secondSubMenu=new SubMenu("Choix de la maladie de départ");
+		SubMenu firstSubMenu=new SubMenu("Personnalisation de la maladie",()->"Maladie actuelle " + this.model.getName());
 		SubMenu modelChoice=new SubMenu("Choix d'un modèle",()->"Current model is " + this.model.getClass().getSimpleName());
 		modelChoice.add(x-> this.model=new SIRModel(), "Modèle SIR",()->this.model.getClass().getSimpleName(),()->this.model.getClass()!=SIRModel.class);
 		modelChoice.add(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death",()->this.model.getClass().getName());
@@ -30,20 +30,22 @@ public class Context {
 		constantes.add(x->((SIRModel) this.model).setGamma(Double.parseDouble(x)),"Gamma: coefficient de guérison",()->this.model.getClass()==SIRModel.class || this.model.getClass()==SIRBaDModel.class);
 		constantes.add(x->((SIRBaDModel) this.model).setMu(Double.parseDouble(x)),"Mu: taux de mortalité",()->this.model.getClass()==SIRBaDModel.class);
 		diseaseParameter.add(x->this.model.setDt(Double.parseDouble(x)),"Echelle de temps dt");
-		SubMenu startParameters=new SubMenu("Conditions de départ");
-		SubMenu countryChoice=new SubMenu("Choisir un pays");
-		startParameters.add(countryChoice);
+		SubMenu startParameters=new SubMenu("Paramètres de départ",()->"Choix du pays");
 		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
 			Country c=((Country) this.model.getNetwork().getCells()[i]);
-			SubMenu country=new SubMenu(c.getName(),()->"Current population state:\nTotal population:" + c.getPopulation() + "\nSusceptibles:" + c.getSusceptibles() + "\nInfectives:" + c.getInfectives() + "\nRecovered:" + c.getRecovered());
-			country.add(x->{
+			SubMenu countryPopulation=new SubMenu("Population de départ du pays",()->"Population totale:" + c.getPopulation() + "\nSains:" + c.getSusceptibles() + "\nInfectés:" + c.getInfectives() + "\nGuéris:" + c.getRecovered());
+			SubMenu countryBorders=new SubMenu("Etat des frontières du pays");
+			SubMenu country=new SubMenu(c.getName());
+			startParameters.add(country);
+			country.add(countryPopulation);
+			countryPopulation.add(x->{
 				double y = Double.parseDouble(x);
 				try{
 					c.setSusceptibles(y);
 					} catch (ImpossibleValue e){
 						System.out.println(e.getTitle());}
 				},"Nombre de sains");
-			country.add(x->{
+			countryPopulation.add(x->{
 				double y =Double.parseDouble(x);
 				try{
 					c.setInfectives(y);
@@ -51,7 +53,7 @@ public class Context {
 					System.out.println(e.getTitle());
 				}
 			},"Nombre d'infectés");
-			country.add(x->{
+			countryPopulation.add(x->{
 				double y=Double.parseDouble(x);
 				try{
 					c.setRecovered(y);
@@ -59,12 +61,11 @@ public class Context {
 					System.out.println(e.getTitle());
 				}
 			},"Nombre de guéris");
-			countryChoice.add(country);
+			country.add(countryBorders);
+			//for (int j=0
 		}
 		
 		SubMenu eventParameters=new SubMenu("Evènements");
-		
-		
 		
 		firstSubMenu.add(diseaseParameter);
 		firstSubMenu.add(startParameters);
