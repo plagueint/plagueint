@@ -36,7 +36,13 @@ public class Context {
 		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
 			Country c=((Country) this.model.getNetwork().getCells()[i]);
 			SubMenu country=new SubMenu(c.getName(),()->"Current population state:\nTotal population:" + c.getPopulation() + "\nSusceptibles:" + c.getSusceptibles() + "\nInfectives:" + c.getInfectives() + "\nRecovered:" + c.getRecovered());
-			country.add(x->c.setSusceptibles(Double.parseDouble(x)),"Nombre de sains");
+			country.add(x->{
+				double y = Double.parseDouble(x);
+				try{
+					c.setSusceptibles(y);
+					} catch (ImpossibleValue e){
+						System.out.println(e.getTitle());}
+				},"Nombre de sains");
 			country.add(x->{
 				double y =Double.parseDouble(x);
 				try{

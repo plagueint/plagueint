@@ -49,8 +49,7 @@ public class Cell {
 	public void setInfectives(double infectives)  throws ImpossibleValue{
 		if (infectives<0){throw new ImpossibleValue("Le nombre d'infectés doit être positif.");}
 		else{
-			if (this.susceptibles>(infectives-this.infectives)){
-				this.population=this.population+(infectives-this.infectives);
+			if (this.susceptibles>=(infectives-this.infectives)){
 				this.susceptibles=this.susceptibles-(infectives-this.infectives);
 			}
 			else{
@@ -65,12 +64,10 @@ public class Cell {
 	public void setRecovered(double recovered) throws ImpossibleValue{
 		if (recovered<0){throw new ImpossibleValue("Le nombre de guéris doit être positif.");}
 		else{
-			if (this.infectives>(recovered-this.recovered)){
+			if (this.infectives>=(recovered-this.recovered)){
 				this.infectives=this.infectives-(recovered-this.recovered);
 			}
-			else{
-				throw new ImpossibleValue("Impossible d'ajouter plus de guéris qu'il n'y a d'infectés.");
-			}
+			else{throw new ImpossibleValue("Impossible d'ajouter plus de guéris qu'il n'y a d'infectés.");}
 		}
 		this.recovered = recovered;
 	}
@@ -78,10 +75,7 @@ public class Cell {
 		return population;
 	}
 	public void setPopulation(double population) throws ImpossibleValue {
-		if (population<this.infectives+this.recovered){throw new ImpossibleValue("Impossible de supprimer plus d'habitants qu'il n'y a de sains.");}
-		else{
 			this.population = population;
-		}
 	}
 	public double getHygieneRate() {
 		return hygieneRate;
