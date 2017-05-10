@@ -34,18 +34,28 @@ public class Cell {
 	public double getSusceptibles() {
 		return susceptibles;
 	}
-	public void setSusceptibles(double susceptibles) {
-		this.susceptibles = susceptibles;
+	public void setSusceptibles(double susceptibles) throws ImpossibleValue{
+		if (susceptibles>=0){
+			this.population=this.infectives+this.recovered+susceptibles;
+			this.susceptibles = susceptibles;
+		}
+		else{
+			throw new ImpossibleValue("Le nombre de sains doit être positif.");
+		}
 	}
 	public double getInfectives() {
 		return infectives;
 	}
 	public void setInfectives(double infectives)  throws ImpossibleValue{
-		if (this.susceptibles>(infectives-this.infectives)){
-			this.susceptibles=this.susceptibles-(infectives-this.infectives);
-		}
+		if (infectives<0){throw new ImpossibleValue("Le nombre d'infectés doit être positif.");}
 		else{
-			throw new ImpossibleValue("Impossible d'ajouter plus d'infectés qu'il n'y a de sains.");
+			if (this.susceptibles>(infectives-this.infectives)){
+				this.population=this.population+(infectives-this.infectives);
+				this.susceptibles=this.susceptibles-(infectives-this.infectives);
+			}
+			else{
+				throw new ImpossibleValue("Impossible d'ajouter plus d'infectés qu'il n'y a de sains.");
+			}
 		}
 		this.infectives = infectives;
 	}
@@ -53,19 +63,25 @@ public class Cell {
 		return recovered;
 	}
 	public void setRecovered(double recovered) throws ImpossibleValue{
-		if (this.infectives>(recovered-this.recovered)){
-			this.infectives=this.infectives-(recovered-this.recovered);
-		}
+		if (recovered<0){throw new ImpossibleValue("Le nombre de guéris doit être positif.");}
 		else{
-			throw new ImpossibleValue("Impossible d'ajouter plus de guéris qu'il n'y a d'infectés.");
+			if (this.infectives>(recovered-this.recovered)){
+				this.infectives=this.infectives-(recovered-this.recovered);
+			}
+			else{
+				throw new ImpossibleValue("Impossible d'ajouter plus de guéris qu'il n'y a d'infectés.");
+			}
 		}
 		this.recovered = recovered;
 	}
 	public double getPopulation() {
 		return population;
 	}
-	public void setPopulation(double population) {
-		this.population = population;
+	public void setPopulation(double population) throws ImpossibleValue {
+		if (population<this.infectives+this.recovered){throw new ImpossibleValue("Impossible de supprimer plus d'habitants qu'il n'y a de sains.");}
+		else{
+			this.population = population;
+		}
 	}
 	public double getHygieneRate() {
 		return hygieneRate;
