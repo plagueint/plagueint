@@ -12,7 +12,7 @@ public class Context {
 	private GenericModel model=new SIRModel();
 	
 	
-	private Menu constructModelMenu(){
+	private Menu constructModelMenu() {
 		// Pour ajouter un menu: new SubMenu("Titre", [ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice) ] )
 		// ou bien menuPrincipal.add("Titre", [ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice) ] ).
 		// Pour faire une entrée menu qui exécute une action sur le sous-menu sousMenu: sousMenu.add(inconnue String x -> void, "Titre",[ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice), ()->boolean pour rendre indisponible une entrée menu)]
@@ -35,10 +35,18 @@ public class Context {
 		startParameters.add(countryChoice);
 		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
 			Country c=((Country) this.model.getNetwork().getCells()[i]);
-			SubMenu country=new SubMenu(c.getName());
+			SubMenu country=new SubMenu(c.getName(),()->"Current population state:\nTotal population:" + c.getPopulation() + "\nSusceptibles:" + c.getSusceptibles() + "\nInfectives:" + c.getInfectives() + "\nRecovered:" + c.getRecovered());
+			try{
 			country.add(x->c.setInfectives(Double.parseDouble(x)),"Nombre d'infectés");
+			} catch (ImpossibleValue e){
+				System.out.println(e.getTitle());
+			}
 			country.add(x->c.setSusceptibles(Double.parseDouble(x)),"Nombre de sains");
-			country.add(x->c.setRecovered(Double.parseDouble(x)),"Nombre de guéris");
+			try{
+				country.add(x->c.setRecovered(Double.parseDouble(x)),"Nombre de guéris");
+			} catch (ImpossibleValue e){
+				System.out.println("Impossible d'ajouter plus  de guéris qu'il n'y a d'infectés");
+			}
 			country.add(x->c.setSusceptibles(Double.parseDouble(x)-c.getRecovered()-c.getInfectives()),"Population totale");
 			countryChoice.add(country);
 		}
@@ -56,7 +64,7 @@ public class Context {
 	}
 
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Context context=new Context();
 		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event("test",0);

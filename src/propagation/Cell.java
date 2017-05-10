@@ -47,13 +47,18 @@ public class Cell {
 		else{
 			throw new ImpossibleValue("Impossible d'ajouter plus d'infectés qu'il n'y a de sains.");
 		}
-				
 		this.infectives = infectives;
 	}
 	public double getRecovered() {
 		return recovered;
 	}
-	public void setRecovered(double recovered) {
+	public void setRecovered(double recovered) throws ImpossibleValue{
+		if (this.infectives<(recovered-this.recovered)){
+			this.infectives=this.infectives-(recovered-this.recovered);
+		}
+		else{
+			throw new ImpossibleValue("Impossible d'ajouter plus de guéris qu'il n'y a d'infectés.");
+		}
 		this.recovered = recovered;
 	}
 	public double getPopulation() {

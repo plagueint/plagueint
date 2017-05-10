@@ -9,5 +9,4 @@ public class ImpossibleValue extends Throwable{
 	public String getTitle() {
 		return title;
 	}
-	
 }
