@@ -30,13 +30,18 @@ public class Context {
 		constantes.add(x->((SIRModel) this.model).setGamma(Double.parseDouble(x)),"Gamma: coefficient de guérison",()->this.model.getClass()==SIRModel.class || this.model.getClass()==SIRBaDModel.class);
 		constantes.add(x->((SIRBaDModel) this.model).setMu(Double.parseDouble(x)),"Mu: taux de mortalité",()->this.model.getClass()==SIRBaDModel.class);
 		diseaseParameter.add(x->this.model.setDt(Double.parseDouble(x)),"Echelle de temps dt");
-		SubMenu startParameters=new SubMenu("Conditions de départs");
-		startParameters.add("Choisir le pays");
-//		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
-//			Country c=((Country) this.model.getNetwork().getCells()[i]);
-//			SubMenu country=new SubMenu(c.getName());
-//			country.add(x->c.setInfectives(Double.parseDouble(x)),"Nombre d'infectés");
-//		}
+		SubMenu startParameters=new SubMenu("Conditions de départ");
+		SubMenu countryChoice=new SubMenu("Choisir un pays");
+		startParameters.add(countryChoice);
+		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
+			Country c=((Country) this.model.getNetwork().getCells()[i]);
+			SubMenu country=new SubMenu(c.getName());
+			country.add(x->c.setInfectives(Double.parseDouble(x)),"Nombre d'infectés");
+			country.add(x->c.setSusceptibles(Double.parseDouble(x)),"Nombre de sains");
+			country.add(x->c.setRecovered(Double.parseDouble(x)),"Nombre de guéris");
+			country.add(x->c.setSusceptibles(Double.parseDouble(x)-c.getRecovered()-c.getInfectives()),"Population totale");
+			countryChoice.add(country);
+		}
 		
 		SubMenu eventParameters=new SubMenu("Evènements");
 		

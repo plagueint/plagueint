@@ -1,5 +1,6 @@
 package terminal;
 import java.util.Comparator;
+import propagation.ImpossibleValue;
 import java.util.PriorityQueue;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -55,6 +56,8 @@ public class MenuItem implements Menu{
 				ask=false;
 			}catch (NumberFormatException error){
 				console.print("You might have not provided the right type\n");
+			}catch (ImpossibleValue error){
+				console.print(error.getTitle());
 			}
 		}
 		events.add(e.addChoice(choice));

@@ -7,6 +7,12 @@ public class Border {
 		this.crossingTime = crossingTime;
 		this.hygieneRate = hygieneRate;
 	}
+	public Border(){
+		this.opened=false;
+		this.freqRate=0;
+		this.crossingTime=0;
+		this.hygieneRate=0;
+	}
 	
 	private boolean opened;
 	private float freqRate;

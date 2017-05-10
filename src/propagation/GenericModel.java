@@ -22,6 +22,7 @@ public abstract class GenericModel {
 		this.name=name;
 	}
 		
+	
 	private double beta;
 	private Graph network;
 	private double susceptibles;
@@ -48,7 +49,7 @@ public abstract class GenericModel {
 	public Graph getNetwork() {
 		return network;
 	}
-	void setNetwork(Graph network) {
+	public void setNetwork(Graph network) {
 		this.network = network;
 	}
 	double getSusceptibles() {

@@ -6,6 +6,7 @@ public class SIRModel extends GenericModel{
 	
 	//Standard SIRModel
 	public SIRModel(){
+		super();
 		this.recovered=0;
 		this.gamma=0;
 	}

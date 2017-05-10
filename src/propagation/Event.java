@@ -56,7 +56,7 @@ public class Event {
 	public String toString(){
 		String s=name + ":";
 		for (String i : menuPath){
-			s += i; 
+			s += i + ","; 
 		}
 		return s + ";" + time;
 	}
