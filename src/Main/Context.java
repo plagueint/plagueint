@@ -33,10 +33,9 @@ public class Context {
 		SubMenu startParameters=new SubMenu("Paramètres de départ",()->"Choix du pays");
 		for (int i=0;i<this.model.getNetwork().getCells().length;i++){
 			Country c=((Country) this.model.getNetwork().getCells()[i]);
-			SubMenu countryPopulation=new SubMenu("Population de départ du pays",()->"Population totale:" + c.getPopulation() + "\nSains:" + c.getSusceptibles() + "\nInfectés:" + c.getInfectives() + "\nGuéris:" + c.getRecovered());
-			SubMenu countryBorders=new SubMenu("Etat des frontières du pays");
 			SubMenu country=new SubMenu(c.getName());
 			startParameters.add(country);
+			SubMenu countryPopulation=new SubMenu("Population de départ du pays",()->"Population totale:" + c.getPopulation() + "\nSains:" + c.getSusceptibles() + "\nInfectés:" + c.getInfectives() + "\nGuéris:" + c.getRecovered());
 			country.add(countryPopulation);
 			countryPopulation.add(x->{
 				double y = Double.parseDouble(x);
@@ -61,8 +60,25 @@ public class Context {
 					System.out.println(e.getTitle());
 				}
 			},"Nombre de guéris");
+			SubMenu countryBorders=new SubMenu("Etat des frontières du pays");
 			country.add(countryBorders);
-			//for (int j=0
+			for (int j=0;j<this.model.getNetwork().getCells().length;j++){
+				Border[] b = this.model.getNetwork().getEdges()[i][j];
+				Country l = ((Country) this.model.getNetwork().getCells()[j]);
+				SubMenu border = new SubMenu("Frontière avec " + l.getName());
+				countryBorders.add(border);
+				for (int k=0;k<3;k++){
+					SubMenu borderType = new SubMenu("Frontière "+ this.model.getNetwork().getEdges()[i][j][k].getClass().getSimpleName() + " avec " + l.getName());
+					border.add(borderType);
+					borderType.add(x-> b[k].setOpened(true),"Ouvrir la frontière");
+					borderType.add(x-> b[k].setOpened(false),"Fermer la frontière");
+					
+					}
+					
+				
+				}
+			}
+			
 		}
 		
 		SubMenu eventParameters=new SubMenu("Evènements");
