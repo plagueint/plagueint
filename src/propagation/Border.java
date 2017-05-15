@@ -1,7 +1,7 @@
 package propagation;
 
 public class Border {
-	public Border(boolean opened, float freqRate, float crossingTime, float hygieneRate) {
+	public Border(boolean opened, double freqRate, double crossingTime, double hygieneRate) {
 		this.opened = opened;
 		this.freqRate = freqRate;
 		this.crossingTime = crossingTime;
@@ -15,9 +15,9 @@ public class Border {
 	}
 	
 	private boolean opened;
-	private float freqRate;
-	private float crossingTime;
-	private float hygieneRate;
+	private double freqRate;
+	private double crossingTime;
+	private double hygieneRate;
 	
 	public boolean isOpened() {
 		return opened;
@@ -25,22 +25,22 @@ public class Border {
 	public void setOpened(boolean opened) {
 		this.opened = opened;
 	}
-	public float getFreqRate() {
+	public double getFreqRate() {
 		return freqRate;
 	}
-	public void setFreqRate(float freqRate) {
+	public void setFreqRate(double freqRate) {
 		this.freqRate = freqRate;
 	}
-	public float getCrossingTime() {
+	public double getCrossingTime() {
 		return crossingTime;
 	}
-	public void setCrossingTime(float crossingTime) {
+	public void setCrossingTime(double crossingTime) {
 		this.crossingTime = crossingTime;
 	}
-	public float getHygieneRate() {
+	public double getHygieneRate() {
 		return hygieneRate;
 	}
-	public void setHygieneRate(float hygieneRate) {
+	public void setHygieneRate(double hygieneRate) {
 		this.hygieneRate = hygieneRate;
 	}
 }
