@@ -1,14 +1,15 @@
 package propagation;
+import java.util.ArrayList;
 
 public class Graph {
 	
-	public Graph(Border[][][] edges, Cell[][] cells) {
+	public Graph(ArrayList<Border>[][] edges, Cell[][] cells) {
 		super();
 		this.edges = edges;
 		this.cells = cells;
 	}
 	
-	private Border[][][] edges;
+	private ArrayList<Border>[][] edges;
 	private Cell[][] cells;
 	
 	
@@ -16,10 +17,10 @@ public class Graph {
 		//Extract information from CSV and fill up countries and edges
 	}
 
-	public Border[][][] getEdges() {
+	public ArrayList<Border>[][] getEdges() {
 		return edges;
 	}
-	public void setEdges(Border[][][] edges) {
+	public void setEdges(ArrayList<Border>[][] edges) {
 		this.edges = edges;
 	}
 	public Cell[][] getCells() {
