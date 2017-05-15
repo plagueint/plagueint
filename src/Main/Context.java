@@ -68,18 +68,30 @@ public class Context {
 				SubMenu border = new SubMenu("Frontière avec " + l.getName());
 				countryBorders.add(border);
 				for (int k=0;k<3;k++){
-					SubMenu borderType = new SubMenu("Frontière "+ this.model.getNetwork().getEdges()[i][j][k].getClass().getSimpleName() + " avec " + l.getName());
+					Border z = b[k];
+					SubMenu borderType = new SubMenu("Frontière "+ this.model.getNetwork().getEdges()[i][j][k].getClass().getSimpleName() + " avec " + l.getName(), ()->z.returnOpened() + "\nTemps de voyage: " + z.getCrossingTime() + "\nNombre de voyageurs par unité de temps: " + z.getFreqRate());
 					border.add(borderType);
-					borderType.add(x-> b[k].setOpened(true),"Ouvrir la frontière");
-					borderType.add(x-> b[k].setOpened(false),"Fermer la frontière");
-					
+					borderType.add(x-> z.setOpened(true),"Ouvrir la frontière");
+					borderType.add(x-> z.setOpened(false),"Fermer la frontière");
+					borderType.add(x->{
+						double y = Double.parseDouble(x);
+						try{
+							z.setCrossingTime(y);
+							} catch (ImpossibleValue e){
+								System.out.println(e.getTitle());
+							}
+						},"Temps de voyage");
+					borderType.add(x->{
+						double y = Double.parseDouble(x);
+						try{
+							z.setFreqRate(y);
+						} catch (ImpossibleValue e){
+							System.out.println(e.getTitle());
+						}
+					},"Nombre de voyageurs par unité de temps");
 					}
-					
-				
 				}
 			}
-			
-		}
 		
 		SubMenu eventParameters=new SubMenu("Evènements");
 		

@@ -28,19 +28,26 @@ public class Border {
 	public double getFreqRate() {
 		return freqRate;
 	}
-	public void setFreqRate(double freqRate) {
-		this.freqRate = freqRate;
+	public void setFreqRate(double freqRate) throws ImpossibleValue{
+		if (freqRate<0){throw new ImpossibleValue("Le nombre de voyageurs doit être positif");}
+		else {	this.freqRate = freqRate;}
 	}
 	public double getCrossingTime() {
 		return crossingTime;
 	}
-	public void setCrossingTime(double crossingTime) {
-		this.crossingTime = crossingTime;
+	public void setCrossingTime(double crossingTime) throws ImpossibleValue{
+		if (crossingTime<0){throw new ImpossibleValue("Le temps de voyage doit être positif");}
+		else {this.crossingTime = crossingTime;}
 	}
 	public double getHygieneRate() {
 		return hygieneRate;
 	}
 	public void setHygieneRate(double hygieneRate) {
 		this.hygieneRate = hygieneRate;
+	}
+	
+	public String returnOpened(){
+		if (this.isOpened()){return "Frontière ouverte";}
+		else {return "Frontière fermée";}
 	}
 }
