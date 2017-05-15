@@ -1,7 +1,7 @@
 package propagation;
 
 public class Cell {
-	public Cell(double id, double susceptibles, double infectives, double recovered, double population, float hygieneRate) {
+	public Cell(int id, double susceptibles, double infectives, double recovered, double population, float hygieneRate) {
 		this.id = id;
 		this.susceptibles = susceptibles;
 		this.infectives = infectives;
@@ -10,17 +10,17 @@ public class Cell {
 		this.hygieneRate = hygieneRate;
 	}
 	
-	private double id;
+	private int id;
 	private double susceptibles;
 	private double infectives;
 	private double recovered;
 	private double population;
 	private float hygieneRate;
 	
-	public double getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(double id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public double getSusceptibles() {

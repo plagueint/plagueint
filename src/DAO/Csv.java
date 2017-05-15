@@ -1,5 +1,7 @@
 package DAO;
 import propagation.Event;
+import propagation.Country;
+import propagation.Cell;
 
 
 import java.io.BufferedReader;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import propagation.Country;
+
 public class Csv {
 	
 	public static ArrayList<String[]> read(String file, String separator, int[] infoPosition){ // Il y a un polymorphisme sans infoPosition (voir plus bas)
@@ -128,6 +130,22 @@ public class Csv {
 			result.add(importEvent(t));
 		}
 		return result;
+	}
+	
+	public Country importCountry(String[] liste , int id){
+		double population = Double.parseDouble(liste[0]);
+		return new Country(id,population,0,0,population,1,liste[1]);
+		
+	}
+	
+	public Cell[] importCountryList(ArrayList<String[]> table){
+		int id = 0;
+		int total=table.size();
+		Cell[] result=new Cell[total];
+		for (id=0;id<total;id++){
+			result[id]=importCountry(table.get(id),id);
+		}
+		return result;		
 	}
 	
 }

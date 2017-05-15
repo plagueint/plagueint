@@ -1,7 +1,7 @@
 package propagation;
 
 public class Country extends Cell{
-	public Country(double id, double susceptibles, double infectives, double recovered, double population, float hygieneRate, String name) {
+	public Country(int id, double susceptibles, double infectives, double recovered, double population, float hygieneRate, String name) {
 		super(id, susceptibles, infectives, recovered, population, hygieneRate);
 		this.name = name;
 	}
