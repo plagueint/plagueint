@@ -11,6 +11,29 @@ public class Context {
 	
 	private GenericModel model=new SIRModel();
 	
+	/* Arborescence du Menu
+	 * modelMenu
+	 * firstSubMenu
+	 * * startParameters
+	 * * * country
+	 * * * * countryPopulation
+	 * * * * countryBorders
+	 * * diseaseParameter
+	 * * * modelChoice
+	 * * * constantes
+	 * 
+	 * secondSubMenu
+	 * *
+	 * *
+	 * 
+	 * eventSubMenu
+	 * * createEvent
+	 * * listEvent
+	 * * deleteEvent
+	 * 
+	 * 
+	 */
+	
 	
 	private Menu constructModelMenu() {
 		// Pour ajouter un menu: new SubMenu("Titre", [ ()->String qui renvoie l'état que l'on veut indiquer (Ex: modelChoice) ] )
@@ -93,14 +116,33 @@ public class Context {
 				}
 			}
 		
-		SubMenu eventParameters=new SubMenu("Evènements");
+		//on définit les subMenu de choix de Maladie (secondSubMenu)
+		//Les valeurs 1 et 2 sont à changés dans les deux lignes qui suivent
+		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Peste"),"Peste");
+		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Lèpre"),"Lèpre");
 		
+		//On veut pouvoir créer des événements en cours de propagation pour modifier des données:
+		SubMenu eventSubMenu=new SubMenu("Gérer les évenements");
+		modelMenu.add(eventSubMenu);
+		SubMenu createEvent=new SubMenu("Créer un évenement");
+		eventSubMenu.add(createEvent);
+		Event e=new Event("",0);
+		//createEvent.add(MenuItem.events.add(e));
+		//eventSubMenu.add(x-> this.model,"Lister les évenements");
+		
+		//SubMenu deleteEvent=new SubMenu("Supprimer un événement")
+		//eventSubMenu.add(x->this.model=new);
+		
+				
 		firstSubMenu.add(diseaseParameter);
 		firstSubMenu.add(startParameters);
-		firstSubMenu.add(eventParameters);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);
+		
+		
 		return modelMenu;
+		
+		
 	}
 
 	
