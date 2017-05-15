@@ -20,10 +20,10 @@ public class SIRModel extends GenericModel{
 	private double recovered;
 	private double gamma;
 
-	double getRecovered() {
+	public double getRecovered() {
 		return recovered;
 	}
-	void setRecovered(int recovered) {
+	public void setRecovered(int recovered) {
 		this.recovered = recovered;
 	}
 	double getGamma() {

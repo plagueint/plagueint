@@ -52,19 +52,19 @@ public abstract class GenericModel {
 	public void setNetwork(Graph network) {
 		this.network = network;
 	}
-	double getSusceptibles() {
+	public double getSusceptibles() {
 		return susceptibles;
 	}
-	void setSusceptibles(int susceptibles) {
+	public void setSusceptibles(int susceptibles) {
 		this.susceptibles = susceptibles;
 	}
-	double getInfectives() {
+	public double getInfectives() {
 		return infectives;
 	}
-	void setInfectives(int infectives) {
+	public void setInfectives(int infectives) {
 		this.infectives = infectives;
 	}
-	double getDt() {
+	public double getDt() {
 		return dt;
 	}
 	public void setDt(double dt) {
@@ -73,6 +73,11 @@ public abstract class GenericModel {
 	
 	public String toString(){
 		return "Dt : " + this.dt + " | beta : " + this.beta +"\n";
+	}
+
+	public double getRecovered() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 
