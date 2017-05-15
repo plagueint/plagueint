@@ -7,6 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 import propagation.Country;
 public class Csv {
 	
@@ -117,4 +120,14 @@ public class Csv {
 		}
 		return e;
 	}
+	
+	public PriorityQueue<Event> import_all_CSV(String file, String separator){
+		ArrayList<String[]> tableau=read(file,separator);
+		PriorityQueue<Event> result= new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+		for(String[] t:tableau){
+			result.add(import_event(t));
+		}
+		return result;
+	}
+	
 }
