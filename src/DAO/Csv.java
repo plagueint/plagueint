@@ -1,7 +1,5 @@
 package DAO;
-import propagation.Event;
-import propagation.Country;
-import propagation.Cell;
+import propagation.*;
 
 
 import java.io.BufferedReader;
@@ -138,14 +136,42 @@ public class Csv {
 		
 	}
 	
-	public Cell[] importCountryList(ArrayList<String[]> table){
+	public Cell[] importCountryList(String file, String separator){
+		ArrayList<String[]> table=read(file,separator);
 		int id = 0;
 		int total=table.size();
 		Cell[] result=new Cell[total];
 		for (id=0;id<total;id++){
 			result[id]=importCountry(table.get(id),id);
 		}
-		return result;		
+		return result;
 	}
 	
+	public Border importBorder(String[] liste){
+		return new Border(true,0,0,1);
+	}
+	
+	public Border[][][] importEntireBorder(String file,String separator,int countryTotal) throws UnexpectedFile{
+		ArrayList<String[]> table=read(file,separator);
+		int i = 0;
+		int total=table.size();
+		Border[][][] result=new Border[countryTotal][countryTotal][3];
+		for (i=0;i<total;i++){
+			int firstCountry=Integer.parseInt(table.get(0)[0]);
+			int secondCountry=Integer.parseInt(table.get(0)[1]);
+			
+			if (file=="maritime.txt"){
+				result[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);
+			}else if (file=="terrestre.txt"){
+				result[firstCountry][secondCountry][1]=new Land(true,0,0,1);
+			}else if (file=="aerienne.txt"){
+				result[firstCountry][secondCountry][2]=new Air(true,0,0,1);
+			}else{
+				throw new UnexpectedFile();
+			}
+			
+		}
+		
+		return result;
+	}
 }
