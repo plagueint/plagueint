@@ -1,11 +1,13 @@
 package DAO;
+import propagation.Event;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import propagation.Country;
 public class Csv {
 	
 	public static ArrayList<String[]> read(String file, String separator, int[] infoPosition){ // Il y a un polymorphisme sans infoPosition (voir plus bas)
@@ -100,5 +102,19 @@ public class Csv {
         }
 		
 		return table;
+	}
+	
+	public Event import_event(String[] liste){
+		double time=0;
+		try{
+			time = Double.parseDouble(liste[0]);
+		}catch (NumberFormatException e){
+			System.out.println("Error in parsing event");
+		}
+		Event e = new Event(time);
+		for(String s : liste){
+			e.getMenuPath().add(s);
+		}
+		return e;
 	}
 }
