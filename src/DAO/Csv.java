@@ -107,7 +107,7 @@ public class Csv {
 		return table;
 	}
 	
-	public Event import_event(String[] liste){
+	public Event importEvent(String[] liste){
 		double time=0;
 		try{
 			time = Double.parseDouble(liste[0]);
@@ -121,11 +121,11 @@ public class Csv {
 		return e;
 	}
 	
-	public PriorityQueue<Event> import_all_CSV(String file, String separator){
+	public PriorityQueue<Event> importEntireCSV(String file, String separator){
 		ArrayList<String[]> tableau=read(file,separator);
 		PriorityQueue<Event> result= new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		for(String[] t:tableau){
-			result.add(import_event(t));
+			result.add(importEvent(t));
 		}
 		return result;
 	}
