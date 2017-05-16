@@ -126,8 +126,13 @@ public class Context {
 		modelMenu.add(eventSubMenu);
 		SubMenu createEvent=new SubMenu("Créer un évenement");
 		eventSubMenu.add(createEvent);
-		Event e=new Event("",0);
-		//createEvent.add(MenuItem.events.add(e));
+		
+		createEvent.add(x->{
+			Event ev=new Event(0);//on créer un event vide
+			ev.setTime(Double.parseDouble(x));
+			}, "Définir l'heure:");
+		
+		//createEvent.add(MenuItem.events.add(ev));
 		//eventSubMenu.add(x-> this.model,"Lister les évenements");
 		
 		//SubMenu deleteEvent=new SubMenu("Supprimer un événement")
@@ -149,7 +154,7 @@ public class Context {
 	public static void main(String[] args) {
 		Context context=new Context();
 		Menu mainMenu=context.constructModelMenu();
-		Event e=new Event("test",0);
+		Event e=new Event(0);
 		mainMenu.getUserChoice(e);
 		System.out.println(MenuItem.events);
 	}

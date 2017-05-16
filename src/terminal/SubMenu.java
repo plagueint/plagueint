@@ -75,6 +75,10 @@ public class SubMenu implements Menu{
 		this.add(consumer,s,null,()->true);
 	}
 	
+	public void add(Consumer<String> consumer, Consumer<String> consumer2, String s){
+		this.add(consumer,s,null,()->true);
+	}
+	
 	public void remove(int i){
 		this.submenus.remove(i);
 		this.length-=1;

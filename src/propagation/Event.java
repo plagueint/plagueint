@@ -2,7 +2,7 @@ package propagation;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Event {
-	public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
+	/* public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
 		super();
 		this.setName(name);
 		this.setTime(time);
@@ -15,8 +15,21 @@ public class Event {
 		this.setTime(time);
 		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
 	}
+	*/
 	
-	private String name;
+	public Event(double time, ConcurrentLinkedQueue<String> menuPath) {
+		super();
+		this.setTime(time);
+		this.setMenuPath(menuPath);
+	}
+	
+	public Event(double time){
+		super();
+		this.setTime(time);
+		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
+	}
+	
+	//private String name;
 	private double time;
 	private ConcurrentLinkedQueue<String> menuPath;
 	
@@ -26,12 +39,15 @@ public class Event {
 	void setMenuPath(ConcurrentLinkedQueue<String> menuPath) {
 		this.menuPath = menuPath;
 	}
+	
+	/*
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	*/
 	public double getTime() {
 		return time;
 	}
@@ -44,7 +60,8 @@ public class Event {
 	}
 	public Event addChoice(String s){
 		ConcurrentLinkedQueue<String> newMenuPath= new ConcurrentLinkedQueue<String>(this.menuPath);
-		Event next=new Event(this.name,this.time,newMenuPath);
+		//Event next=new Event(this.name,this.time,newMenuPath);
+		Event next=new Event(this.time,newMenuPath);
 		next.menuPath.add(s);
 		return next;
 	}
@@ -53,12 +70,13 @@ public class Event {
 		return e.getTime();
 	}
 	
-	public String toString(){
+	/* public String toString(){
 		String s=name + ":";
 		for (String i : menuPath){
 			s += i + ","; 
 		}
 		return s + ";" + time;
 	}
+	*/
 	
 }
