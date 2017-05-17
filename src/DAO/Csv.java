@@ -148,7 +148,7 @@ public class Csv {
 	}
 	
 	public Border importBorder(String[] liste){
-		return new Border(true,0,0,1);
+		return new Border(true,1,1,1);
 	}
 	
 	public Border[][][] importEntireBorder(String file,String separator,int countryTotal) throws UnexpectedFile{
