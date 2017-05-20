@@ -124,26 +124,19 @@ public class Context {
 		//On veut pouvoir créer des événements en cours de propagation pour modifier des données:
 		SubMenu eventSubMenu=new SubMenu("Gérer les évenements");
 		modelMenu.add(eventSubMenu);
-		SubMenu createEvent=new SubMenu("Créer un évenement");
-		eventSubMenu.add(createEvent);
+		SubMenu createEvent=new EventSubMenu("Créer un évenement");		
 		
-		createEvent.add(x->{
-			Event ev=new Event(0);//on créer un event vide
-			ev.setTime(Double.parseDouble(x));
-			}, "Définir l'heure:");
-		
-		//createEvent.add(MenuItem.events.add(ev));
 		//eventSubMenu.add(x-> this.model,"Lister les évenements");
 		
 		//SubMenu deleteEvent=new SubMenu("Supprimer un événement")
 		//eventSubMenu.add(x->this.model=new);
 		
-				
+		createEvent.add(firstSubMenu);
+		eventSubMenu.add(createEvent);
 		firstSubMenu.add(diseaseParameter);
 		firstSubMenu.add(startParameters);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);
-		
 		
 		return modelMenu;
 		

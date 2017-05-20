@@ -8,7 +8,7 @@ import java.util.function.BooleanSupplier;
 public class SubMenu implements Menu{
 	
 	
-	private ArrayList<Menu> submenus = new ArrayList<Menu>();
+	protected ArrayList<Menu> submenus = new ArrayList<Menu>();
 	private String menuName;
 	private Supplier<String> current;
 	private int length = submenus.size();
@@ -101,6 +101,10 @@ public class SubMenu implements Menu{
 		return this.current.get();
 	}
 	
+	public void getNextMenu(int value,Event e,String choice){
+		submenus.get(value).getUserChoice(e.addChoice(choice));
+	}
+	
 	public void getUserChoice(Event e){
 		int value=0;
 		String choice = "";
@@ -114,7 +118,7 @@ public class SubMenu implements Menu{
 				if (value == -1){
 					ask=false;
 				}else if (submenus.get(value).isAvailable()){
-					submenus.get(value).getUserChoice(e.addChoice(choice));
+					getNextMenu(value,e,choice);
 				}else{
 					throw new NotAvailableChoice();
 				}

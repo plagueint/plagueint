@@ -70,13 +70,13 @@ public class Event {
 		return e.getTime();
 	}
 	
-	/* public String toString(){
-		String s=name + ":";
+	public String toString(){
+		String s=String.valueOf(time);
 		for (String i : menuPath){
-			s += i + ","; 
+			s += "," + i ; 
 		}
-		return s + ";" + time;
+		return s;
 	}
-	*/
+	
 	
 }
