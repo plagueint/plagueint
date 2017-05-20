@@ -28,6 +28,8 @@ public class Context {
 	 * 
 	 * eventSubMenu
 	 * * createEvent
+	 * * * constantes
+	 * * * graphParameters
 	 * * listEvent
 	 * * deleteEvent
 	 * 
@@ -47,7 +49,7 @@ public class Context {
 		modelChoice.add(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death",()->this.model.getClass().getName());
 		SubMenu diseaseParameter=new SubMenu("Paramètres de propagation",()-> "Current parameters are :\n" + this.model.getClass().getSimpleName() + "\n" + this.model.toString());
 		diseaseParameter.add(modelChoice);
-		SubMenu constantes=new SubMenu("Constantes");
+		SubMenu constantes=new SubMenu("Constantes",()->"Constantes actuelles :\n" + this.model.toString());
 		diseaseParameter.add(constantes);
 		constantes.add(x->this.model.setBeta(Double.parseDouble(x)),"Beta: coefficient de propagation");
 		constantes.add(x->((SIRModel) this.model).setGamma(Double.parseDouble(x)),"Gamma: coefficient de guérison",()->this.model.getClass()==SIRModel.class || this.model.getClass()==SIRBaDModel.class);
@@ -58,7 +60,7 @@ public class Context {
 			Country c=((Country) this.model.getNetwork().getCells()[i]);
 			SubMenu country=new SubMenu(c.getName());
 			startParameters.add(country);
-			SubMenu countryPopulation=new SubMenu("Population de départ du pays",()->"Population totale:" + c.getPopulation() + "\nSains:" + c.getSusceptibles() + "\nInfectés:" + c.getInfectives() + "\nGuéris:" + c.getRecovered());
+			SubMenu countryPopulation=new SubMenu("Population du pays",()->"Population totale:" + c.getPopulation() + "\nSains:" + c.getSusceptibles() + "\nInfectés:" + c.getInfectives() + "\nGuéris:" + c.getRecovered());
 			country.add(countryPopulation);
 			countryPopulation.add(x->{
 				double y = Double.parseDouble(x);
@@ -131,7 +133,13 @@ public class Context {
 		//SubMenu deleteEvent=new SubMenu("Supprimer un événement")
 		//eventSubMenu.add(x->this.model=new);
 		
-		createEvent.add(firstSubMenu);
+		
+		
+		
+		createEvent.add(constantes);
+		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
+		graphParameters.setSubmenus(startParameters.getSubmenus());
+		createEvent.add(graphParameters);
 		eventSubMenu.add(createEvent);
 		firstSubMenu.add(diseaseParameter);
 		firstSubMenu.add(startParameters);

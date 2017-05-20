@@ -9,6 +9,17 @@ public class SubMenu implements Menu{
 	
 	
 	protected ArrayList<Menu> submenus = new ArrayList<Menu>();
+	
+	
+	public ArrayList<Menu> getSubmenus() {
+		return submenus;
+	}
+
+	public void setSubmenus(ArrayList<Menu> submenus) {
+		this.submenus = submenus;
+	}
+
+
 	private String menuName;
 	private Supplier<String> current;
 	private int length = submenus.size();
