@@ -121,7 +121,7 @@ public class Csv {
 		return e;
 	}
 	
-	public PriorityQueue<Event> importEntireCSV(String file, String separator){
+	public PriorityQueue<Event> importEventList(String file, String separator){
 		ArrayList<String[]> tableau=read(file,separator);
 		PriorityQueue<Event> result= new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		for(String[] t:tableau){
@@ -151,7 +151,7 @@ public class Csv {
 		return new Border(true,1,1,1);
 	}
 	
-	public Border[][][] importEntireBorder(String file,String separator,int countryTotal) throws UnexpectedFile{
+	public Border[][][] importBorderList(String file,String separator,int countryTotal) throws UnexpectedFile{
 		ArrayList<String[]> table=read(file,separator);
 		int i = 0;
 		int total=table.size();
