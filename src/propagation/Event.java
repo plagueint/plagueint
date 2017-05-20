@@ -2,20 +2,6 @@ package propagation;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Event {
-	/* public Event(String name, double time, ConcurrentLinkedQueue<String> menuPath) {
-		super();
-		this.setName(name);
-		this.setTime(time);
-		this.setMenuPath(menuPath);
-	}
-	
-	public Event(String name,double time){
-		super();
-		this.setName(name);
-		this.setTime(time);
-		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
-	}
-	*/
 	
 	public Event(double time, ConcurrentLinkedQueue<String> menuPath) {
 		super();
@@ -29,7 +15,6 @@ public class Event {
 		this.setMenuPath(new ConcurrentLinkedQueue<String> ());
 	}
 	
-	//private String name;
 	private double time;
 	private ConcurrentLinkedQueue<String> menuPath;
 	
@@ -40,14 +25,6 @@ public class Event {
 		this.menuPath = menuPath;
 	}
 	
-	/*
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	*/
 	public double getTime() {
 		return time;
 	}
@@ -60,7 +37,6 @@ public class Event {
 	}
 	public Event addChoice(String s){
 		ConcurrentLinkedQueue<String> newMenuPath= new ConcurrentLinkedQueue<String>(this.menuPath);
-		//Event next=new Event(this.name,this.time,newMenuPath);
 		Event next=new Event(this.time,newMenuPath);
 		next.menuPath.add(s);
 		return next;
