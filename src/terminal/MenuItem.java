@@ -56,6 +56,10 @@ public class MenuItem implements Menu{
 				console.print("You might have not provided the right type\n");
 			}
 		}
+		generateEvent(e, choice);
+	}
+	
+	protected void generateEvent(Event e,String choice){
 		events.add(e.addChoice(choice));
 	}
 	

@@ -1,6 +1,5 @@
 package Main;
 import terminal.*;
-
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -14,6 +13,7 @@ Elle renvoie les résultats en sortie dans la classe output
 public class Context {
 	
 	private GenericModel model=new SIRModel();
+	private String fileToWrite="out";
 
 	
 	/* Arborescence du Menu
@@ -38,6 +38,8 @@ public class Context {
 	 * * listEvent (Lister et supprimer)
 	 * * deleteEvent
 	 * 
+	 * exportMenu
+	 * importMenu
 	 * 
 	 */
 	
@@ -137,6 +139,8 @@ public class Context {
 		createEvent.add(constantes);
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
 		graphParameters.setSubmenus(startParameters.getSubmenus());
+		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.writeToFile(x),"Exporter les paramètres et évènements");
+		modelMenu.add(exportMenu);
 		createEvent.add(graphParameters);
 		eventSubMenu.add(createEvent);
 		firstSubMenu.add(diseaseParameter);

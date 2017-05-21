@@ -1,10 +1,12 @@
 package DAO;
 import propagation.*;
-
+import terminal.MenuItem;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -105,6 +107,20 @@ public class Csv {
         }
 		
 		return table;
+	}
+	
+	
+	public static void writeToFile(String fileToWrite){
+		try {
+	        BufferedWriter out = new BufferedWriter(new FileWriter(fileToWrite));
+	        for(Event e : MenuItem.events){
+				out.write(e.toString());;
+				out.newLine();
+			}
+	        out.close();
+	        } catch (IOException e) {
+	        	System.out.println("Error while opening file");
+	        }
 	}
 	
 	public Event importEvent(String[] liste){
