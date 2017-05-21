@@ -139,7 +139,7 @@ public class Csv {
 	
 	public static ArrayList<Event> importEventList(String file, String separator){
 		ArrayList<String[]> tableau=read(file,separator);
-		ArrayList<Event> result= new ArrayList();
+		ArrayList<Event> result= new ArrayList<Event>();
 		for(String[] t:tableau){
 			result.add(importEvent(t));
 		}
