@@ -110,11 +110,11 @@ public class Csv {
 	}
 	
 	
-	public static void writeToFile(String fileToWrite){
+	public static void exportEvent(String fileToWrite){
 		try {
 	        BufferedWriter out = new BufferedWriter(new FileWriter(fileToWrite));
 	        for(Event e : MenuItem.events){
-				out.write(e.toString());;
+				out.write(e.toCSV());;
 				out.newLine();
 			}
 	        out.close();
@@ -137,9 +137,9 @@ public class Csv {
 		return e;
 	}
 	
-	public static PriorityQueue<Event> importEventList(String file, String separator){
+	public static ArrayList<Event> importEventList(String file, String separator){
 		ArrayList<String[]> tableau=read(file,separator);
-		PriorityQueue<Event> result= new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+		ArrayList<Event> result= new ArrayList();
 		for(String[] t:tableau){
 			result.add(importEvent(t));
 		}

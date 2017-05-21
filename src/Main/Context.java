@@ -139,14 +139,17 @@ public class Context {
 		createEvent.add(constantes);
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
 		graphParameters.setSubmenus(startParameters.getSubmenus());
-		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.writeToFile(x),"Exporter les paramètres et évènements");
-		modelMenu.add(exportMenu);
+		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.exportEvent(x),"Exporter les paramètres et évènements");
+		MenuItem importMenu=new NoEventMenuItem(x->MenuItem.events.addAll(DAO.Csv.importEventList(x,";")),"Importer les paramètres et évènements");
+		
 		createEvent.add(graphParameters);
 		eventSubMenu.add(createEvent);
 		firstSubMenu.add(diseaseParameter);
 		firstSubMenu.add(startParameters);
 		modelMenu.add(firstSubMenu);
 		modelMenu.add(secondSubMenu);
+		modelMenu.add(exportMenu);
+		modelMenu.add(importMenu);
 		
 		return modelMenu;
 		

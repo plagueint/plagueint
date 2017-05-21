@@ -49,7 +49,15 @@ public class Event {
 	public String toString(){
 		String s=String.valueOf(time);
 		for (String i : menuPath){
-			s += "," + i ; 
+			s += ";" + i ; 
+		}
+		return s;
+	}
+	
+	public String toCSV(){
+		String s=String.valueOf(time);
+		for (String i : menuPath){
+			s += ";" + i ; 
 		}
 		return s;
 	}
