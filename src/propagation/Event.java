@@ -8,6 +8,7 @@ public class Event {
 		this.setTime(time);
 		this.setMenuPath(menuPath);
 	}
+
 	
 	public Event(double time){
 		super();
@@ -24,7 +25,6 @@ public class Event {
 	void setMenuPath(ConcurrentLinkedQueue<String> menuPath) {
 		this.menuPath = menuPath;
 	}
-	
 	public double getTime() {
 		return time;
 	}
@@ -53,6 +53,5 @@ public class Event {
 		}
 		return s;
 	}
-	
 	
 }
