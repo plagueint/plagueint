@@ -21,7 +21,7 @@ public class SubMenu implements Menu{
 
 
 	private String menuName;
-	private Supplier<String> current;
+	protected Supplier<String> current;
 	private int length = submenus.size();
 	private BooleanSupplier available;
 	

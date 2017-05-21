@@ -2,8 +2,8 @@ package terminal;
 
 import propagation.Event;
 
-public class EventSubMenu extends SubMenu{
-	public EventSubMenu(String name){
+public class EventCreationSubMenu extends SubMenu{
+	public EventCreationSubMenu(String name){
 		super(name);
 	}
 	

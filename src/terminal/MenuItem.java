@@ -1,7 +1,5 @@
 package terminal;
-import java.util.Comparator;
-import propagation.ImpossibleValue;
-import java.util.PriorityQueue;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.function.BooleanSupplier;
@@ -10,7 +8,7 @@ import propagation.Event;
 
 public class MenuItem implements Menu{
 	
-	final static public PriorityQueue<Event> events = new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+	final static public ArrayList<Event> events = new ArrayList<Event>();
 
 	
 	private Consumer<String> function;

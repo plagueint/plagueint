@@ -1,5 +1,9 @@
 package Main;
 import terminal.*;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 import propagation.*;
 
 /* La classe Main appelle les getters de terminal.Menu.
@@ -10,6 +14,7 @@ Elle renvoie les résultats en sortie dans la classe output
 public class Context {
 	
 	private GenericModel model=new SIRModel();
+
 	
 	/* Arborescence du Menu
 	 * modelMenu
@@ -30,7 +35,7 @@ public class Context {
 	 * * createEvent
 	 * * * constantes
 	 * * * graphParameters
-	 * * listEvent
+	 * * listEvent (Lister et supprimer)
 	 * * deleteEvent
 	 * 
 	 * 
@@ -126,16 +131,9 @@ public class Context {
 		//On veut pouvoir créer des événements en cours de propagation pour modifier des données:
 		SubMenu eventSubMenu=new SubMenu("Gérer les évenements");
 		modelMenu.add(eventSubMenu);
-		SubMenu createEvent=new EventSubMenu("Créer un évenement");		
-		
-		//eventSubMenu.add(x-> this.model,"Lister les évenements");
-		
-		//SubMenu deleteEvent=new SubMenu("Supprimer un événement")
-		//eventSubMenu.add(x->this.model=new);
-		
-		
-		
-		
+		SubMenu createEvent=new EventCreationSubMenu("Créer un évenement");		
+		SubMenu listEvent=new EventListSubMenu("Lister et supprimer l'évènement choisi");
+		eventSubMenu.add(listEvent);	
 		createEvent.add(constantes);
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
 		graphParameters.setSubmenus(startParameters.getSubmenus());
@@ -157,6 +155,8 @@ public class Context {
 		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event(0);
 		mainMenu.getUserChoice(e);
-		System.out.println(MenuItem.events);
+		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+		events.addAll(MenuItem.events);
+		System.out.println(events);
 	}
 }
