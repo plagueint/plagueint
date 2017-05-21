@@ -123,7 +123,7 @@ public class Csv {
 	        }
 	}
 	
-	public Event importEvent(String[] liste){
+	public static Event importEvent(String[] liste){
 		double time=0;
 		try{
 			time = Double.parseDouble(liste[0]);
@@ -137,7 +137,7 @@ public class Csv {
 		return e;
 	}
 	
-	public PriorityQueue<Event> importEventList(String file, String separator){
+	public static PriorityQueue<Event> importEventList(String file, String separator){
 		ArrayList<String[]> tableau=read(file,separator);
 		PriorityQueue<Event> result= new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		for(String[] t:tableau){
@@ -146,13 +146,13 @@ public class Csv {
 		return result;
 	}
 	
-	public Country importCountry(String[] liste , int id){
+	public static Country importCountry(String[] liste , int id){
 		double population = Double.parseDouble(liste[0]);
 		return new Country(id,population,0,0,population,1,liste[1]);
 		
 	}
 	
-	public Cell[] importCountryList(String file, String separator){
+	public static Cell[] importCountryList(String file, String separator){
 		ArrayList<String[]> table=read(file,separator);
 		int id = 0;
 		int total=table.size();
@@ -163,11 +163,11 @@ public class Csv {
 		return result;
 	}
 	
-	public Border importBorder(String[] liste){
+	public static Border importBorder(String[] liste){
 		return new Border(true,1,1,1);
 	}
 	
-	public Border[][][] importBorderList(String file,String separator,int countryTotal) throws UnexpectedFile{
+	public static Border[][][] importBorderList(String file,String separator,int countryTotal) throws UnexpectedFile{
 		ArrayList<String[]> table=read(file,separator);
 		int i = 0;
 		int total=table.size();
