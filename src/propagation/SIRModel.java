@@ -1,26 +1,35 @@
 package propagation;
 
+
+
 public class SIRModel extends GenericModel{
 	
-	public SIRModel(float beta, float gamma, Graph network, double susceptibles, double infectives, float dt, double recovered) {
-		super(beta, network, susceptibles, infectives, dt);
+	//Standard SIRModel
+	public SIRModel(){
+		super();
+		this.recovered=0;
+		this.gamma=0;
+	}
+
+	public SIRModel(double beta, double gamma, Graph network, double susceptibles, double infectives, double dt, double recovered,String name) {
+		super(beta, network, susceptibles, infectives, dt,name);
 		this.recovered=recovered;
 		this.gamma = gamma;
 	}
-
+	
 	private double recovered;
-	private float gamma;
+	private double gamma;
 
-	double getRecovered() {
+	public double getRecovered() {
 		return recovered;
 	}
-	void setRecovered(int recovered) {
+	public void setRecovered(int recovered) {
 		this.recovered = recovered;
 	}
-	float getGamma() {
+	double getGamma() {
 		return gamma;
 	}
-	void setGamma(float gamma) {
+	public void setGamma(double gamma) {
 		this.gamma = gamma;
 	}
 	
@@ -32,5 +41,10 @@ public class SIRModel extends GenericModel{
 		du[2] = gamma*u[1];
 		return du;
 	}
-		
+	
+	@Override
+	public String toString (){
+		String s=super.toString() ;
+		return s + "gamma : " + this.gamma + "\n";
+	}
 }
