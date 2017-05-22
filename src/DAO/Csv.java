@@ -35,29 +35,31 @@ public class Csv {
 
             br = new BufferedReader(new FileReader(file));
             
-            String[] useful_data = new String[nud];	// Tableau temporaire où l'on stocke les données de la ligne
+            
             
             while ((line = br.readLine()) != null) {
 
                 String[] data = line.split(separator);  // On split la ligne dans un tableau
+                String[] useful_data = new String[nud];	// Tableau temporaire où l'on stocke les données de la ligne
                 
                 for (int i = 0; i < nud; i++) {
 					useful_data[i] = data[infoPosition[i]];
-				}
+					}
+                
                 table.add(useful_data);
 
             }
 
         } catch (FileNotFoundException e) {  
-            System.out.println("File not found");;
+            System.out.println("File not found");
         } catch (IOException e) {
-            System.out.println("Error while opening the file");;
+            System.out.println("Error while opening the file");
         } finally {
             if (br != null) {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    System.out.println("Error while closing the file");;
+                    System.out.println("Error while closing the file");
                 }
             }
         }
