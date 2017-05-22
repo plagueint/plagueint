@@ -1,18 +1,18 @@
-"popular republic of ubuntu"
-"kingdom of slackware"
-"lubuntia"
-"xubuntia"
-"the debian republic"
-"the rogue state of mind"
-"new mageia republic"
-"the offensive kingdom"
-"the highlands of gentoo"
-"the great compile"
-"archland"
-"the ubuntu based emirates"
-"the opensuse kingdom"
-"the independient republic of fedora"
-"centosia"
-"kubuntustan"
-"the elementary state"
-"the red hat comonwealth"
+"popular republic of ubuntu",100000
+"kingdom of slackware",1000
+"lubuntia",20000
+"xubuntia",50000
+"the debian republic",100000
+"the rogue state of mind",10000
+"new mageia republic",3000
+"the offensive kingdom",45000
+"the highlands of gentoo",8000
+"the great compile",50000
+"archland",200000
+"the ubuntu based emirates",10000
+"the opensuse kingdom",30000
+"the independient republic of fedora",100000
+"centosia",100000
+"kubuntustan",10000
+"the elementary state",10000
+"the red hat comonwealth",50000

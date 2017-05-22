@@ -1,5 +1,7 @@
 package propagation;
 
+import DAO.UnexpectedFile;
+
 public class Graph {
 	
 	 
@@ -12,19 +14,35 @@ public class Graph {
 	private Border[][][] edges;
 	private Cell[] cells;
 	
-	/* À décommenter lorsque les fichiers à la racine seront valides.
 	public Graph (){
-		int nb = 3;
+		/* À décommenter si l'on veut rentrer 3 pays à la main 
+		int nb = 3; //Nombre de pays
 		this.cells=new Cell[nb];
-		this.cells=DAO.Csv.importCountryList("population_mondiale.txt",";"); //importe la liste de tous les pays [Fr, Al,..]
+		*/
+		this.cells=new Cell[18];
+		this.cells=DAO.Csv.importCountryList("data/linuxmap/country.txt",","); //importe la liste de tous les pays [Fr, Al,..]
 		
+		//3 car il y a trois types de borders: maritime, terreste, aérien
+		this.edges=new Border[18][18][3];
+		//countryTotal est le nombre de pays
 		
-		
-		
+		//On n'utilise un try/catch car les throws renvoie la gestion de l'erreur à la classe qui appelle
+		try {
+			this.edges=DAO.Csv.importBorderList("data/linuxmap/maritime.txt",",",18);
+		} catch (UnexpectedFile e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			this.edges=DAO.Csv.importBorderList("data/linuxmap/terreste.txt",",", 18);
+		} catch (UnexpectedFile e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 }
-*/
+
 	
-	public Graph (){
+/*	public Graph (){
 		//Extract information from CSV and fill up countries and edges
 		int nb = 3;
 		this.cells=new Cell[nb];	
@@ -40,6 +58,7 @@ public class Graph {
 			}
 		}
 	}
+	*/
 
 	public Border[][][] getEdges() {
 		return edges;
