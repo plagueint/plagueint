@@ -180,9 +180,9 @@ public class Csv {
 			if (file=="maritime.txt"){
 				result[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);
 			}else if (file=="terrestre.txt"){
-				result[firstCountry][secondCountry][1]=new Land(true,0,0,1);
+				result[firstCountry][secondCountry][1]=new Terrestre(true,0,0,1);
 			}else if (file=="aerienne.txt"){
-				result[firstCountry][secondCountry][2]=new Air(true,0,0,1);
+				result[firstCountry][secondCountry][2]=new Aérienne(true,0,0,1);
 			}else{
 				throw new UnexpectedFile();
 			}

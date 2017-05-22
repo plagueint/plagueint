@@ -14,17 +14,17 @@ public class EventCreationSubMenu extends SubMenu{
 		String choice = "";
 		boolean ask=true;
 		while(ask){
-			console.print("\nAt which time does the event trigger ? :");
+			console.print("\nA quel instant l'évènement doit-il être déclenché ?");
 			try{
 				choice = console.readLine();
 				value = Double.parseDouble(choice);
 				if (value >= 0){
 					ask=false;
 				}else{
-					console.print("A time must be positive");
+					console.print("Le temps doit être positif");
 				}
 			}catch (NumberFormatException error){
-				console.print("A Double is expected");
+				console.print("Un double est attendu");
 			}
 		}
 		this.time=value;

@@ -53,7 +53,7 @@ public class Context {
 		SubMenu modelChoice=new SubMenu("Choix d'un modèle",()->"Current model is " + this.model.getClass().getSimpleName());
 		modelChoice.add(x-> this.model=new SIRModel(), "Modèle SIR",()->this.model.getClass().getSimpleName(),()->this.model.getClass()!=SIRModel.class);
 		modelChoice.add(x-> this.model=new SIRBaDModel(), "Modèle SIR with Birth and Death",()->this.model.getClass().getName());
-		SubMenu diseaseParameter=new SubMenu("Paramètres de propagation",()-> "Current parameters are :\n" + this.model.getClass().getSimpleName() + "\n" + this.model.toString());
+		SubMenu diseaseParameter=new SubMenu("Paramètres de propagation",()-> "Les paramètres actuels de propagation sont :\n" + this.model.getClass().getSimpleName() + "\n" + this.model.toString());
 		diseaseParameter.add(modelChoice);
 		SubMenu constantes=new SubMenu("Constantes",()->"Constantes actuelles :\n" + this.model.toString());
 		diseaseParameter.add(constantes);
@@ -129,7 +129,7 @@ public class Context {
 		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Peste"),"Peste");
 		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Lèpre"),"Lèpre");
 		
-		//On veut pouvoir créer des événements en cours de propagation pour modifier des données:
+		//On veut pouvoir créer des événements en cours de propagation pour modifier des paramètres:
 		SubMenu eventSubMenu=new SubMenu("Gérer les évenements");
 		modelMenu.add(eventSubMenu);
 		SubMenu createEvent=new EventCreationSubMenu("Créer un évenement");		
