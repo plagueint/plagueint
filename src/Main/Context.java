@@ -154,6 +154,19 @@ public class Context {
 		
 		
 	}
+	
+	private void launchSimulation(int iterations,PriorityQueue<Event> events,Menu mainMenu){
+		this.model.clear();
+		
+		double time = 0;
+		for (int i=0;i<iterations;i++){
+			while (events.peek().getTime()==time){
+				mainMenu.getEventChoice(events.poll());
+			}
+			
+			
+		}
+	}
 
 	
 	public static void main(String[] args) {
@@ -163,6 +176,5 @@ public class Context {
 		mainMenu.getUserChoice(e);
 		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		events.addAll(MenuItem.events);
-		System.out.println(events);
 	}
 }

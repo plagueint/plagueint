@@ -26,4 +26,8 @@ public class SIRBaDModel extends SIRModel {
 		String s= super.toString();
 		return s + "mu : " + this.mu + "\n";
 	}
+	public void clear(){
+		super.clear();
+		this.mu=0;
+	}
 }

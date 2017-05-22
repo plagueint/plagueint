@@ -28,7 +28,6 @@ public interface Euler{
 		u[0]=u[0]+dt*du[0];
 		u[1]=u[1]+dt*du[1];
 		u[2]=u[2]+dt*du[2];
-		//du=f(u);
 		return new Tuple<double[],double[]>(u,du);
 	}	
 }

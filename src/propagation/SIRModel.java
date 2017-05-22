@@ -39,15 +39,18 @@ public class SIRModel extends GenericModel{
 		du[0] = -beta*u[0]*u[1]/(u[0]+u[1]+u[2]);
 		du[1] = beta*u[0]*u[1]/(u[0]+u[1]+u[2]) - gamma*u[1];
 		du[2] = gamma*u[1];
-		for(int i=0;i<u.length;i++){
-			u[i]=u[i]+du[i]*this.dt;
-		}
-		return u;
+		return du;
 	}
 	
 	@Override
 	public String toString (){
 		String s=super.toString() ;
 		return s + "gamma : " + this.gamma + "\n";
+	}
+	
+	public void clear(){
+		super.clear();
+		this.recovered=0;
+		this.gamma=0;
 	}
 }

@@ -80,5 +80,13 @@ public abstract class GenericModel {
 		return 0;
 	}
 	
+	public void clear(){
+		this.beta=0.00218;
+		this.susceptibles=1;
+		this.infectives=0;
+		this.network=new Graph();
+		this.dt=1;
+		this.name="maladie par défaut";
+	}
 
 }
