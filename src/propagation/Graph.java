@@ -34,8 +34,8 @@ public class Graph {
 		this.edges=new Border[nb][nb][3];
 		for (int i=0;i<nb;i++) {
 			for (int j=0;j<nb;j++) {
-				this.edges[i][j][0]=new Terrestre();
-				this.edges[i][j][1]=new Aérienne();
+				this.edges[i][j][0]=new Land();
+				this.edges[i][j][1]=new Air();
 				this.edges[i][j][2]=new Maritime();
 			}
 		}

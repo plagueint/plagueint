@@ -100,7 +100,7 @@ public class Context {
 				countryBorders.add(border);
 				for (int k=0;k<3;k++){
 					Border z = b[k];
-					SubMenu borderType = new SubMenu("Frontière "+ this.model.getNetwork().getEdges()[i][j][k].getClass().getSimpleName() + " avec " + l.getName(), ()->z.returnOpened() + "\nTemps de voyage: " + z.getCrossingTime() + "\nNombre de voyageurs par unité de temps: " + z.getFreqRate());
+					SubMenu borderType = new SubMenu("Frontière "+ this.model.getNetwork().getEdges()[i][j][k].getMenuName() + " avec " + l.getName(), ()->z.returnOpened() + "\nTemps de voyage: " + z.getCrossingTime() + "\nNombre de voyageurs par unité de temps: " + z.getFreqRate());
 					border.add(borderType);
 					borderType.add(x-> z.setOpened(true),"Ouvrir la frontière");
 					borderType.add(x-> z.setOpened(false),"Fermer la frontière");

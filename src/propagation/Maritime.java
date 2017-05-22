@@ -8,4 +8,8 @@ public class Maritime extends Border{
 	public Maritime(){
 		super();
 	}
+	
+	public String getMenuName(){
+		return "Maritime";
+	}
 }

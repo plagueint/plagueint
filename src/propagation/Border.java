@@ -50,4 +50,8 @@ public class Border {
 		if (this.isOpened()){return "Frontière ouverte";}
 		else {return "Frontière fermée";}
 	}
+	
+	public String getMenuName(){
+		return "";
+	}
 }
