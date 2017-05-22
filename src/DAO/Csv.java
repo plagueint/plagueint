@@ -156,10 +156,10 @@ public class Csv {
 	
 	public static Cell[] importCountryList(String file, String separator){
 		ArrayList<String[]> table=read(file,separator);
-		int id = 0;
 		int total=table.size();
 		Cell[] result=new Cell[total];
-		for (id=0;id<total;id++){
+		for (int id=0;id<total;id++){
+			
 			result[id]=importCountry(table.get(id),id);
 		}
 		return result;
@@ -169,28 +169,27 @@ public class Csv {
 		return new Border(true,1,1,1);
 	}
 	
-	public static Border[][][] importBorderList(String file,String separator,int countryTotal,HashMap<String,Integer> revertCell) throws UnexpectedFile{
+	public static Border[][][] importBorderList(Border[][][] borders,String file,String separator,int countryTotal,HashMap<String,Integer> revertCell) throws UnexpectedFile{
 		ArrayList<String[]> table=read(file,separator);
 		int i = 0;
 		int total=table.size();
-		Border[][][] result=new Border[countryTotal][countryTotal][3];
 		for (i=0;i<total;i++){
 			int firstCountry=revertCell.get(table.get(0)[0]);
 			int secondCountry=revertCell.get(table.get(0)[1]);
 			
-			if (file=="maritime.txt"){
-				result[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);
-			}else if (file=="terrestre.txt"){
-				result[firstCountry][secondCountry][1]=new Land(true,0,0,1);
-			}else if (file=="aerienne.txt"){
-				result[firstCountry][secondCountry][2]=new Air(true,0,0,1);
+			if (file=="data/linuxmap/maritime.txt"){
+				borders[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);
+			}else if (file=="data/linuxmap/terrestre.txt"){
+				borders[firstCountry][secondCountry][1]=new Land(true,0,0,1);
+			}else if (file=="data/linuxmap/aerienne.txt"){
+				borders[firstCountry][secondCountry][2]=new Air(true,0,0,1);
 			}else{
 				throw new UnexpectedFile();
 			}
 			
 		}
 		
-		return result;
+		return borders;
 	}
 	
 	

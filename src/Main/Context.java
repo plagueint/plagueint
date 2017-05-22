@@ -181,7 +181,5 @@ public class Context {
 		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event(0);
 		mainMenu.getUserChoice(e);
-		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
-		events.addAll(MenuItem.events);
 	}
 }
