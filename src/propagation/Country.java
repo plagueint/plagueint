@@ -23,4 +23,8 @@ public class Country extends Cell{
 		super();
 		this.name="Défaut";		
 	}
+	
+	public String toCSV(){
+		return "" + this.getSusceptibles() + ';' + this.getInfectives() + ';' + this.getRecovered() + ';' + this.getPopulation() + "\n";
+	}
 }

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class Csv {
 	
+	final static String dir="countriesData";
+	
 	public static ArrayList<String[]> read(String file, String separator, int[] infoPosition){ // Il y a un polymorphisme sans infoPosition (voir plus bas)
 		/*
 		 * Retourne sous forme de tableau les données d'un Csv
@@ -186,5 +188,23 @@ public class Csv {
 		}
 		
 		return result;
+	}
+	
+	
+	public static String exportData(double time,Country c){
+		return time + ";" + c.toCSV();
+	}
+	public static void exportAllCountry(double time,GenericModel m){
+		double t = time * m.getDt();
+		for (Cell cell : m.getNetwork().getCells()){
+			Country c=(Country) cell;
+			try {
+		        BufferedWriter out = new BufferedWriter(new FileWriter(c.getName()));
+		        out.write(exportData(t,c));;
+		        out.close();
+		    } catch (IOException e) {
+		        	System.out.println("Error while opening file");
+		    }
+		}
 	}
 }
