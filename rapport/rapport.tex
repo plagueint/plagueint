@@ -35,10 +35,10 @@ Encadrant: Mr. Vincent Gauthier }
 \begin{flushleft}
   \begin{itemize}
 	\item[$\bullet$] Mode de visualisation (écoulement du temps) 
-	\item[$\bullet$] Modélisation mondiale avec celulle de la taille d'un pays
+	\item[$\bullet$] Modélisation mondiale avec cellules de la taille d'un pays
 	\item[$\bullet$] Possibilité d'exporter le résultat dans un fichier lisible 
-	\item[$\bullet$] Voix de transports prise en compte 
-	\item[$\bullet$] Possibilité d'ajouter des événements (blocage d'aéroports, gare, etc..) au début
+	\item[$\bullet$] Voies de transports prises en compte 
+	\item[$\bullet$] Possibilité d'ajouter des événements (blocage d'aéroports, gare, etc..) au début de la modélisation
   \end{itemize}
 \end{flushleft}
 
@@ -46,8 +46,8 @@ Encadrant: Mr. Vincent Gauthier }
 \begin{flushleft}
   \begin{itemize}
 	\item[$\bullet$] Utiliser Java8 avec Eclipse et éventuellement d'autres languages si nécessaires 
-	\item[$\bullet$] Possibilité d'execution en mode terminal puis graphique
-	\item[$\bullet$] Portabilité Windows, Linux, MAC OS (géré nativement par Java)
+	\item[$\bullet$] Possibilité d'exécution en mode terminal puis graphique
+	\item[$\bullet$] Portabilité Windows, Linux, MAC OS (gérée nativement par Java)
     \end{itemize}
 \end{flushleft}
 
@@ -101,7 +101,7 @@ Encadrant: Mr. Vincent Gauthier }
 
 \subsection*{Juridique}
 \begin{flushleft}
-Creative Commons sans usage commerciale [BY NC SA]
+Creative Commons sans usage commercial [BY NC SA]
 \end{flushleft}
 
 \section*{Spécification fonctionnelle générale}
@@ -111,20 +111,21 @@ Creative Commons sans usage commerciale [BY NC SA]
 	Pour l'écoulement du temps, nous avons choisi de discrétiser le temps. \\
 	Pour l'importation des données et leur traitement, Python est fortement envisagé en tant qu'outil plus performant que Java à l'aide de certaines bibliothèques précodées.
 	Pour l'exportation des résultats dans un fichier lisible, on exporterait les données dans un fichier csv en utilisant des fonctionnalités de lecture/écriture de fichier.\\
-	Pour modéliser les voix de transports, on utiliserait un seul graphe avec comme noeuds du graphe les pays et sur les branches, le nombre de passagers par jour.
+	Pour modéliser les voies de transports, on utiliserait un seul graphe avec comme noeuds du graphe les pays et sur les branches, le nombre de passagers par jour.
 	\end{flushleft}
 
 \subsection*{Critères d'acceptabilité et de réception}
 \begin{flushleft}
-	Pour la résolution des équations différentielles, on utiliserait dans un premier temps une méthode d'Euler. Dans un second temps, on implémenterait une méthode de Runge Kutta qui nous permettrait de gagner en performance. \\
+	Pour la résolution des équations différentielles, on utiliserait dans un premier temps une méthode d'Euler. Dans un second temps, on implémenterait une méthode de Runge Kutta qui nous permettrait de gagner en précision. \\
 	Pour l'interface utilisateur, on permettrait à l'utilisateur de définir l'échelle de temps afin de gérer la rapidité du programme. L'utilisateur pourrait également choisir les pays de lancement de la maladie. Il écrirait le nom du pays et on vérifierait si le nom correspond au nom d'un pays présent dans la liste d'une variable pays. \\
-	Enfin pour les coefficients des différentes maladies, il y a le mode manuelle ou l'utilisateur saisi les coefficients à la main et lance ensuite notre programme de modélisation. Mais il y a aussi le mode d'utilisation ou l'utilisateur rentre la maladie et où cela va chercher dans des données que l'on a généré à partir des statistiques mondiales sur les maladies.
+	Enfin pour les coefficients de propagation des différentes maladies, il y a le mode manuel ou l'utilisateur saisit les coefficients à la main et lance ensuite notre programme de modélisation. Mais il y a aussi le mode d'utilisation où l'utilisateur 
+rentre la maladie et où le programme va chercher dans des données que l'on a générées précédemment à partir de statistiques mondiales sur les maladies.
 \end{flushleft}
 
 \subsection*{Extensions}
 \begin{flushleft}
  	Pour l'interface graphique qui permettra d'afficher une carte du monde ainsi que de tracer des graphiques relatifs aux données de la celulle et leur évolution dans le temps, nous utiliserons la librairie (toolkit) graphique JavaFX. \\
-	Pour la modification de l'environnement (hygiène, température, etc...), on modifie directement les coefficients de propagation de la maladie dans la celulle.
+	Pour la modification de l'environnement (hygiène, température, etc...), on modifie directement les coefficients de propagation de la maladie dans la cellule.
 \end{flushleft}
 
 \section*{Regroupement modulaire des fonctionnalités}
@@ -166,9 +167,10 @@ Creative Commons sans usage commerciale [BY NC SA]
 \begin{flushleft}
 \begin{itemize}
 L'aborescence des paquets est la suivante:
-\item DAO: Data Access Object: Packet contenant les classes relatives aux données. Dans notre projet les données sont stockées dans fichier .txt avec séparateurs.
-\item Main: Contient la classe Context.java qui est itérée tous les dt et qui fait lance la création des objets et le déroulement du programme.
-\item propagation: Ce paquet contient les éléments relatifs aux pays, frontières, les modèles épidémiques et les événements. Nous voulions modélisé trois types de frontières: Air, Land, Maritime. Les appels pour les extractions de données du CSV se font dans la classe Graph.java.
+\item DAO: Data Access Object: Paquet contenant les classes relatives aux données. Dans notre projet les données sont stockées dans fichier .txt avec séparateurs.
+\item Main: Contient la classe Context.java qui est itérée tous les dt et qui lance la création des objets et permet le déroulement du programme.
+\item propagation: Ce paquet contient les éléments relatifs aux pays, frontières, les modèles épidémiques et les événements. Nous voulions modéliser trois types de frontières: Air, Land et Maritime. Les appels pour les extractions de données du CSV se font 
+dans la classe Graph.java.
 \item service: Ce paquet contient une première version de résolution des équations différentielles avant l'implémentation de utils.
 \item terminal: Ce paquet contient l'ensemble des fonctions donnant le terminal utilisateur.
 \item utils: Ce paquet contient les outils de résolution des équations différentielles en proposant une implémentation de la méthode d'Euler.
@@ -180,7 +182,7 @@ L'aborescence des paquets est la suivante:
 
 \paragraph{Comparaison entre l'objectif et la réalisation}
 \begin{flushleft}
-Nous avions initialement prévu de réaliser une interface graphique mais nous avions sous estimé la partie fonctionnelle du programme qui nous as pis plus de temps que prévu.
+Nous avions initialement prévu de réaliser une interface graphique mais nous avions sous estimé la partie fonctionnelle du programme qui nous as pris plus de temps que prévu.
 En particulier, la modélisation initiale du problème a été complexe, il a fallu adopter une structure permettant de gérer plusieurs scénarios.
 \end{flushleft}
 
@@ -192,53 +194,57 @@ En particulier, la modélisation initiale du problème a été complexe, il a fa
 \section*{Aborescence des Menus}
 \begin{flushleft}
 
-L'interaction entre l'utilisateur et le programme se fait par l'utilisation d'un terminal divisés en Menus.
+L'interaction entre l'utilisateur et le programme se fait par l'utilisation d'un terminal divisés en menus.
 \dirtree{%
 .1 Gérer les événements .
-.2 Lister et Supprimer l'évenement choisi .
+.2 Lister et supprimer l'évenement choisi .
 .3 Créer un événement .
-.4 At which time does the event trigger? .
+.4 Moment de déclenchement .
 .5 Constantes .
 .6 Beta: coefficient de propagation .
 .6 Gamma: coefficient de guérison .
-.6 Mu: taux de mortalité [Indisponible] .
+.6 Mu: taux de mortalité .
 .5 Paramètres du graphe .
-.6 Defaut .
+.6 Pays1 .
 .7 Population du pays .
-.8 Nombre de Sains .
+.8 Nombre de sains .
 .8 Nombre d'infectés .
 .8 Nombre de guéris .
 .7 Etat des frontières du pays .
-.8 Frontière avec Défaut .
-.8 Frontière avec Défaut .
-.8 Frontière avec Défaut .
-.6 Defaut .
+.8 Frontière avec Pays1 .
+.8 Frontière avec Pays2 .
+.6 Pays2 .
 .7 Population du pays .
-.8 Nombre de Sains .
+.8 Nombre de sains .
 .8 Nombre d'infectés .
 .8 Nombre de guéris .
 .7 Etat des frontières du pays .
-.8 Frontière avec Défaut .
-.8 Frontière avec Défaut .
-.8 Frontière avec Défaut .
+.8 Frontière avec Pays1 .
+.8 Frontière avec Pays2 .
 .1 Personnalisation de la maladie .
 .2 Paramètres de propagation .
 .3 Choix d'un modèle .
-.4 Modèle SIR [Indisponible] .
-.4 Modèle SIR with Birth and Death .
+.4 Modèle SIR  .
+.4 Modèle SIR avec naissances et morts .
 .3 Constantes .
 .4 Beta: coefficient de propagation .
-.4 Gamma: coeffcient de Guérison .
+.4 Gamma: coefficient de guérison .
 .4 Mu: taux de mortalité .
 .3 Échelle de temps dt .
-.2 Paramètre de départ .
+.2 Paramètres de départ .
 .1 Choix de la maladie .
 .2 Peste .
 .2 Lèpre .
+.1 Exporter les paramètres et évènements .
+.1 Importer les paramètres et évènements .
 }
 
-Les événements sont des phénomènes modifiant les données du problème à un instant t. Par exemple: la fermeture d'une frontière.
 
+Le choix d'une maladie permet de charger les données pré-enregistrées (constantes, population de départ, évènements...) d'une maladie connue. Nous n'avons pas eu le temps de générer ces données, mais la fonctionnalité elle-même est implémentée.
+La personnalisation de la maladie permet de modifier les données de départ de la modélisation (que l'on ait choisi une maladie précédemment ou non). Ainsi on peut modifier l'état de départ des frontières (ouverture/fermeture et flux de population), la 
+population de départ de tous les pays (répartie entre les sains, les infectés et les guéris) et les paramètres de propagation de la maladie (coefficients Beta et Gamma, Mu n'étant pas implémenté).
+Les événements sont des phénomènes modifiant les données du problème à un instant t. Ils permettent de modifier les mêmes paramètres que le menu de personnalisation de la maladie, mais à un instant donné non nul. 
+Exporter les paramètres et évènements permet de sauvegarder les modifications apportées aux paramètres de la simulation, et importer les paramètres et évènements permet de charger les sauvegardes précédentes.
 
 \end{flushleft}
 

@@ -125,7 +125,7 @@ public class Context {
 			}
 		
 		//on définit les subMenu de choix de Maladie (secondSubMenu)
-		//Les valeurs 1 et 2 sont à changés dans les deux lignes qui suivent
+		//Les valeurs 1 et 2 sont à changer dans les deux lignes qui suivent
 		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Peste"),"Peste");
 		secondSubMenu.add(x->this.model=new SIRModel(1, 2, this.model.getNetwork(), this.model.getSusceptibles(), this.model.getInfectives(), this.model.getDt(),this.model.getRecovered(), "Lèpre"),"Lèpre");
 		
