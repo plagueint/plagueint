@@ -34,14 +34,20 @@ public class SIRModel extends GenericModel{
 	}
 	
 	//Définit la fonction f vérifiant: du=f(u) où u=(susceptibles,infectives,recovered)
-	public double[] f(double[] u , double beta , double gamma) {
+	public double[] f(double[] u) {
 		double[] du = new double[3];
-		du[0] = -beta*u[0]*u[1]/(u[0]+u[1]+u[2]);
-		du[1] = beta*u[0]*u[1]/(u[0]+u[1]+u[2]) - gamma*u[1];
+		du[0] = -getBeta()*u[0]*u[1]/(u[0]+u[1]+u[2]);
+		du[1] = getBeta()*u[0]*u[1]/(u[0]+u[1]+u[2]) - gamma*u[1];
 		du[2] = gamma*u[1];
 		return du;
 	}
-	
+	public double[][] update(double[][] u){
+		double [][] du = new double[this.getNetwork().getCells().length][3];
+		for (int i=0;i<this.getNetwork().getCells().length;i++){
+			du[i]=f(u[i]);
+		}
+		return du;
+	}
 	@Override
 	public String toString (){
 		String s=super.toString() ;

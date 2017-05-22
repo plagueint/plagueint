@@ -2,7 +2,7 @@ package utils;
 
 public interface Euler{
 	
-	//Création d'une classe Tuple parce que Java c'est de la merde il retourne qu'un seul arguments
+	//Création d'une classe Tuple parce que Java ne retourne qu'un seul argument
 	public class Tuple<X,Y>{ //<X,Y> est puissant on ne décrit pas les types on peut metre X=int, Y=double --> fonction d'ordre supérieur
 		  public final X x; //final: l'élément ne peut être changé dans la suite du programme
 		  public final Y y; //final: l'élément ne peut être changé dans la suite du programme
@@ -29,5 +29,5 @@ public interface Euler{
 		u[1]=u[1]+dt*du[1];
 		u[2]=u[2]+dt*du[2];
 		return new Tuple<double[],double[]>(u,du);
-	}	
+	}
 }

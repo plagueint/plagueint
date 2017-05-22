@@ -21,7 +21,8 @@ public abstract class GenericModel {
 		this.dt = dt;
 		this.name=name;
 	}
-		
+	
+
 	
 	private double beta;
 	private Graph network;

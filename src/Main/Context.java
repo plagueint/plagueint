@@ -149,6 +149,8 @@ public class Context {
 		modelMenu.add(secondSubMenu);
 		modelMenu.add(exportMenu);
 		modelMenu.add(importMenu);
+		SubMenu thirdSubMenu = new SubMenu("Lancer la simulation");
+		modelMenu.add(thirdSubMenu);
 		
 		return modelMenu;
 		
