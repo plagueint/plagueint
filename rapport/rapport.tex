@@ -182,8 +182,13 @@ dans la classe Graph.java.
 
 \paragraph{Comparaison entre l'objectif et la réalisation}
 \begin{flushleft}
-Nous avions initialement prévu de réaliser une interface graphique mais nous avions sous estimé la partie fonctionnelle du programme qui nous as pris plus de temps que prévu.
-En particulier, la modélisation initiale du problème a été complexe, il a fallu adopter une structure permettant de gérer plusieurs scénarios.
+Les contraintes techniques ont bien été respectées: utilisation de Java8 et Eclipse, possibilité d'exécution dans un terminal et portatibilité Windows, Linux et MacOS. Nous n'avons pas eu le temps de travailler sur l'interface graphique, considéré comme une 
+extension du programme. Il n'est donc pas possible d'obtenir des graphes sur l'état des pays au cours ou bien à la fin de la simulation.
+Concernant les critères d'acceptabilité et de réception, l'interface utilisateur ne correspond pas complètement à la maquette initiale: il ressemble à la maquette mais l'ordre des menus n'est pas le même, la version finale nous paraîssait plus logique et 
+intuitive. La méthode d'Euler est implémentée, mais la méthode de Runge-Kutta, plus précise, ne l'est pas encore.
+Contrairement à ce qui était prévu, nous n'avons pas utilisé python pour importer et traiter les données dont nous nous servons: étant tous habitués à utiliser bash dans le cadre de l'administraiton système, il nous a paru plus simple de le faire en bash.
+Enfin, à l'exception des différents modèles de propagation des maladies (notamment le modèle SIR avec naissances et morts), tous les choix possibles qui étaient prévus pour la modification des paramètres de propagation, et qui n'étaient pas considérés comme 
+des extensions (comme le taux d'hygiène des pays et frontières) sont implémentés.
 \end{flushleft}
 
 \chapter*{Manuel utilisateur}
