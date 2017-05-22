@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Csv {
@@ -168,14 +169,14 @@ public class Csv {
 		return new Border(true,1,1,1);
 	}
 	
-	public static Border[][][] importBorderList(String file,String separator,int countryTotal) throws UnexpectedFile{
+	public static Border[][][] importBorderList(String file,String separator,int countryTotal,HashMap<String,Integer> revertCell) throws UnexpectedFile{
 		ArrayList<String[]> table=read(file,separator);
 		int i = 0;
 		int total=table.size();
 		Border[][][] result=new Border[countryTotal][countryTotal][3];
 		for (i=0;i<total;i++){
-			int firstCountry=Integer.parseInt(table.get(0)[0]);
-			int secondCountry=Integer.parseInt(table.get(0)[1]);
+			int firstCountry=revertCell.get(table.get(0)[0]);
+			int secondCountry=revertCell.get(table.get(0)[1]);
 			
 			if (file=="maritime.txt"){
 				result[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);

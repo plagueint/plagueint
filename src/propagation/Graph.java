@@ -1,5 +1,7 @@
 package propagation;
 
+import java.util.HashMap;
+
 import DAO.UnexpectedFile;
 
 public class Graph {
@@ -13,6 +15,7 @@ public class Graph {
 	
 	private Border[][][] edges;
 	private Cell[] cells;
+	private HashMap<String,Integer> revertCell;
 	
 	public Graph (){
 		/* À décommenter si l'on veut rentrer 3 pays à la main 
@@ -20,21 +23,23 @@ public class Graph {
 		this.cells=new Cell[nb];
 		*/
 		this.cells=new Cell[18];
-		this.cells=DAO.Csv.importCountryList("data/linuxmap/country.txt",","); //importe la liste de tous les pays [Fr, Al,..]
-		
+		this.cells=DAO.Csv.importCountryList("data/linuxmap/country.txt",",");//importe la liste de tous les pays [Fr, Al,..]
+		for(int i = 0 ; i<cells.length;i++){
+			revertCell.put(((Country)cells[i]).getName(), i);
+		}
 		//3 car il y a trois types de borders: maritime, terreste, aérien
 		this.edges=new Border[18][18][3];
 		//countryTotal est le nombre de pays
 		
 		//On n'utilise un try/catch car les throws renvoie la gestion de l'erreur à la classe qui appelle
 		try {
-			this.edges=DAO.Csv.importBorderList("data/linuxmap/maritime.txt",",",18);
+			this.edges=DAO.Csv.importBorderList("data/linuxmap/maritime.txt",",",18,revertCell);
 		} catch (UnexpectedFile e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			this.edges=DAO.Csv.importBorderList("data/linuxmap/terreste.txt",",", 18);
+			this.edges=DAO.Csv.importBorderList("data/linuxmap/terreste.txt",",", 18,revertCell);
 		} catch (UnexpectedFile e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
