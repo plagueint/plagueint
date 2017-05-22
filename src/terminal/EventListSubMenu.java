@@ -3,10 +3,12 @@ package terminal;
 import propagation.Event;
 
 public class EventListSubMenu extends SubMenu {
-	public EventListSubMenu(String name){
+	public EventListSubMenu(String name, SubMenu modelMenu){
 		super(name);
+		this.menu=modelMenu;
 	}
 	
+	private SubMenu menu;
 	@Override
 	public void getNextMenu(int value,Event e,String choice){
 		MenuItem.events.remove(value);
@@ -21,7 +23,7 @@ public class EventListSubMenu extends SubMenu {
 		int i;
 		menuText += 0 + ") Menu précédent\n";
 		for (i=0;i<MenuItem.events.size();i++){
-			menuText += (i+1) + ") " + MenuItem.events.get(i) +"\n";
+			menuText += (i+1) + ") " + menu.readMenuPath(MenuItem.events.get(i).getMenuPath()) +"\n";
 		}
 		return menuText;
 	}

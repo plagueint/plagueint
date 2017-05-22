@@ -1,5 +1,7 @@
 package terminal;
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 import propagation.Event;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -164,6 +166,14 @@ public class SubMenu implements Menu{
 			menuText+="\n";
 		}
 		return menuText;
+	}
+	
+	public String readMenuPath(ConcurrentLinkedQueue<String> menuPath){
+		if (menuPath.size()==2){
+			return this.getMenuName() + " : " + this.submenus.get(Integer.parseInt(menuPath.poll())-1).readMenuPath(menuPath)  ;
+		}else{
+			return this.submenus.get(Integer.parseInt(menuPath.poll())-1).readMenuPath(menuPath);
+		}
 	}
 
 	

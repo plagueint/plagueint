@@ -133,7 +133,7 @@ public class Context {
 		SubMenu eventSubMenu=new SubMenu("Gérer les évenements");
 		modelMenu.add(eventSubMenu);
 		SubMenu createEvent=new EventCreationSubMenu("Créer un évenement");		
-		SubMenu listEvent=new EventListSubMenu("Lister et supprimer l'évènement choisi");
+		SubMenu listEvent=new EventListSubMenu("Lister et supprimer l'évènement choisi",modelMenu);
 		eventSubMenu.add(listEvent);	
 		createEvent.add(constantes);
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");

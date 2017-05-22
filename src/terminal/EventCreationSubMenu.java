@@ -36,8 +36,10 @@ public class EventCreationSubMenu extends SubMenu{
 	
 	@Override
 	public void getNextMenu(int value,Event e,String choice){
-		Event next = new Event(getTime(),e.getMenuPath());
+		Event next = e.addChoice(choice);
+		next.setTime(getTime());
 		submenus.get(value).getUserChoice(next);
+		
 	}
 	
 	@Override

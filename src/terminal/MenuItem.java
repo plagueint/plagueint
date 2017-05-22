@@ -1,5 +1,6 @@
 package terminal;
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.function.BooleanSupplier;
@@ -65,6 +66,10 @@ public class MenuItem implements Menu{
 	
 	public void getEventChoice(Event e){
 		this.accept(e.getNextChoice());
+	}
+	
+	public String readMenuPath(ConcurrentLinkedQueue<String> menuPath){
+		return this.getMenuName() + " : " + menuPath.poll(); 
 	}
 	
 	@Override
