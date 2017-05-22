@@ -39,7 +39,10 @@ public class SIRModel extends GenericModel{
 		du[0] = -beta*u[0]*u[1]/(u[0]+u[1]+u[2]);
 		du[1] = beta*u[0]*u[1]/(u[0]+u[1]+u[2]) - gamma*u[1];
 		du[2] = gamma*u[1];
-		return du;
+		for(int i=0;i<u.length;i++){
+			u[i]=u[i]+du[i]*this.dt;
+		}
+		return u;
 	}
 	
 	@Override

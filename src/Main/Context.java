@@ -13,7 +13,6 @@ Elle renvoie les résultats en sortie dans la classe output
 public class Context {
 	
 	private GenericModel model=new SIRModel();
-	private String fileToWrite="out";
 
 	
 	/* Arborescence du Menu

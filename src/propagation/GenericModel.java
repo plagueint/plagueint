@@ -27,7 +27,7 @@ public abstract class GenericModel {
 	private Graph network;
 	private double susceptibles;
 	private double infectives;
-	private double dt;
+	protected double dt;
 	private String name;
 	
 	
