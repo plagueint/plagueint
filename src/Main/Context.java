@@ -3,6 +3,7 @@ import terminal.*;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import DAO.Csv;
 import propagation.*;
 
 /* La classe Main appelle les getters de terminal.Menu.
@@ -149,15 +150,17 @@ public class Context {
 		modelMenu.add(secondSubMenu);
 		modelMenu.add(exportMenu);
 		modelMenu.add(importMenu);
-		SubMenu thirdSubMenu = new SubMenu("Lancer la simulation");
-		modelMenu.add(thirdSubMenu);
+		modelMenu.add(x->this.launchSimulation(Integer.parseInt(x),modelMenu),"Lancer la simulation");
+		
 		
 		return modelMenu;
 		
 		
 	}
 	
-	private void launchSimulation(int iterations,PriorityQueue<Event> events,Menu mainMenu){
+	private void launchSimulation(int iterations,Menu mainMenu){
+		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
+		events.addAll(MenuItem.events);
 		this.model.clear();
 		
 		double time = 0;
@@ -165,7 +168,9 @@ public class Context {
 			while (events.peek().getTime()==time){
 				mainMenu.getEventChoice(events.poll());
 			}
-			
+			Csv.exportAllCountry(time, this.model);
+			this.model.update();
+			time+=this.model.getDt();
 			
 		}
 	}

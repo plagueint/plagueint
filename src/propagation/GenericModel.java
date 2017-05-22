@@ -56,13 +56,13 @@ public abstract class GenericModel {
 	public double getSusceptibles() {
 		return susceptibles;
 	}
-	public void setSusceptibles(int susceptibles) {
+	public void setSusceptibles(double susceptibles) {
 		this.susceptibles = susceptibles;
 	}
 	public double getInfectives() {
 		return infectives;
 	}
-	public void setInfectives(int infectives) {
+	public void setInfectives(double infectives) {
 		this.infectives = infectives;
 	}
 	public double getDt() {
@@ -88,6 +88,10 @@ public abstract class GenericModel {
 		this.network=new Graph();
 		this.dt=1;
 		this.name="maladie par défaut";
+	}
+	
+	public void update(){
+		
 	}
 
 }

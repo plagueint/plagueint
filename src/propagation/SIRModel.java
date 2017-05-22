@@ -23,7 +23,7 @@ public class SIRModel extends GenericModel{
 	public double getRecovered() {
 		return recovered;
 	}
-	public void setRecovered(int recovered) {
+	public void setRecovered(double recovered) {
 		this.recovered = recovered;
 	}
 	double getGamma() {
@@ -41,13 +41,41 @@ public class SIRModel extends GenericModel{
 		du[2] = gamma*u[1];
 		return du;
 	}
-	public double[][] update(double[][] u){
-		double [][] du = new double[this.getNetwork().getCells().length][3];
+	public void update(){
 		for (int i=0;i<this.getNetwork().getCells().length;i++){
-			du[i]=f(u[i]);
+			double[] u={this.getNetwork().getCells()[i].getSusceptibles(),this.getNetwork().getCells()[i].getInfectives(),this.getNetwork().getCells()[i].getRecovered()};
+			double[] du=f(u);
+			u[0]=u[0]+dt*du[0];
+			u[1]=u[1]+dt*du[1];
+			u[2]=u[2]+dt*du[2];
+			try{
+				this.getNetwork().getCells()[i].setSusceptibles(u[0]);
+				this.getNetwork().getCells()[i].setInfectives(u[1]);
+				this.getNetwork().getCells()[i].setRecovered(u[2]);
+			}catch (ImpossibleValue e){
+				System.out.println("Problème de propagation");
+			}
+			for (int j=0;j<this.getNetwork().getEdges().length;j++){
+				double population = this.getNetwork().getCells()[j].getPopulation();
+				double infectives = this.getNetwork().getCells()[j].getInfectives();
+				double susceptibles = this.getNetwork().getCells()[j].getSusceptibles();
+				double recovered = this.getNetwork().getCells()[j].getRecovered();
+				for (Border b : this.getNetwork().getEdges()[i][j]){
+					if (b.isOpened()){
+						double number = b.getFreqRate()*dt;
+						try{
+							this.getNetwork().getCells()[i].setPopulation(this.getNetwork().getCells()[i].getPopulation() + number);
+							this.getNetwork().getCells()[i].setSusceptibles(this.getNetwork().getCells()[i].getSusceptibles() + susceptibles/population * number + recovered/population * number);
+							this.getNetwork().getCells()[i].setRecovered(this.getNetwork().getCells()[i].getRecovered() + recovered/population * number );
+						}catch (ImpossibleValue e){
+							System.out.println("Problème de transport entre les pays");
+						}
+					}
+				}
+			}
 		}
-		return du;
 	}
+	
 	@Override
 	public String toString (){
 		String s=super.toString() ;
