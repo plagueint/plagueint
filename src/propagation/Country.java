@@ -5,6 +5,10 @@ public class Country extends Cell{
 		super(id, susceptibles, infectives, recovered, population, hygieneRate);
 		this.name = name;
 	}
+	
+	public Country(String name){
+		this.name=name;
+	}
 
 	private String name;
 

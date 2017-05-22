@@ -147,9 +147,8 @@ public class Csv {
 	}
 	
 	public static Country importCountry(String[] liste , int id){
-		double population = Double.parseDouble(liste[0]);
-		return new Country(id,population,0,0,population,1,liste[1]);
-		
+		double population = Double.parseDouble(liste[1]);
+		return new Country(id,population,0,0,population,1,liste[0]);
 	}
 	
 	public static Cell[] importCountryList(String file, String separator){

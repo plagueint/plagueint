@@ -12,6 +12,17 @@ public class Graph {
 	private Border[][][] edges;
 	private Cell[] cells;
 	
+	/* À décommenter lorsque les fichiers à la racine seront valides.
+	public Graph (){
+		int nb = 3;
+		this.cells=new Cell[nb];
+		this.cells=DAO.Csv.importCountryList("population_mondiale.txt",";"); //importe la liste de tous les pays [Fr, Al,..]
+		
+		
+		
+		
+}
+*/
 	
 	public Graph (){
 		//Extract information from CSV and fill up countries and edges
