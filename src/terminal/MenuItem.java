@@ -14,7 +14,7 @@ public class MenuItem implements Menu{
 	
 	private Consumer<String> function;
 	private String menuName;
-	private Supplier<String> current;
+	protected Supplier<String> current;
 	private BooleanSupplier available;
 	
 	protected MenuItem(Consumer<String> function,String menuName, Supplier<String> current,BooleanSupplier available){
@@ -54,7 +54,7 @@ public class MenuItem implements Menu{
 				accept(choice);
 				ask=false;
 			}catch (NumberFormatException error){
-				console.print("You might have not provided the right type\n");
+				console.print("Vous n'avez pas rentré le type de donnée attendu\n");
 			}
 		}
 		generateEvent(e, choice);
@@ -75,7 +75,7 @@ public class MenuItem implements Menu{
 	@Override
 	public String toString(){
 		if (this.current != null && this.getCurrentState() != ""){
-			return this.getMenuName() + "\n" + "current is : " + this.getCurrentState();
+			return this.getMenuName() + "\n" + "actuel est : " + this.getCurrentState();
 		}else{
 			return this.getMenuName();
 		}
