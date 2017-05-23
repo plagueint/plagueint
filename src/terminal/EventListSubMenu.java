@@ -1,5 +1,7 @@
 package terminal;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 import propagation.Event;
 
 public class EventListSubMenu extends SubMenu {
@@ -23,7 +25,8 @@ public class EventListSubMenu extends SubMenu {
 		int i;
 		menuText += 0 + ") Menu précédent\n";
 		for (i=0;i<MenuItem.events.size();i++){
-			menuText += (i+1) + ") " + menu.readMenuPath(MenuItem.events.get(i).getMenuPath()) +"\n";
+			ConcurrentLinkedQueue<String> menuPath = new ConcurrentLinkedQueue<String>(MenuItem.events.get(i).getMenuPath()); 
+			menuText += (i+1) + ") " + menu.readMenuPath(menuPath) +"\n";
 		}
 		return menuText;
 	}
@@ -50,7 +53,7 @@ public class EventListSubMenu extends SubMenu {
 			}catch (NumberFormatException error){
 				console.print("An Integer is expected\n");
 			}catch (IndexOutOfBoundsException error){
-				console.print((value+1) + " is not between 0 and " + this.submenus.size() +"\n");
+				console.print((value+1) + " is not between 0 and " + MenuItem.events.size() +"\n");
 			}catch (NotAvailableChoice error){
 				console.print("choice " + (value+1) + " is not available\n");
 			}

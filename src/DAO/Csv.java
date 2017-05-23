@@ -201,8 +201,9 @@ public class Csv {
 		for (Cell cell : m.getNetwork().getCells()){
 			Country c=(Country) cell;
 			try {
-		        BufferedWriter out = new BufferedWriter(new FileWriter(c.getName()));
-		        out.write(exportData(t,c));;
+		        BufferedWriter out = new BufferedWriter(new FileWriter("result/" + c.getName(),true));
+		        out.append(exportData(t,c));
+		        out.flush();
 		        out.close();
 		    } catch (IOException e) {
 		        	System.out.println("Error while opening file");

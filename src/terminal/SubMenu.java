@@ -68,7 +68,7 @@ public class SubMenu implements Menu{
 	}
 	
 	public void add(String s){
-		this.add(s,null,null);
+		this.add(s,()->"",()->true);
 	}
 	
 	public void add(Consumer<String> consumer,String s,Supplier<String> actual,BooleanSupplier available){
@@ -80,12 +80,12 @@ public class SubMenu implements Menu{
 	}
 	
 	public void add(Consumer<String> consumer, String s,BooleanSupplier available){
-		this.add(consumer,s,null,available);
+		this.add(consumer,s,()->"",available);
 	}
 	
 	
 	public void add(Consumer<String> consumer,String s){
-		this.add(consumer,s,null,()->true);
+		this.add(consumer,s,()->"",()->true);
 	}
 	
 	public void remove(int i){
@@ -146,7 +146,7 @@ public class SubMenu implements Menu{
 	}
 	
 	public void getEventChoice(Event e){
-		submenus.get(Integer.parseInt(e.getNextChoice())).getEventChoice(e);
+		submenus.get(Integer.parseInt(e.getNextChoice())-1).getEventChoice(e);
 	}
 	
 	
