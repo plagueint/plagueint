@@ -3,7 +3,7 @@ kingdom of slackware,1000
 lubuntia,20000
 xubuntia,50000
 the debian republic,100000
-the rogue state of mind,10000
+the rogue state of mint,10000
 new mageia republic,3000
 the offensive kingdom,45000
 the highlands of gentoo,8000

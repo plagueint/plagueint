@@ -174,18 +174,18 @@ public class Csv {
 		int i = 0;
 		int total=table.size();
 		for (i=0;i<total;i++){
-			int firstCountry=revertCell.get(table.get(0)[0]);
-			int secondCountry=revertCell.get(table.get(0)[1]);
-			
+			int firstCountry=revertCell.get(table.get(i)[0]);
+			int secondCountry=revertCell.get(table.get(i)[1]);			
 			if (file=="data/linuxmap/maritime.txt"){
-				borders[firstCountry][secondCountry][0]=new Maritime(true,0,0,1);
+				borders[firstCountry][secondCountry][0]=new Maritime(true,1,0,1);
 			}else if (file=="data/linuxmap/terrestre.txt"){
-				borders[firstCountry][secondCountry][1]=new Land(true,0,0,1);
+				borders[firstCountry][secondCountry][1]=new Land(true,1,0,1);
 			}else if (file=="data/linuxmap/aerienne.txt"){
-				borders[firstCountry][secondCountry][2]=new Air(true,0,0,1);
+				borders[firstCountry][secondCountry][2]=new Air(true,1,0,1);
 			}else{
 				throw new UnexpectedFile();
 			}
+			borders[secondCountry][firstCountry][1]=borders[firstCountry][secondCountry][1];
 			
 		}
 		

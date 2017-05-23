@@ -1,7 +1,7 @@
 popular republic of ubuntu,kingdom of slackware
 popular republic of ubuntu,lubuntia
 xubuntia,the debian republic
-the rogue state of mind,new mageia republic
+the rogue state of mint,new mageia republic
 new mageia republic,the offensive kingdom
 new mageia republic,the highlands of gentoo
 the great compile,archland

@@ -14,7 +14,6 @@ Elle renvoie les résultats en sortie dans la classe output
 public class Context {
 	
 	private GenericModel model=new SIRModel();
-	private Menu mainMenu;
 	
 	/* Arborescence du Menu
 	 * modelMenu
@@ -162,13 +161,12 @@ public class Context {
 	private void launchSimulation(int iterations){
 		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		events.addAll(MenuItem.events);
-		System.out.println(((Country)this.model.getNetwork().getCells()[0]).getInfectives()+((Country)this.model.getNetwork().getCells()[0]).getName());
 		this.model.clear();
-		
+		Menu mainMenu=this.constructModelMenu();
 		double time = 0;
 		for (int i=0;i<iterations;i++){
 			while ( ! events.isEmpty() && events.peek().getTime()==time){
-				this.mainMenu.getEventChoice(events.poll());
+				mainMenu.getEventChoice(events.poll());
 			}
 			Csv.exportAllCountry(time, this.model);
 			this.model.update();
@@ -180,8 +178,9 @@ public class Context {
 	
 	public static void main(String[] args) {
 		Context context=new Context();
-		context.mainMenu=context.constructModelMenu();
+		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event(0);
-		context.mainMenu.getUserChoice(e);
+		mainMenu.getUserChoice(e);
+		System.out.println(MenuItem.events);
 	}
 }
