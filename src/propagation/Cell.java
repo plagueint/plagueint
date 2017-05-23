@@ -34,7 +34,7 @@ public class Cell {
 	public double getSusceptibles() {
 		return susceptibles;
 	}
-	public void setSusceptibles(double susceptibles) throws ImpossibleValue{
+	public void setSusceptiblesMenu(double susceptibles) throws ImpossibleValue{
 		if (susceptibles>=0){
 			this.population=this.infectives+this.recovered+susceptibles;
 			this.susceptibles = susceptibles;
@@ -46,7 +46,7 @@ public class Cell {
 	public double getInfectives() {
 		return infectives;
 	}
-	public void setInfectives(double infectives)  throws ImpossibleValue{
+	public void setInfectivesMenu(double infectives)  throws ImpossibleValue{
 		if (infectives<0){throw new ImpossibleValue("Le nombre d'infectés doit être positif.");}
 		else{
 			if (this.susceptibles>=(infectives-this.infectives)){
@@ -61,7 +61,7 @@ public class Cell {
 	public double getRecovered() {
 		return recovered;
 	}
-	public void setRecovered(double recovered) throws ImpossibleValue{
+	public void setRecoveredMenu(double recovered) throws ImpossibleValue{
 		if (recovered<0){throw new ImpossibleValue("Le nombre de guéris doit être positif.");}
 		else{
 			if (this.infectives>=(recovered-this.recovered)){
@@ -74,8 +74,20 @@ public class Cell {
 	public double getPopulation() {
 		return population;
 	}
-	public void setPopulation(double population) throws ImpossibleValue {
+	public void setPopulationMenu(double population) throws ImpossibleValue {
 			this.population = population;
+	}
+	public void setSusceptibles(double susceptibles) {
+		this.susceptibles = susceptibles;
+	}
+	public void setInfectives(double infectives) {
+		this.infectives = infectives;
+	}
+	public void setRecovered(double recovered) {
+		this.recovered = recovered;
+	}
+	public void setPopulation(double population) {
+		this.population = population;
 	}
 	public double getHygieneRate() {
 		return hygieneRate;

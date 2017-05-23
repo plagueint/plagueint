@@ -43,36 +43,39 @@ public class SIRModel extends GenericModel{
 	}
 	public void update(){
 		for (int i=0;i<this.getNetwork().getCells().length;i++){
-			double[] u={this.getNetwork().getCells()[i].getSusceptibles(),this.getNetwork().getCells()[i].getInfectives(),this.getNetwork().getCells()[i].getRecovered()};
+			double population = this.getNetwork().getCells()[i].getPopulation();
+			double infectives = this.getNetwork().getCells()[i].getInfectives();
+			double susceptibles = this.getNetwork().getCells()[i].getSusceptibles();
+			double recovered = this.getNetwork().getCells()[i].getRecovered();
+			double[] u={susceptibles,infectives,recovered};
 			double[] du=f(u);
 			u[0]=u[0]+dt*du[0];
 			u[1]=u[1]+dt*du[1];
 			u[2]=u[2]+dt*du[2];
-			try{
-				this.getNetwork().getCells()[i].setSusceptibles(u[0]);
-				this.getNetwork().getCells()[i].setInfectives(u[1]);
-				this.getNetwork().getCells()[i].setRecovered(u[2]);
-			}catch (ImpossibleValue e){
-				System.out.println("Problème de propagation");
-			}
-			for (int j=0;j<this.getNetwork().getEdges().length;j++){
-				double population = this.getNetwork().getCells()[j].getPopulation();
-				double infectives = this.getNetwork().getCells()[j].getInfectives();
-				double susceptibles = this.getNetwork().getCells()[j].getSusceptibles();
-				double recovered = this.getNetwork().getCells()[j].getRecovered();
+			
+			susceptibles=u[0];
+			infectives=u[1];
+			recovered=u[2];
+			
+			for (int j=0;j<this.getNetwork().getCells().length;j++){
+				double population1 = this.getNetwork().getCells()[j].getPopulation();
+				double infectives1 = this.getNetwork().getCells()[j].getInfectives();
+				double susceptibles1 = this.getNetwork().getCells()[j].getSusceptibles();
+				double recovered1 = this.getNetwork().getCells()[j].getRecovered();
 				for (Border b : this.getNetwork().getEdges()[i][j]){
 					if (b.isOpened()){
 						double number = b.getFreqRate()*dt;
-						try{
-							this.getNetwork().getCells()[i].setPopulation(this.getNetwork().getCells()[i].getPopulation() + number);
-							this.getNetwork().getCells()[i].setSusceptibles(this.getNetwork().getCells()[i].getSusceptibles() + susceptibles/population * number + recovered/population * number);
-							this.getNetwork().getCells()[i].setRecovered(this.getNetwork().getCells()[i].getRecovered() + recovered/population * number );
-						}catch (ImpossibleValue e){
-							System.out.println("Problème de transport entre les pays");
-						}
+						population=population + number;
+						susceptibles=susceptibles + susceptibles1/population1*number;
+						infectives=infectives + infectives1/population1 * number;
+						recovered=recovered + recovered1/population1 * number ;
 					}
 				}
 			}
+			this.getNetwork().getCells()[i].setPopulation(population);
+			this.getNetwork().getCells()[i].setSusceptibles(susceptibles);
+			this.getNetwork().getCells()[i].setInfectives(infectives);
+			this.getNetwork().getCells()[i].setRecovered(recovered);
 		}
 	}
 	

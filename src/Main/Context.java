@@ -71,14 +71,14 @@ public class Context {
 			countryPopulation.add(x->{
 				double y = Double.parseDouble(x);
 				try{
-					c.setSusceptibles(y);
+					c.setSusceptiblesMenu(y);
 					} catch (ImpossibleValue e){
 						System.out.println(e.getTitle());}
 				},"Nombre de sains");
 			countryPopulation.add(x->{
 				double y =Double.parseDouble(x);
 				try{
-					c.setInfectives(y);
+					c.setInfectivesMenu(y);
 				} catch (ImpossibleValue e){
 					System.out.println(e.getTitle());
 				}
@@ -86,7 +86,7 @@ public class Context {
 			countryPopulation.add(x->{
 				double y=Double.parseDouble(x);
 				try{
-					c.setRecovered(y);
+					c.setRecoveredMenu(y);
 				} catch (ImpossibleValue e){
 					System.out.println(e.getTitle());
 				}
@@ -139,7 +139,7 @@ public class Context {
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
 		graphParameters.setSubmenus(startParameters.getSubmenus());
 		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.exportEvent(x),"Exporter les paramètres et évènements",()->"Ecrire le nom du fichier de destination: ");
-		MenuItem importMenu=new NoEventMenuItem(x->MenuItem.events.addAll(DAO.Csv.importEventList(x,";")),"Importer les paramètres et évènements",()->"Ecrire le nom du fichier source: ");
+		MenuItem importMenu=new NoEventMenuItem(x->MenuItem.events.addAll(DAO.Csv.importEventList("exports/" + x,";")),"Importer les paramètres et évènements",()->"Ecrire le nom du fichier source: ");
 		
 		createEvent.add(graphParameters);
 		eventSubMenu.add(createEvent);
@@ -159,8 +159,10 @@ public class Context {
 	}
 	
 	private void launchSimulation(int iterations){
+		
 		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		events.addAll(MenuItem.events);
+		MenuItem.events.clear();
 		this.model.clear();
 		Menu mainMenu=this.constructModelMenu();
 		double time = 0;
@@ -173,6 +175,7 @@ public class Context {
 			time+=this.model.getDt();
 			
 		}
+		
 	}
 
 	

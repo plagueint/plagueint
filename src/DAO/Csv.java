@@ -134,8 +134,8 @@ public class Csv {
 			System.out.println("Error in parsing event");
 		}
 		Event e = new Event(time);
-		for(String s : liste){
-			e.getMenuPath().add(s);
+		for(int i=1;i<liste.length;i++){
+			e.getMenuPath().add(liste[i]);
 		}
 		return e;
 	}
@@ -185,7 +185,8 @@ public class Csv {
 			}else{
 				throw new UnexpectedFile();
 			}
-			borders[secondCountry][firstCountry][1]=borders[firstCountry][secondCountry][1];
+			//Si on veut rendre les frontières symétriques
+			//borders[secondCountry][firstCountry][1]=borders[firstCountry][secondCountry][1];
 			
 		}
 		
