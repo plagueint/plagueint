@@ -1,17 +1,23 @@
 package propagation;
 
 public class Border {
-	public Border(boolean opened, float freqRate, float crossingTime, float hygieneRate) {
+	public Border(boolean opened, double freqRate, double crossingTime, double hygieneRate) {
 		this.opened = opened;
 		this.freqRate = freqRate;
 		this.crossingTime = crossingTime;
 		this.hygieneRate = hygieneRate;
 	}
+	public Border(){
+		this.opened=false;
+		this.freqRate=0;
+		this.crossingTime=0;
+		this.hygieneRate=0;
+	}
 	
 	private boolean opened;
-	private float freqRate;
-	private float crossingTime;
-	private float hygieneRate;
+	private double freqRate;
+	private double crossingTime;
+	private double hygieneRate;
 	
 	public boolean isOpened() {
 		return opened;
@@ -19,22 +25,33 @@ public class Border {
 	public void setOpened(boolean opened) {
 		this.opened = opened;
 	}
-	public float getFreqRate() {
+	public double getFreqRate() {
 		return freqRate;
 	}
-	public void setFreqRate(float freqRate) {
-		this.freqRate = freqRate;
+	public void setFreqRate(double freqRate) throws ImpossibleValue{
+		if (freqRate<0){throw new ImpossibleValue("Le nombre de voyageurs doit être positif");}
+		else {	this.freqRate = freqRate;}
 	}
-	public float getCrossingTime() {
+	public double getCrossingTime() {
 		return crossingTime;
 	}
-	public void setCrossingTime(float crossingTime) {
-		this.crossingTime = crossingTime;
+	public void setCrossingTime(double crossingTime) throws ImpossibleValue{
+		if (crossingTime<0){throw new ImpossibleValue("Le temps de voyage doit être positif");}
+		else {this.crossingTime = crossingTime;}
 	}
-	public float getHygieneRate() {
+	public double getHygieneRate() {
 		return hygieneRate;
 	}
-	public void setHygieneRate(float hygieneRate) {
+	public void setHygieneRate(double hygieneRate) {
 		this.hygieneRate = hygieneRate;
+	}
+	
+	public String returnOpened(){
+		if (this.isOpened()){return "Frontière ouverte";}
+		else {return "Frontière fermée";}
+	}
+	
+	public String getMenuName(){
+		return "";
 	}
 }
