@@ -183,13 +183,13 @@ dans la classe Graph.java.
 \paragraph{Comparaison entre l'objectif et la réalisation}
 \begin{flushleft}
 	Les contraintes techniques ont bien été respectées: utilisation de Java8 et Eclipse, possibilité d'exécution dans un terminal cependant la portatibilité Windows n'est pas garantie car l'arborescence utilise \ au lieu de /. Le programme fonctionne correctement sous Linux et MacOS. Nous n'avons pas eu le temps de travailler sur l'interface graphique, considéré comme une 
-extension du programme. Il possible d'obtenir des graphes sur l'état des pays en récupérant les fichiers .csv de données et en utilisant un tableur excel.
+extension du programme. Il possible d'obtenir des graphes sur l'état des pays en récupérant les fichiers .csv de données et en utilisant un tableur. \newline
 Concernant les critères d'acceptabilité et de réception, l'interface utilisateur ne correspond pas complètement à la maquette initiale: il ressemble à la maquette mais l'ordre des menus n'est pas le même, la version finale nous paraîssait plus logique et 
-intuitive. La méthode d'Euler est implémentée, mais la méthode de Runge-Kutta, plus précise, ne l'est pas encore.
-Contrairement à ce qui était prévu, nous n'avons pas utilisé python pour importer et traiter les données dont nous nous servons. En effet, nous sommes tous habitués à utiliser bash en tant qu'outil natif en administraiton système.
+intuitive. La méthode d'Euler est implémentée, mais la méthode de Runge-Kutta, plus précise, ne l'est pas encore. \newline
+Contrairement à ce qui était prévu, nous n'avons pas utilisé python pour importer et traiter les données dont nous nous servons. En effet, nous sommes tous habitués à utiliser bash en tant qu'outil natif en administraiton système. \newline
 Enfin, à l'exception des différents modèles de propagation des maladies (notamment le modèle SIR avec naissances et morts), tous les choix possibles qui étaient prévus pour la modification des paramètres de propagation, et qui n'étaient pas considérés comme 
-des extensions (comme le taux d'hygiène des pays et frontières) sont implémentés.
-La fonction d'importation des données n'est pas fonctionnelle. En particulier, nous avons essayé de trouver et parser des données réelles sans succès. Nous avons alors décidé de créer un monde fictif linuxmap. Ci-dessous la carte linuxmap:
+des extensions (comme le taux d'hygiène des pays et frontières) sont implémentés. \newline
+La fonction d'importation des données est fonctionnelle. En particulier, nous avons essayé de trouver et parser des données réelles sans succès. Nous avons alors décidé de créer un monde fictif linuxmap. Ci-dessous la carte linuxmap:
 \includegraphics[angle=270 , scale=0.5]{linuxmap.jpg}
 
 
@@ -246,16 +246,17 @@ L'interaction entre l'utilisateur et le programme se fait par l'utilisation d'un
 .2 Lèpre .
 .1 Exporter les paramètres et évènements .
 .1 Importer les paramètres et évènements .
-.1 Lancer la simulation (non disponible) .
+.1 Lancer la simulation . 
 }
 \end{flushleft}
 
 \begin{flushleft}
-Le choix d'une maladie permet de charger les données pré-enregistrées (constantes, population de départ, évènements...) d'une maladie connue. Nous n'avons pas eu le temps de générer ces données, mais la fonctionnalité elle-même est implémentée.
+Le choix d'une maladie permet de charger les données pré-enregistrées (constantes, population de départ, évènements...) d'une maladie connue. Nous n'avons pas eu le temps de générer ces données, mais la fonctionnalité elle-même est implémentée. \newline
 La personnalisation de la maladie permet de modifier les données de départ de la modélisation (que l'on ait choisi une maladie précédemment ou non). Ainsi on peut modifier l'état de départ des frontières (ouverture/fermeture et flux de population), la 
-population de départ de tous les pays (répartie entre les sains, les infectés et les guéris) et les paramètres de propagation de la maladie (coefficients Beta et Gamma, Mu n'étant pas implémenté).
-Les événements sont des phénomènes modifiant les données du problème à un instant t. Ils permettent de modifier les mêmes paramètres que le menu de personnalisation de la maladie, mais à un instant donné non nul. 
-Exporter les paramètres et évènements permet de sauvegarder les modifications apportées aux paramètres de la simulation, et importer les paramètres et évènements permet de charger les sauvegardes précédentes.
+population de départ de tous les pays (répartie entre les sains, les infectés et les guéris) et les paramètres de propagation de la maladie (coefficients Beta et Gamma, Mu n'étant pas implémenté). \newline
+Les événements sont des phénomènes modifiant les données du problème à un instant t. Ils permettent de modifier les mêmes paramètres que le menu de personnalisation de la maladie, mais à un instant donné non nul. \newline
+Exporter les paramètres et évènements permet de sauvegarder les modifications apportées aux paramètres de la simulation, et importer les paramètres et évènements permet de charger les sauvegardes précédentes. \newline
+	Lorsque l'utilisateur choisit simulation, il peut renseigner le nombre d'itérations qu'il veut faire. Les résultats sont exportés dans des fichiers CSV (un par pays) avec le temps et la répartition de population dans le dossier result.
 \end{flushleft}
 
 \begin{flushleft}
