@@ -1,0 +1,20 @@
+the red hat comonwealth,popular republic of ubuntu
+the red hat comonwealth,the debian republic
+the red hat comonwealth,the highlands of gentoo
+the debian republic,the red hat comonwealth
+the highlands of gentoo,the red hat comonwealth
+popular republic of ubuntu,the red hat comonwealth
+popular republic of ubuntu,the highlands of gentoo
+popular republic of ubuntu,the opensuse kingdom
+the opensuse kingdom,popular republic of ubuntu
+the opensuse kingdom,the highlands of gentoo
+the highlands of gentoo,popular republic of ubuntu
+the hihglands of gentoo,the opensuse kingdom
+the great compile,kingdom of slackware
+kingdom of slackware,the great compile
+the great compile,the highlands of gentoo
+the highlands of gentoo,the great compile
+the debian republic,the opensuse kingdom
+the opensuse kingdom,the debian republic
+the debian republic,popular republic of ubuntu
+popular republic of ubuntu,the debian republic

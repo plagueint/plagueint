@@ -1,9 +1,32 @@
 popular republic of ubuntu,kingdom of slackware
 popular republic of ubuntu,lubuntia
-xubuntia,the debian republic
+popular republic of ubuntu,the debian republic
+lubuntia,popular republic of ubuntu
+the debian republic,popular republic of ubuntu
+kingdom of slackware,popular republic of ubuntu
+the red hat comonwealth,kingdom of slackware
+kingdom of slackware,the red hat comonwealth
+archland,the highlands of gentoo
+the highlands of gentoo,archland
+centosia,archland
+archland,centosia
+the rogue state of mint,archland
+archland,the rogue state of mint
 the rogue state of mint,new mageia republic
-new mageia republic,the offensive kingdom
+new mageia republic,the rogue state of mint
+xubuntia,the debian republic
+the debian republic,xubuntia
+the rogue state of mint,new mageia republic
+new mageia republic,the opensuse kingdom
 new mageia republic,the highlands of gentoo
-the great compile,archland
 the ubuntu based emirates,the opensuse kingdom
 the independient republic of fedora,centosia
+centosia,the independient republic of fedora
+new mageia republic,the highlands of gentoo
+the highlands of gentoo,new mageia republic
+kubuntustan,the rogue state of mint
+the rogue state of mint,kubuntustan
+the elementary state,the debian republic
+the debian republic,the elementary state
+the opensuse kingdom,the ubuntu based emirates
+the opensuse kingdom,new mageia republic

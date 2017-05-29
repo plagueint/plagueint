@@ -5,7 +5,6 @@ xubuntia,50000
 the debian republic,100000
 the rogue state of mint,10000
 new mageia republic,3000
-the offensive kingdom,45000
 the highlands of gentoo,8000
 the great compile,50000
 archland,200000

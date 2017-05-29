@@ -4,6 +4,15 @@ popular republic of ubuntu,xubuntia
 popular republic of ubuntu,the elementary state
 kubuntustan,the ubuntu based emirates
 kubuntustan,the elementary state
+kubuntustan,popular republic of ubuntu
 the elementary state,the ubuntu based emirates
+the elementary state,kubuntustan
+the elementary state,popular republic of ubuntu
+the ubuntu based emirates,kubuntustan
+the ubuntu based emirates,the elementary state
 the independient republic of fedora,the red hat comonwealth
+the red hat comonwealth,the independient republic of fedora
 the great compile,archland
+archland,the great compile
+xubuntia,popular republic of ubuntu
+the rogue state of mint,popular republic of ubuntu
