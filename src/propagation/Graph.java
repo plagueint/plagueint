@@ -31,10 +31,9 @@ public class Graph {
 		for (int i=0;i<cells.length;i++){
 			Border[] a={new Border(false,0,0,1),new Border(false,0,0,1),new Border(false,0,0,1)};
 			edges[i][i]=a;
-			for(int j=0;j<i;j++){
+			for(int j=0;j<cells.length;j++){
 				Border[] b={new Border(false,0,0,1),new Border(false,0,0,1),new Border(false,0,0,1)};
 				edges[i][j]=b;
-				edges[j][i]=b;
 			}
 		}
 		//countryTotal est le nombre de pays

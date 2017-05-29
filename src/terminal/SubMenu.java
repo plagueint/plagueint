@@ -135,8 +135,8 @@ public class SubMenu implements Menu{
 				}else{
 					throw new NotAvailableChoice();
 				}
-//			}catch (NumberFormatException error){
-//				console.print("An Integer is expected\n");
+			}catch (NumberFormatException error){
+				console.print("An Integer is expected\n");
 			}catch (IndexOutOfBoundsException error){
 				console.print((value+1) + " is not between 0 and " + this.submenus.size() +"\n");
 			}catch (NotAvailableChoice error){

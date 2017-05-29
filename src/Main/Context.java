@@ -138,8 +138,8 @@ public class Context {
 		createEvent.add(constantes);
 		SubMenu graphParameters=new SubMenu("Paramètres du graphe",()->"Choix du pays");
 		graphParameters.setSubmenus(startParameters.getSubmenus());
-		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.exportEvent(x),"Exporter les paramètres et évènements",()->"Ecrire le nom du fichier de destination: ");
-		MenuItem importMenu=new NoEventMenuItem(x->MenuItem.events.addAll(DAO.Csv.importEventList("exports/" + x,";")),"Importer les paramètres et évènements",()->"Ecrire le nom du fichier source: ");
+		MenuItem exportMenu=new NoEventMenuItem(x->DAO.Csv.exportEvent("data/exports/" + x),"Exporter les paramètres et évènements",()->"Ecrire le nom du fichier de destination: ");
+		MenuItem importMenu=new NoEventMenuItem(x->MenuItem.events.addAll(DAO.Csv.importEventList("data/exports/" + x,";")),"Importer les paramètres et évènements",()->"Ecrire le nom du fichier source: ");
 		
 		createEvent.add(graphParameters);
 		eventSubMenu.add(createEvent);
@@ -184,6 +184,5 @@ public class Context {
 		Menu mainMenu=context.constructModelMenu();
 		Event e=new Event(0);
 		mainMenu.getUserChoice(e);
-		System.out.println(MenuItem.events);
 	}
 }
