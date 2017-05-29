@@ -10,7 +10,8 @@ public class Land extends Border{
 		super();
 	}
 	
+	@Override
 	public String getMenuName(){
-		return "Terrestre";
+		return "terrestre";
 	}
 }

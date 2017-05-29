@@ -12,6 +12,6 @@ public class Air extends Border{
 	
 	@Override
 	public String getMenuName(){
-		return "Aérienne";
+		return "aérienne";
 	}
 }

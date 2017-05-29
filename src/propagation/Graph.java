@@ -29,10 +29,10 @@ public class Graph {
 		//3 car il y a trois types de borders: maritime, terreste, aérien
 		this.edges=new Border[cells.length][cells.length][3];
 		for (int i=0;i<cells.length;i++){
-			Border[] a={new Border(false,0,0,1),new Border(false,0,0,1),new Border(false,0,0,1)};
+			Border[] a={new Maritime(false,0,0,1),new Land(false,0,0,1),new Air(false,0,0,1)};
 			edges[i][i]=a;
 			for(int j=0;j<cells.length;j++){
-				Border[] b={new Border(false,0,0,1),new Border(false,0,0,1),new Border(false,0,0,1)};
+				Border[] b={new Maritime(false,0,0,1),new Land(false,0,0,1),new Air(false,0,0,1)};
 				edges[i][j]=b;
 			}
 		}

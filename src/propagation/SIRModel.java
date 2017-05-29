@@ -64,11 +64,15 @@ public class SIRModel extends GenericModel{
 				double recovered1 = this.getNetwork().getCells()[j].getRecovered();
 				for (Border b : this.getNetwork().getEdges()[i][j]){
 					if (b.isOpened()){
-						double number = b.getFreqRate()*dt;
+						double number = b.getFreqRate()/100*population1*dt;
 						population=population + number;
 						susceptibles=susceptibles + susceptibles1/population1*number;
 						infectives=infectives + infectives1/population1 * number;
 						recovered=recovered + recovered1/population1 * number ;
+						this.getNetwork().getCells()[j].setPopulation(population1-number);
+						this.getNetwork().getCells()[j].setInfectives(infectives1-infectives1/population1 * number);
+						this.getNetwork().getCells()[j].setSusceptibles(susceptibles1-susceptibles1/population1 * number);
+						this.getNetwork().getCells()[j].setRecovered(recovered1 - recovered1/population1 * number);
 					}
 				}
 			}

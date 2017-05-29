@@ -9,7 +9,8 @@ public class Maritime extends Border{
 		super();
 	}
 	
+	@Override
 	public String getMenuName(){
-		return "Maritime";
+		return "maritime";
 	}
 }

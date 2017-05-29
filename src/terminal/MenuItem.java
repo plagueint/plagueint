@@ -57,6 +57,9 @@ public class MenuItem implements Menu{
 				console.print("Vous n'avez pas rentré le type de donnée attendu\n");
 			}
 		}
+		if (choice == ""){
+			choice=" ";
+		}
 		generateEvent(e, choice);
 	}
 	
