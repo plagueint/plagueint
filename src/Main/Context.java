@@ -159,7 +159,7 @@ public class Context {
 	}
 	
 	private void launchSimulation(int iterations){
-		
+		Csv.deleteDirContent("result/");
 		PriorityQueue<Event> events=new PriorityQueue<Event>(Comparator.comparingDouble(Event::getPriority));
 		events.addAll(MenuItem.events);
 		MenuItem.events.clear();
@@ -175,6 +175,7 @@ public class Context {
 			time+=this.model.getDt();
 			
 		}
+		this.model.clear();
 		
 	}
 

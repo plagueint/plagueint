@@ -57,7 +57,7 @@ public class Event {
 	public String toCSV(){
 		String s=String.valueOf(time);
 		for (String i : menuPath){
-			s += ";" + i ; 
+			s += ";" + i ;
 		}
 		return s;
 	}

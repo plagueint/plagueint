@@ -33,7 +33,7 @@ public class MenuItem implements Menu{
 	}
 
 	protected void accept(String choice){
-		this.function.accept(choice);;
+		this.function.accept(choice);
 	}
 	
 	public Boolean isAvailable(){
@@ -57,7 +57,7 @@ public class MenuItem implements Menu{
 				console.print("Vous n'avez pas rentré le type de donnée attendu\n");
 			}
 		}
-		if (choice == ""){
+		if (choice.isEmpty()){
 			choice=" ";
 		}
 		generateEvent(e, choice);

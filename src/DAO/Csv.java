@@ -4,6 +4,7 @@ import terminal.MenuItem;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -209,6 +210,20 @@ public class Csv {
 		    } catch (IOException e) {
 		        	System.out.println("Error while opening file");
 		    }
+		}
+	}
+	
+	public static void deleteDirContent(String dir){
+		File f=new File(dir);
+		String[] paths=f.list();
+		for (String path : paths){
+			try {
+				BufferedWriter out = new BufferedWriter(new FileWriter("result/" + path,false));
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+	        	System.out.println("Error while opening file");
+			}
 		}
 	}
 }
